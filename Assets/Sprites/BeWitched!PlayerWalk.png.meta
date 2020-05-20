@@ -1,76 +1,67 @@
 fileFormatVersion: 2
-guid: bd0b320dea7cd7f4b9649539dda500b3
+guid: b9f42aa775fb5fd4b9e74b65644d1dd8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8679202682233200035
-    second: BeWitched!MaleStudentWalkDown_0
+      213: 5816477108443209080
+    second: BeWitched!PlayerWalk_0
   - first:
-      213: 2107312264771642787
-    second: BeWitched!MaleStudentWalkDown_1
+      213: -4746401405703875568
+    second: BeWitched!PlayerWalk_1
   - first:
-      213: 2550348777309583094
-    second: BeWitched!MaleStudentWalkDown_2
+      213: 7979946156030240658
+    second: BeWitched!PlayerWalk_2
   - first:
-      213: -480034037277203881
-    second: BeWitched!MaleStudentWalkDown_3
+      213: -3663687933576141559
+    second: BeWitched!PlayerWalk_3
   - first:
-      213: 1427515927164058874
-    second: BeWitched!MaleStudentWalkDown_4
+      213: -7580382841625540254
+    second: BeWitched!PlayerWalk_4
   - first:
-      213: -626140877796867588
-    second: BeWitched!MaleStudentWalkDown_5
+      213: 514183818230325886
+    second: BeWitched!PlayerWalk_5
   - first:
-      213: 6327357048670290653
-    second: BeWitched!MaleStudentWalkDown_6
+      213: -990673937702612438
+    second: BeWitched!PlayerWalk_6
   - first:
-      213: 1264744376368327251
-    second: BeWitched!MaleStudentWalkDown_7
+      213: 2257487178584935127
+    second: BeWitched!PlayerWalk_7
   - first:
-      213: -2779072468459339698
-    second: BeWitched!MaleStudentWalkDown_8
+      213: -293991099962912215
+    second: BeWitched!PlayerWalk_8
   - first:
-      213: -2557659385272156561
-    second: BeWitched!MaleStudentWalkDown_9
+      213: 959631610996066234
+    second: BeWitched!PlayerWalk_9
   - first:
-      213: -8389950764465651383
-    second: BeWitched!MaleStudentWalkDown_10
+      213: 6306216792969893670
+    second: BeWitched!PlayerWalk_10
   - first:
-      213: 5486270117990545143
-    second: BeWitched!MaleStudentWalkDown_11
+      213: -7430269816364024960
+    second: BeWitched!PlayerWalk_11
   - first:
-      213: 7996767596800300605
-    second: BeWitched!MaleStudentWalkDown_12
+      213: -5578156486794749174
+    second: BeWitched!PlayerWalk_12
   - first:
-      213: -341232928882042785
-    second: BeWitched!MaleStudentWalkDown_13
+      213: -2611055568387267677
+    second: BeWitched!PlayerWalk_13
   - first:
-      213: 7525933840116923120
-    second: BeWitched!MaleStudentWalkDown_14
+      213: -7317038653413338113
+    second: BeWitched!PlayerWalk_14
   - first:
-      213: -6888012339299914099
-    second: BeWitched!MaleStudentWalkDown_15
+      213: 256974435913864340
+    second: BeWitched!PlayerWalk_15
   - first:
-      213: -6932402798384646991
-    second: BeWitched!MaleStudentWalkDown_16
+      213: -8497125601340315699
+    second: BeWitched!PlayerWalk_16
   - first:
-      213: 3476130977536529104
-    second: BeWitched!MaleStudentWalkDown_17
+      213: 6587973152204048364
+    second: BeWitched!PlayerWalk_17
   - first:
-      213: -4046207239723329452
-    second: BeWitched!MaleStudentWalkDown_18
+      213: 2140065621565471423
+    second: BeWitched!PlayerWalk_18
   - first:
-      213: 2339785226809957658
-    second: BeWitched!MaleStudentWalkDown_19
-  - first:
-      213: 6390640826460450731
-    second: BeWitched!MaleStudentWalkDown_20
-  - first:
-      213: -2914500919241999546
-    second: BeWitched!MaleStudentWalkDown_21
-  - first:
-      213: -6258381161509705726
-    second: BeWitched!MaleStudentWalkDown_22
+      213: -1711727351501705362
+    second: BeWitched!PlayerWalk_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -180,7 +171,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_0
+      name: BeWitched!PlayerWalk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -194,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d526fd715274d8780800000000000000
-      internalID: -8679202682233200035
+      spriteID: 87dd2f4fc1748b050800000000000000
+      internalID: 5816477108443209080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_1
+      name: BeWitched!PlayerWalk_1
       rect:
         serializedVersion: 2
         x: 16
@@ -215,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a5a98cf65dae3d10800000000000000
-      internalID: 2107312264771642787
+      spriteID: 0141b9ba115612eb0800000000000000
+      internalID: -4746401405703875568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_2
+      name: BeWitched!PlayerWalk_2
       rect:
         serializedVersion: 2
         x: 32
@@ -236,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f6b3ec53b8a46320800000000000000
-      internalID: 2550348777309583094
+      spriteID: 2972de4dfb67ebe60800000000000000
+      internalID: 7979946156030240658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_3
+      name: BeWitched!PlayerWalk_3
       rect:
         serializedVersion: 2
         x: 48
@@ -257,35 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 752eeff16939659f0800000000000000
-      internalID: -480034037277203881
+      spriteID: 9052f474c37f72dc0800000000000000
+      internalID: -3663687933576141559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afc73d52c2e8fc310800000000000000
-      internalID: 1427515927164058874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_5
+      name: BeWitched!PlayerWalk_4
       rect:
         serializedVersion: 2
         x: 0
@@ -299,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf1019760308f47f0800000000000000
-      internalID: -626140877796867588
+      spriteID: 2698177d7f11dc690800000000000000
+      internalID: -7580382841625540254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_6
+      name: BeWitched!PlayerWalk_5
       rect:
         serializedVersion: 2
         x: 16
@@ -320,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd28e0546b94fc750800000000000000
-      internalID: 6327357048670290653
+      spriteID: e726fda557fb22700800000000000000
+      internalID: 514183818230325886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_7
+      name: BeWitched!PlayerWalk_6
       rect:
         serializedVersion: 2
         x: 32
@@ -341,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35a6b153f464d8110800000000000000
-      internalID: 1264744376368327251
+      spriteID: a229ffe6d4b6042f0800000000000000
+      internalID: -990673937702612438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_8
+      name: BeWitched!PlayerWalk_7
       rect:
         serializedVersion: 2
         x: 48
@@ -362,35 +332,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e40c9686050ce69d0800000000000000
-      internalID: -2779072468459339698
+      spriteID: 7dacd84d0a4345f10800000000000000
+      internalID: 2257487178584935127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_9
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6eb864175e518cd0800000000000000
-      internalID: -2557659385272156561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_10
+      name: BeWitched!PlayerWalk_8
       rect:
         serializedVersion: 2
         x: 0
@@ -404,14 +353,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94102094b38e09b80800000000000000
-      internalID: -8389950764465651383
+      spriteID: 9229597f6a88bebf0800000000000000
+      internalID: -293991099962912215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_11
+      name: BeWitched!PlayerWalk_9
       rect:
         serializedVersion: 2
         x: 16
@@ -425,14 +374,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6baa4da95232c40800000000000000
-      internalID: 5486270117990545143
+      spriteID: ab708a8addb415d00800000000000000
+      internalID: 959631610996066234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_12
+      name: BeWitched!PlayerWalk_10
       rect:
         serializedVersion: 2
         x: 32
@@ -446,14 +395,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d36d2a6b2c93afe60800000000000000
-      internalID: 7996767596800300605
+      spriteID: 627d29de2ce248750800000000000000
+      internalID: 6306216792969893670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_13
+      name: BeWitched!PlayerWalk_11
       rect:
         serializedVersion: 2
         x: 48
@@ -467,35 +416,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f58d1588572b34bf0800000000000000
-      internalID: -341232928882042785
+      spriteID: 08bb05228f062e890800000000000000
+      internalID: -7430269816364024960
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0fab24714fc717860800000000000000
-      internalID: 7525933840116923120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_15
+      name: BeWitched!PlayerWalk_12
       rect:
         serializedVersion: 2
         x: 0
@@ -509,14 +437,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8e658b854dd860a0800000000000000
-      internalID: -6888012339299914099
+      spriteID: a0bde07ca386692b0800000000000000
+      internalID: -5578156486794749174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_16
+      name: BeWitched!PlayerWalk_13
       rect:
         serializedVersion: 2
         x: 16
@@ -530,14 +458,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b4fb5262682bcf90800000000000000
-      internalID: -6932402798384646991
+      spriteID: 3a3a8756bcaa3cbd0800000000000000
+      internalID: -2611055568387267677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_17
+      name: BeWitched!PlayerWalk_14
       rect:
         serializedVersion: 2
         x: 32
@@ -551,14 +479,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d2dbcce4b2bd3030800000000000000
-      internalID: 3476130977536529104
+      spriteID: ff3de7fac18a47a90800000000000000
+      internalID: -7317038653413338113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_18
+      name: BeWitched!PlayerWalk_15
       rect:
         serializedVersion: 2
         x: 48
@@ -572,35 +500,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4585da404fbf8d7c0800000000000000
-      internalID: -4046207239723329452
+      spriteID: 494900153e4f09300800000000000000
+      internalID: 256974435913864340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_19
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1dd6be5446987020800000000000000
-      internalID: 2339785226809957658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_20
+      name: BeWitched!PlayerWalk_16
       rect:
         serializedVersion: 2
         x: 0
@@ -614,14 +521,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bafa84cf8fd10b850800000000000000
-      internalID: 6390640826460450731
+      spriteID: dc7ab380945241a80800000000000000
+      internalID: -8497125601340315699
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_21
+      name: BeWitched!PlayerWalk_17
       rect:
         serializedVersion: 2
         x: 16
@@ -635,14 +542,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64bf70b0bdc9d87d0800000000000000
-      internalID: -2914500919241999546
+      spriteID: ce7cee66dae2d6b50800000000000000
+      internalID: 6587973152204048364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BeWitched!MaleStudentWalkDown_22
+      name: BeWitched!PlayerWalk_18
       rect:
         serializedVersion: 2
         x: 32
@@ -656,8 +563,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 208a73fed73c529a0800000000000000
-      internalID: -6258381161509705726
+      spriteID: fba7f61285a03bd10800000000000000
+      internalID: 2140065621565471423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BeWitched!PlayerWalk_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6fab6dfa09be38e0800000000000000
+      internalID: -1711727351501705362
       vertices: []
       indices: 
       edges: []
