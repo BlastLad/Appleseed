@@ -1,0 +1,788 @@
+fileFormatVersion: 2
+guid: 927c7c04432bde74fb3d17ccf9097e2f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4078796110908485188
+    second: Bubbles_0
+  - first:
+      213: -7938878928584171511
+    second: Bubbles_1
+  - first:
+      213: -5417141958962910980
+    second: Bubbles_2
+  - first:
+      213: 5179279333322180978
+    second: Bubbles_3
+  - first:
+      213: -6963593870422336085
+    second: Bubbles_4
+  - first:
+      213: 5028680128492604440
+    second: Bubbles_5
+  - first:
+      213: 2638978548525320615
+    second: Bubbles_6
+  - first:
+      213: -1112529114769193714
+    second: Bubbles_7
+  - first:
+      213: -6200647851499984236
+    second: Bubbles_8
+  - first:
+      213: 5880212346708678647
+    second: Bubbles_9
+  - first:
+      213: 7172371060719296514
+    second: Bubbles_10
+  - first:
+      213: -6632398389021297335
+    second: Bubbles_11
+  - first:
+      213: 2293954029554655769
+    second: Bubbles_12
+  - first:
+      213: 9052976336476088784
+    second: Bubbles_13
+  - first:
+      213: 827346040956873856
+    second: Bubbles_14
+  - first:
+      213: -8291834152662469758
+    second: Bubbles_15
+  - first:
+      213: 8126539916390503930
+    second: Bubbles_16
+  - first:
+      213: -7189308309759251072
+    second: Bubbles_17
+  - first:
+      213: -5646057033986884831
+    second: Bubbles_18
+  - first:
+      213: 1872184739999739651
+    second: Bubbles_19
+  - first:
+      213: -5109914607608894946
+    second: Bubbles_20
+  - first:
+      213: -4513265501592777301
+    second: Bubbles_21
+  - first:
+      213: -8330010313143283741
+    second: Bubbles_22
+  - first:
+      213: -5866241304928517456
+    second: Bubbles_23
+  - first:
+      213: 3617774417647733050
+    second: Bubbles_24
+  - first:
+      213: -1759291520144947060
+    second: Bubbles_25
+  - first:
+      213: -9173521890050185074
+    second: Bubbles_26
+  - first:
+      213: -8059802975518942402
+    second: Bubbles_27
+  - first:
+      213: 2048534730332694730
+    second: Bubbles_28
+  - first:
+      213: 4417382097173445878
+    second: Bubbles_29
+  - first:
+      213: -3775268685044278954
+    second: Bubbles_30
+  - first:
+      213: 980321473287775229
+    second: Bubbles_31
+  - first:
+      213: 3326247431553723267
+    second: Bubbles_32
+  - first:
+      213: -6707853213390702908
+    second: Bubbles_33
+  - first:
+      213: -5101803535899651136
+    second: Bubbles_34
+  - first:
+      213: 6801834833189911411
+    second: Bubbles_35
+  - first:
+      213: 3378631482790281418
+    second: Bubbles_36
+  - first:
+      213: -3219291393115854462
+    second: Bubbles_37
+  - first:
+      213: -7594511143646015905
+    second: Bubbles_38
+  - first:
+      213: 7465218878186335861
+    second: Bubbles_39
+  - first:
+      213: 3447541516057657079
+    second: Bubbles_40
+  - first:
+      213: 8833373090393218626
+    second: Bubbles_41
+  - first:
+      213: -232283931671069312
+    second: Bubbles_42
+  - first:
+      213: -4444939642119482137
+    second: Bubbles_43
+  - first:
+      213: 5775155482915218035
+    second: Bubbles_44
+  - first:
+      213: -1324290852512570514
+    second: Bubbles_45
+  - first:
+      213: -4592593183762146134
+    second: Bubbles_46
+  - first:
+      213: 1231914977697581441
+    second: Bubbles_47
+  - first:
+      213: 4549644758094574984
+    second: Bubbles_48
+  - first:
+      213: -599193717063194163
+    second: Bubbles_49
+  - first:
+      213: 5769743830696413204
+    second: Bubbles_50
+  - first:
+      213: -6715755138043859311
+    second: Bubbles_51
+  - first:
+      213: -2602806679048112746
+    second: Bubbles_52
+  - first:
+      213: 8026569051415330926
+    second: Bubbles_53
+  - first:
+      213: -3278226151089509356
+    second: Bubbles_54
+  - first:
+      213: 6655063722736639468
+    second: Bubbles_55
+  - first:
+      213: -5367793012404606933
+    second: Bubbles_56
+  - first:
+      213: -1543001357308386966
+    second: Bubbles_57
+  - first:
+      213: 4008323468189530436
+    second: Bubbles_58
+  - first:
+      213: -1663733361830728352
+    second: Bubbles_59
+  - first:
+      213: -829203539874548070
+    second: Bubbles_60
+  - first:
+      213: 3633144053545895202
+    second: Bubbles_61
+  - first:
+      213: 7286655111576742435
+    second: Bubbles_62
+  - first:
+      213: -4035163073784461891
+    second: Bubbles_63
+  - first:
+      213: -5209324751185332654
+    second: Bubbles_64
+  - first:
+      213: 2592363386368985703
+    second: Bubbles_65
+  - first:
+      213: 293591677303066899
+    second: Bubbles_66
+  - first:
+      213: 4875529854107070788
+    second: Bubbles_67
+  - first:
+      213: -7635839928101470618
+    second: Bubbles_68
+  - first:
+      213: -5669728898695517136
+    second: Bubbles_69
+  - first:
+      213: -8280566042835256334
+    second: Bubbles_70
+  - first:
+      213: 2302561041976320839
+    second: Bubbles_71
+  - first:
+      213: 1934378072374445448
+    second: Bubbles_72
+  - first:
+      213: 5618123365201372616
+    second: Bubbles_73
+  - first:
+      213: -396720307526132136
+    second: Bubbles_74
+  - first:
+      213: 6847805921175054901
+    second: Bubbles_75
+  - first:
+      213: -7557181569291244743
+    second: Bubbles_76
+  - first:
+      213: 1516178948532025802
+    second: Bubbles_77
+  - first:
+      213: -65549289253359613
+    second: Bubbles_78
+  - first:
+      213: -1591022236606783404
+    second: Bubbles_79
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bubbles_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ee1f5d37bca9830800000000000000
+      internalID: 4078796110908485188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90028ea2daf63d190800000000000000
+      internalID: -7938878928584171511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8e62ee61272d4b0800000000000000
+      internalID: -5417141958962910980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279c037dc1f70e740800000000000000
+      internalID: 5179279333322180978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad936105485c5f90800000000000000
+      internalID: -6963593870422336085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c0edb0fe579c540800000000000000
+      internalID: 5028680128492604440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a94aba02098f9420800000000000000
+      internalID: 2638978548525320615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0507ef1aa08f80f0800000000000000
+      internalID: -1112529114769193714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49aed0aa1afd2f9a0800000000000000
+      internalID: -6200647851499984236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7df6189f5ba9150800000000000000
+      internalID: 5880212346708678647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20027779a71698360800000000000000
+      internalID: 7172371060719296514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 945338d1eccf4f3a0800000000000000
+      internalID: -6632398389021297335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9126ea63903c5df10800000000000000
+      internalID: 2293954029554655769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d9aca76302a2ad70800000000000000
+      internalID: 9052976336476088784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08c6f8d37d25b7b00800000000000000
+      internalID: 827346040956873856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283f91a25cc7dec80800000000000000
+      internalID: -8291834152662469758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af51d796ff447c070800000000000000
+      internalID: 8126539916390503930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d2900de227a3c90800000000000000
+      internalID: -7189308309759251072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bbd9baa0d25a1b0800000000000000
+      internalID: -5646057033986884831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubbles_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f679d0a165bf910800000000000000
+      internalID: 1872184739999739651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
