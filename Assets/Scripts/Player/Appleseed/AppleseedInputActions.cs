@@ -221,7 +221,7 @@ public class @AppleseedInputActions : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""7800777e-ac08-49cf-94bf-ea7266a2ce0e"",
                     ""path"": ""<XInputController>/rightTrigger"",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Attack"",
