@@ -58,7 +58,7 @@ public class GirlController : MonoBehaviour
     public void EnterRose()
     {
         Debug.Log("Entered Rose Mode");
-        inputVector = new Vector2(0f, 0f);
+        inputVector = new Vector2(0f, 0f);//Resets input vector
         isRoseMode = true;
         girlActions.GirlMain.Disable();
         girlActions.GirlRose.Enable();
