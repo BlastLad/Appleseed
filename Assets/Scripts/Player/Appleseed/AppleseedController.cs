@@ -9,6 +9,7 @@ public class AppleseedController : MonoBehaviour
     public float walkSpeed;
     private AppleseedInputActions appleseedActions;
     public bool isPlayDead = false;
+    public Transform hitArea;
     void Awake()
     {
         appleseedActions = new AppleseedInputActions();
@@ -38,7 +39,15 @@ public class AppleseedController : MonoBehaviour
     private void PunchAttack()
     {
         if (isPlayDead == true) { return; }
-        transform.Translate(new Vector3(1.0f, 0.0f));
+        Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
+        if (inputVector == new Vector2(0, 0))
+        {
+            hitArea.position = rb.position + new Vector2(0, -1);
+        }
+        else
+        {
+            hitArea.position = rb.position + inputVector.normalized;
+        }
     }
 
     private void EnterPlayDead()

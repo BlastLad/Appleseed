@@ -206,6 +206,62 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e94ad7c3-721f-4e34-ae34-a96b60e81189
     m_ActionName: GirlMain/Movement[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6ce75e36-665f-4037-a610-d71650aa198e
+    m_ActionName: GirlMain/EnterRose[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bb31481b-a13c-4252-9a5e-28bb65944ba7
+    m_ActionName: GirlMain/UseGadget[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 43af94da-d477-448b-9f8c-b58fa12864b3
+    m_ActionName: GirlMain/CycleLeft[/XInputControllerWindows/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d70e5ba5-b2d7-4fce-96f7-8503ea952300
+    m_ActionName: GirlMain/CycleRight[/XInputControllerWindows/dpad/right,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 76994eec-43dc-4a8d-86b4-de98339ff6df
+    m_ActionName: GirlMain/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c732595-ff6b-4262-a4d7-d2bb4d2ee591
+    m_ActionName: GirlRose/Target[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3d426218-5a4a-4ae5-83c1-5dcc5e69a10d
+    m_ActionName: GirlRose/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 05eb53f4-afaf-4370-8b36-8d0fb7b95c33
+    m_ActionName: GirlRose/EnterMain[/XInputControllerWindows/select,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: df01f07d-1893-4108-8e2a-ed6d94a5e77a
+    m_ActionName: GirlRose/Fire[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7198d02e-f0b8-4661-b365-731279e12476
+    m_ActionName: GirlAppleseedGadget/Target[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 80e5762c-39ec-4b6c-b7a0-648aaccbd774
+    m_ActionName: GirlAppleseedGadget/Throw[/XInputControllerWindows/leftShoulder,/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bce3f65a-b96c-44e7-87b0-e8b1ff969304
+    m_ActionName: GirlAppleseedGadget/EnterMain[/XInputControllerWindows/select,/XInputControllerWindows/select]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f61f0c23-b7fa-49de-b0f5-c562ab4083ab
+    m_ActionName: GirlAppleseedGadget/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f096f779-61a7-4162-a896-f4765efecfef
+    m_ActionName: GirlCaptured/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GirlMain
@@ -223,7 +279,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2178a0e250b36b499ad0b8189a01aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thornPrefab: {fileID: 4915503731722889496, guid: 312119a3e69f95d4fa4fe533ead5aa39,
+    type: 3}
   walkSpeed: 4
+  thornSpeed: 5.75
+  cooldownTime: 0.5
+  cooldownTimer: 0
+  isRoseMode: 0
+  isCaptured: 0
+  isUsingGadget: 0
 --- !u!70 &580024985
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
