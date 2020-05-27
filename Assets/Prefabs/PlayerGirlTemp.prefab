@@ -262,6 +262,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f096f779-61a7-4162-a896-f4765efecfef
     m_ActionName: GirlCaptured/Pause[/XInputControllerWindows/start,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e2e8c9a1-8ffc-4feb-ab7f-a1e7aef6ab4a
+    m_ActionName: GirlMain/Demount[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GirlMain
@@ -281,6 +285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thornPrefab: {fileID: 4915503731722889496, guid: 312119a3e69f95d4fa4fe533ead5aa39,
     type: 3}
+  appleseedPrefab: {fileID: 0}
   walkSpeed: 4
   thornSpeed: 5.75
   cooldownTime: 0.5
@@ -288,6 +293,7 @@ MonoBehaviour:
   isRoseMode: 0
   isCaptured: 0
   isUsingGadget: 0
+  isMounted: 0
 --- !u!70 &580024985
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

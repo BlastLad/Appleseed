@@ -8,6 +8,7 @@ public class GirlController : MonoBehaviour
     private Vector2 inputVector = new Vector2(0, 0); // Start is called before the first frame update
     private Rigidbody2D rb;
     public GameObject thornPrefab;
+    public GameObject appleseedPrefab;
 
     public float walkSpeed;
     public float thornSpeed;
@@ -20,7 +21,7 @@ public class GirlController : MonoBehaviour
     public bool isRoseMode = false;
     public bool isCaptured = false;
     public bool isUsingGadget = false;
-
+    public bool isMounted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,8 +35,10 @@ public class GirlController : MonoBehaviour
         girlActions = new GirlInputActions();
         rb = GetComponent<Rigidbody2D>();
         girlActions.GirlMain.Enable();
+        girlActions.GirlMain.Demount.Disable();
 
         girlActions.GirlMain.EnterRose.started += ctx => EnterRose();
+        
         girlActions.GirlMain.UseGadget.started += ctx => UseGadget();
         girlActions.GirlRose.EnterMain.started += ctx => EnterMain();
         girlActions.GirlRose.Fire.started += ctx => LaunchThorn(inputVector);
@@ -104,6 +107,24 @@ public class GirlController : MonoBehaviour
         cooldownTimer = cooldownTime - 0.3f;
         girlActions.GirlMain.Disable();
         girlActions.GirlRose.Enable();
+    }
+
+    //A Function called by Appleseed that enables the Demount Function
+    public void Mount()
+    {
+        Debug.Log("mounted");
+        isMounted = true;
+        girlActions.GirlMain.Demount.Enable();
+        girlActions.GirlMain.Demount.performed += Demount;
+    }
+    //A function that can only be called while mounted that spawns in a Appleseed GameObject at Girl's current position
+    public void Demount(InputAction.CallbackContext context)
+    {
+        if (isMounted == false) { return; }
+        isMounted = false;
+        girlActions.GirlMain.Demount.performed -= Demount;
+        girlActions.GirlMain.Demount.Disable();
+        Instantiate(appleseedPrefab, transform.position, Quaternion.identity);
     }
 
     public void UseGadget()

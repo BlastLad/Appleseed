@@ -10,10 +10,15 @@ public class AppleseedController : MonoBehaviour
     private AppleseedInputActions appleseedActions;
     public bool isPlayDead = false;
     public Transform hitArea;
+
+    public GameObject girl;
+    public GirlController girlController;
     void Awake()
     {
         appleseedActions = new AppleseedInputActions();
         rb = GetComponent<Rigidbody2D>();
+        girl = GameObject.Find("PlayerGirlTemp");
+        girlController = girl.GetComponent<GirlController>();
 
         appleseedActions.AppleseedMain.Attack.started += ctx => PunchAttack();
         appleseedActions.AppleseedMain.PlayDead.started += ctx => EnterPlayDead();
@@ -39,7 +44,7 @@ public class AppleseedController : MonoBehaviour
     private void PunchAttack()
     {
         if (isPlayDead == true) { return; }
-        Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
+        //Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
         if (inputVector == new Vector2(0, 0))
         {
             hitArea.position = rb.position + new Vector2(0, -1);
@@ -59,6 +64,8 @@ public class AppleseedController : MonoBehaviour
     private void EnterMount(InputAction.CallbackContext context)
     {
         Debug.Log("Successfully Mounted");
+        girlController.Mount();
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
