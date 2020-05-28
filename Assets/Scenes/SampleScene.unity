@@ -372,12 +372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2969405028688826487, guid: db20b173e0b9bbc4692fe9cf3a31cfe1,
-        type: 3}
-      propertyPath: appleseedPrefab
-      value: 
-      objectReference: {fileID: 3656825432348818329, guid: 13fb968d65d6053409a9a347deaebac2,
-        type: 3}
     - target: {fileID: 2969405028688826489, guid: db20b173e0b9bbc4692fe9cf3a31cfe1,
         type: 3}
       propertyPath: m_Name
@@ -447,11 +441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3656825432348818322, guid: 13fb968d65d6053409a9a347deaebac2,
-        type: 3}
-      propertyPath: girl
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3656825432348818329, guid: 13fb968d65d6053409a9a347deaebac2,
         type: 3}
       propertyPath: m_Name

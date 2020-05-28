@@ -7,6 +7,8 @@ TagManager:
   - Girl
   - Appleseed
   - Thorn
+  - LandingZone
+  - ThrownObject
   layers:
   - Default
   - TransparentFX
@@ -41,6 +43,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Targeting
+    uniqueID: 426138647
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

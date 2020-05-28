@@ -65,14 +65,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Demount"",
-                    ""type"": ""Button"",
-                    ""id"": ""e2e8c9a1-8ffc-4feb-ab7f-a1e7aef6ab4a"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -348,28 +340,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Pause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""00ac6889-8aa3-4d48-8666-84874fd41a72"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Demount"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ab288c69-4cc5-44f6-bb15-b69dd9f11770"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Demount"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -844,6 +814,44 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GirlMounted"",
+            ""id"": ""8e856c3f-9bc1-4347-8aaf-e9141e3b4c92"",
+            ""actions"": [
+                {
+                    ""name"": ""Demount"",
+                    ""type"": ""Button"",
+                    ""id"": ""d235abae-2cd1-4922-a8b6-c314a54e3cd3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press""
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""df718e39-4790-4f18-9f92-842201284467"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Demount"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bcbc657d-86dd-4d0d-b55d-e7a9a8bacbc3"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Demount"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -856,7 +864,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         m_GirlMain_CycleLeft = m_GirlMain.FindAction("CycleLeft", throwIfNotFound: true);
         m_GirlMain_CycleRight = m_GirlMain.FindAction("CycleRight", throwIfNotFound: true);
         m_GirlMain_Pause = m_GirlMain.FindAction("Pause", throwIfNotFound: true);
-        m_GirlMain_Demount = m_GirlMain.FindAction("Demount", throwIfNotFound: true);
         // GirlRose
         m_GirlRose = asset.FindActionMap("GirlRose", throwIfNotFound: true);
         m_GirlRose_Target = m_GirlRose.FindAction("Target", throwIfNotFound: true);
@@ -872,6 +879,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         // GirlCaptured
         m_GirlCaptured = asset.FindActionMap("GirlCaptured", throwIfNotFound: true);
         m_GirlCaptured_Pause = m_GirlCaptured.FindAction("Pause", throwIfNotFound: true);
+        // GirlMounted
+        m_GirlMounted = asset.FindActionMap("GirlMounted", throwIfNotFound: true);
+        m_GirlMounted_Demount = m_GirlMounted.FindAction("Demount", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -927,7 +937,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_GirlMain_CycleLeft;
     private readonly InputAction m_GirlMain_CycleRight;
     private readonly InputAction m_GirlMain_Pause;
-    private readonly InputAction m_GirlMain_Demount;
     public struct GirlMainActions
     {
         private @GirlInputActions m_Wrapper;
@@ -938,7 +947,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         public InputAction @CycleLeft => m_Wrapper.m_GirlMain_CycleLeft;
         public InputAction @CycleRight => m_Wrapper.m_GirlMain_CycleRight;
         public InputAction @Pause => m_Wrapper.m_GirlMain_Pause;
-        public InputAction @Demount => m_Wrapper.m_GirlMain_Demount;
         public InputActionMap Get() { return m_Wrapper.m_GirlMain; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -966,9 +974,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_GirlMainActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GirlMainActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GirlMainActionsCallbackInterface.OnPause;
-                @Demount.started -= m_Wrapper.m_GirlMainActionsCallbackInterface.OnDemount;
-                @Demount.performed -= m_Wrapper.m_GirlMainActionsCallbackInterface.OnDemount;
-                @Demount.canceled -= m_Wrapper.m_GirlMainActionsCallbackInterface.OnDemount;
             }
             m_Wrapper.m_GirlMainActionsCallbackInterface = instance;
             if (instance != null)
@@ -991,9 +996,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
-                @Demount.started += instance.OnDemount;
-                @Demount.performed += instance.OnDemount;
-                @Demount.canceled += instance.OnDemount;
             }
         }
     }
@@ -1145,6 +1147,39 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         }
     }
     public GirlCapturedActions @GirlCaptured => new GirlCapturedActions(this);
+
+    // GirlMounted
+    private readonly InputActionMap m_GirlMounted;
+    private IGirlMountedActions m_GirlMountedActionsCallbackInterface;
+    private readonly InputAction m_GirlMounted_Demount;
+    public struct GirlMountedActions
+    {
+        private @GirlInputActions m_Wrapper;
+        public GirlMountedActions(@GirlInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Demount => m_Wrapper.m_GirlMounted_Demount;
+        public InputActionMap Get() { return m_Wrapper.m_GirlMounted; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GirlMountedActions set) { return set.Get(); }
+        public void SetCallbacks(IGirlMountedActions instance)
+        {
+            if (m_Wrapper.m_GirlMountedActionsCallbackInterface != null)
+            {
+                @Demount.started -= m_Wrapper.m_GirlMountedActionsCallbackInterface.OnDemount;
+                @Demount.performed -= m_Wrapper.m_GirlMountedActionsCallbackInterface.OnDemount;
+                @Demount.canceled -= m_Wrapper.m_GirlMountedActionsCallbackInterface.OnDemount;
+            }
+            m_Wrapper.m_GirlMountedActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Demount.started += instance.OnDemount;
+                @Demount.performed += instance.OnDemount;
+                @Demount.canceled += instance.OnDemount;
+            }
+        }
+    }
+    public GirlMountedActions @GirlMounted => new GirlMountedActions(this);
     public interface IGirlMainActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -1153,7 +1188,6 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         void OnCycleLeft(InputAction.CallbackContext context);
         void OnCycleRight(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-        void OnDemount(InputAction.CallbackContext context);
     }
     public interface IGirlRoseActions
     {
@@ -1172,5 +1206,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
     public interface IGirlCapturedActions
     {
         void OnPause(InputAction.CallbackContext context);
+    }
+    public interface IGirlMountedActions
+    {
+        void OnDemount(InputAction.CallbackContext context);
     }
 }
