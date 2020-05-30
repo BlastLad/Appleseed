@@ -596,6 +596,14 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ChangeThrowRange"",
+                    ""type"": ""Button"",
+                    ""id"": ""33f56e77-002d-4591-bfe4-dcf406a0b69a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -774,6 +782,72 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""afef446d-6e69-4b5e-967b-9e7f52a7678e"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""076ee358-82cd-44a4-abc3-28aef7b1aec0"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""8cc8d19d-9044-4888-b7ca-db17a904ca0d"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""03bd82b7-44f1-4571-8ca1-9a79c317235a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""0b644050-e09e-457e-9f05-ce6b24249db5"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""3e65d13d-762a-458b-abed-4cae0ac86da0"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -876,6 +950,7 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         m_GirlAppleseedGadget_Throw = m_GirlAppleseedGadget.FindAction("Throw", throwIfNotFound: true);
         m_GirlAppleseedGadget_EnterMain = m_GirlAppleseedGadget.FindAction("EnterMain", throwIfNotFound: true);
         m_GirlAppleseedGadget_Pause = m_GirlAppleseedGadget.FindAction("Pause", throwIfNotFound: true);
+        m_GirlAppleseedGadget_ChangeThrowRange = m_GirlAppleseedGadget.FindAction("ChangeThrowRange", throwIfNotFound: true);
         // GirlCaptured
         m_GirlCaptured = asset.FindActionMap("GirlCaptured", throwIfNotFound: true);
         m_GirlCaptured_Pause = m_GirlCaptured.FindAction("Pause", throwIfNotFound: true);
@@ -1065,6 +1140,7 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_GirlAppleseedGadget_Throw;
     private readonly InputAction m_GirlAppleseedGadget_EnterMain;
     private readonly InputAction m_GirlAppleseedGadget_Pause;
+    private readonly InputAction m_GirlAppleseedGadget_ChangeThrowRange;
     public struct GirlAppleseedGadgetActions
     {
         private @GirlInputActions m_Wrapper;
@@ -1073,6 +1149,7 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         public InputAction @Throw => m_Wrapper.m_GirlAppleseedGadget_Throw;
         public InputAction @EnterMain => m_Wrapper.m_GirlAppleseedGadget_EnterMain;
         public InputAction @Pause => m_Wrapper.m_GirlAppleseedGadget_Pause;
+        public InputAction @ChangeThrowRange => m_Wrapper.m_GirlAppleseedGadget_ChangeThrowRange;
         public InputActionMap Get() { return m_Wrapper.m_GirlAppleseedGadget; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1094,6 +1171,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface.OnPause;
+                @ChangeThrowRange.started -= m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface.OnChangeThrowRange;
+                @ChangeThrowRange.performed -= m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface.OnChangeThrowRange;
+                @ChangeThrowRange.canceled -= m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface.OnChangeThrowRange;
             }
             m_Wrapper.m_GirlAppleseedGadgetActionsCallbackInterface = instance;
             if (instance != null)
@@ -1110,6 +1190,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @ChangeThrowRange.started += instance.OnChangeThrowRange;
+                @ChangeThrowRange.performed += instance.OnChangeThrowRange;
+                @ChangeThrowRange.canceled += instance.OnChangeThrowRange;
             }
         }
     }
@@ -1202,6 +1285,7 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         void OnThrow(InputAction.CallbackContext context);
         void OnEnterMain(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnChangeThrowRange(InputAction.CallbackContext context);
     }
     public interface IGirlCapturedActions
     {

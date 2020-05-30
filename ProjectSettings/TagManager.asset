@@ -9,6 +9,8 @@ TagManager:
   - Thorn
   - LandingZone
   - ThrownObject
+  - Walls
+  - ThrowMarker
   layers:
   - Default
   - TransparentFX
@@ -21,10 +23,10 @@ TagManager:
   - Girl
   - Appleseed
   - Thorn
-  - 
-  - 
-  - 
-  - 
+  - Walls
+  - ThrowMarker
+  - ThrowBounds
+  - ThrownObject
   - 
   - 
   - 
@@ -43,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: ThrowBounds
+    uniqueID: 4177046051
+    locked: 0
   - name: Targeting
     uniqueID: 426138647
     locked: 0

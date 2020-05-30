@@ -14,6 +14,8 @@ public class GirlController : MonoBehaviour
     public Transform roseTarget;
     public Transform throwTarget;
 
+    
+
     public float walkSpeed;
     public float thornSpeed;
 
@@ -27,6 +29,7 @@ public class GirlController : MonoBehaviour
     public bool isUsingGadget = false;
     public bool isMounted = false;
     public bool isThrowing = false;
+    public bool isThrowable = true;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +48,10 @@ public class GirlController : MonoBehaviour
         girlActions.GirlRose.EnterMain.started += ctx => EnterMain();
         girlActions.GirlRose.Fire.started += ctx => LaunchThorn(inputVector);
         girlActions.GirlAppleseedGadget.EnterMain.started += ctx => EnterMain();
-        girlActions.GirlAppleseedGadget.Throw.started += ctx => ThrowAppleseed(inputVector); 
+        girlActions.GirlAppleseedGadget.Throw.started += ctx => ThrowAppleseed(inputVector);
+
         
+
     }
 
     // Update is called once per frame
@@ -59,6 +64,8 @@ public class GirlController : MonoBehaviour
             if (cooldownTimer < 0)
                 thornCooldown = false;
         }
+
+        
     }
 
     private void FixedUpdate()
@@ -66,7 +73,7 @@ public class GirlController : MonoBehaviour
         //rb.velocity = transform.forward * inputVector * walkSpeed;
         if (isRoseMode == true || isUsingGadget == true)//Needs to be improved
         {
-            Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
+            //Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
         }
         else {
             Vector2 position = rb.position;//Current Position of Player
@@ -157,6 +164,7 @@ public class GirlController : MonoBehaviour
             isUsingGadget = true;
             throwTarget.gameObject.SetActive(true);
             throwTarget.position = rb.position + (new Vector2(0, 1) * 2.3f);
+            CalculateRay(new Vector2(0, 1));
             girlActions.GirlMain.Disable();
             girlActions.GirlMounted.Disable();//To ensure that the button press is not accidently eaten while Using AppleseedGadget
             girlActions.GirlAppleseedGadget.Enable();
@@ -165,15 +173,19 @@ public class GirlController : MonoBehaviour
 
     public void ThrowAppleseed(Vector2 castDirection)
     {
-        castDirection.Normalize();
-        //GameObject appleseedThrow = Instantiate(appleseedPrefab, throwTarget.position, Quaternion.identity);
-        if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1.0f; }
-        GameObject throwSprite = Instantiate(appleseedThrownSprite, transform.position, Quaternion.identity);
-        Instantiate(landingZonePrefab, throwTarget.position, Quaternion.identity);
-        throwSprite.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
-        isThrowing = true;
-        isMounted = false;
-        EnterMain();
+        if (isThrowable == false) { return; }
+        else
+        {
+            castDirection.Normalize();
+            //GameObject appleseedThrow = Instantiate(appleseedPrefab, throwTarget.position, Quaternion.identity);
+            if (castDirection.x == 0 && castDirection.y == 0) {                castDirection.y = 1.0f; }
+            GameObject throwSprite = Instantiate(appleseedThrownSprite, transform.position, Quaternion.identity);
+            Instantiate(landingZonePrefab, throwTarget.position, Quaternion.identity);
+            throwSprite.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
+            isThrowing = true;
+            isMounted = false;
+            EnterMain();
+        }
     }
 
     //A function that reads the Left Joy Sticks  current direction
@@ -199,13 +211,44 @@ public class GirlController : MonoBehaviour
         {
             if (inputVector == new Vector2(0,0))
             {
+                
                 throwTarget.position = rb.position + (new Vector2(0, 1) * 2.3f);
+                CalculateRay(inputVector.normalized);
             }
             else
             {
                 throwTarget.position = rb.position + inputVector.normalized * 2.3f;
+                CalculateRay(inputVector.normalized);
             }
         }
         //Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
     }
+
+    public void CalculateRay(Vector2 castDirection)
+    {
+        int layerMask = LayerMask.GetMask("Walls", "ThrowMarker");
+        float a = ((throwTarget.position.x - transform.position.x) * (throwTarget.position.x - transform.position.x));
+        float b = ((throwTarget.position.y - transform.position.y) * (throwTarget.position.y - transform.position.y));
+        float distance = Mathf.Sqrt(a + b);
+        Debug.Log(distance);
+        if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1; }         
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, castDirection, distance, layerMask);
+        //if (hit) { Debug.Log(hit.collider.name); }
+        if (hit)
+        {
+            if (hit.collider.gameObject.tag == "ThrowMarker")
+            {
+                isThrowable = true;
+            }
+            else
+            {
+                isThrowable = false;
+            }
+        }
+    }
+
+    public void SetThrowable(bool b)
+    {
+        isThrowable = b;
+    } 
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8622298309554670275}
   - component: {fileID: -3042588214506705216}
   - component: {fileID: -3840658131552477519}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: ThrownSpriteTemp
   m_TagString: ThrownObject
   m_Icon: {fileID: 0}

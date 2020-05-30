@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4915503731722889497}
   - component: {fileID: 461579806752228152}
   - component: {fileID: 6963969118813502832}
+  - component: {fileID: -6785086488873237766}
   m_Layer: 10
   m_Name: Test Projectile
   m_TagString: Thorn
@@ -130,3 +131,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &-6785086488873237766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4915503731722889496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df149d6c4b3fc8e499b2602b3f0b896f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
