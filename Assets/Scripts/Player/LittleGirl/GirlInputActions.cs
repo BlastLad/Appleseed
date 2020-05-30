@@ -784,9 +784,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""afef446d-6e69-4b5e-967b-9e7f52a7678e"",
-                    ""path"": ""1DAxis"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""27af9352-de51-49ff-85c9-1d56868690d9"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -795,19 +795,8 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""076ee358-82cd-44a4-abc3-28aef7b1aec0"",
-                    ""path"": ""<XInputController>/dpad/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeThrowRange"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""8cc8d19d-9044-4888-b7ca-db17a904ca0d"",
+                    ""name"": ""up"",
+                    ""id"": ""52b9c98b-e2c4-4463-b7b6-abe3199cc8ba"",
                     ""path"": ""<XInputController>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -817,19 +806,8 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""03bd82b7-44f1-4571-8ca1-9a79c317235a"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ChangeThrowRange"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""0b644050-e09e-457e-9f05-ce6b24249db5"",
+                    ""name"": ""down"",
+                    ""id"": ""32e25dd8-98fa-4083-8880-1d0f68a4f27d"",
                     ""path"": ""<XInputController>/dpad/down"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -839,9 +817,20 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""3e65d13d-762a-458b-abed-4cae0ac86da0"",
-                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""name"": ""left"",
+                    ""id"": ""044cdf3d-ef03-446a-aa60-806211bc1059"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ChangeThrowRange"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2fb6ac0b-d330-43de-8f61-72c6126114e4"",
+                    ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

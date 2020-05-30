@@ -13,8 +13,9 @@ public class GirlController : MonoBehaviour
     public GameObject appleseedThrownSprite;
     public Transform roseTarget;
     public Transform throwTarget;
-
-    
+    private float throwTargetDistance = 2.3f;
+    private float throwTargetMax = 6.0f;
+    private float throwTargetMin = 1.5f;
 
     public float walkSpeed;
     public float thornSpeed;
@@ -24,6 +25,7 @@ public class GirlController : MonoBehaviour
     public float cooldownTimer;
 
     private GirlInputActions girlActions;
+    public bool isMain = true;
     public bool isRoseMode = false;
     public bool isCaptured = false;
     public bool isUsingGadget = false;
@@ -49,6 +51,7 @@ public class GirlController : MonoBehaviour
         girlActions.GirlRose.Fire.started += ctx => LaunchThorn(inputVector);
         girlActions.GirlAppleseedGadget.EnterMain.started += ctx => EnterMain();
         girlActions.GirlAppleseedGadget.Throw.started += ctx => ThrowAppleseed(inputVector);
+        girlActions.GirlAppleseedGadget.ChangeThrowRange.started += ctx => MoveTarget();
 
         
 
@@ -71,11 +74,22 @@ public class GirlController : MonoBehaviour
     private void FixedUpdate()
     {
         //rb.velocity = transform.forward * inputVector * walkSpeed;
-        if (isRoseMode == true || isUsingGadget == true)//Needs to be improved
+        if (isUsingGadget == true)//Needs to be improved
         {
-            //Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
+            if (inputVector == new Vector2(0, 0))
+            {
+                MoveTarget();
+                throwTarget.position = rb.position + (new Vector2(0, 1) * throwTargetDistance);
+                CalculateRay(inputVector.normalized);
+            }
+            else
+            {
+                MoveTarget();
+                throwTarget.position = rb.position + inputVector.normalized * throwTargetDistance;
+                CalculateRay(inputVector.normalized);
+            }//Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
         }
-        else {
+        else if (isMain == true) {
             Vector2 position = rb.position;//Current Position of Player
             position = position + inputVector * walkSpeed * Time.fixedDeltaTime;//updated position area
             rb.MovePosition(position);
@@ -102,6 +116,7 @@ public class GirlController : MonoBehaviour
         Debug.Log("Entered Main Mode");
         isRoseMode = false;
         isCaptured = false;
+        isMain = true;
         roseTarget.gameObject.SetActive(false);
         throwTarget.gameObject.SetActive(false);
         if (girlActions.GirlRose.enabled == true) { girlActions.GirlRose.Disable(); }
@@ -123,6 +138,7 @@ public class GirlController : MonoBehaviour
     {
         Debug.Log("Entered Rose Mode");
         inputVector = new Vector2(0f, 0f);//Resets input vector
+        isMain = false;
         isRoseMode = true;
         thornCooldown = true;//Ensures that no thorn is fired upon entry
         roseTarget.gameObject.SetActive(true);
@@ -162,8 +178,10 @@ public class GirlController : MonoBehaviour
             Debug.Log("Gadget Activated");
             inputVector = new Vector2(0f, 0f);
             isUsingGadget = true;
+            isMain = false;
             throwTarget.gameObject.SetActive(true);
-            throwTarget.position = rb.position + (new Vector2(0, 1) * 2.3f);
+            throwTargetDistance = 2.3f;
+            throwTarget.position = rb.position + (new Vector2(0, 1) * throwTargetDistance);
             CalculateRay(new Vector2(0, 1));
             girlActions.GirlMain.Disable();
             girlActions.GirlMounted.Disable();//To ensure that the button press is not accidently eaten while Using AppleseedGadget
@@ -178,7 +196,7 @@ public class GirlController : MonoBehaviour
         {
             castDirection.Normalize();
             //GameObject appleseedThrow = Instantiate(appleseedPrefab, throwTarget.position, Quaternion.identity);
-            if (castDirection.x == 0 && castDirection.y == 0) {                castDirection.y = 1.0f; }
+            if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1.0f; }
             GameObject throwSprite = Instantiate(appleseedThrownSprite, transform.position, Quaternion.identity);
             Instantiate(landingZonePrefab, throwTarget.position, Quaternion.identity);
             throwSprite.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
@@ -212,12 +230,12 @@ public class GirlController : MonoBehaviour
             if (inputVector == new Vector2(0,0))
             {
                 
-                throwTarget.position = rb.position + (new Vector2(0, 1) * 2.3f);
+                throwTarget.position = rb.position + (new Vector2(0, 1) * throwTargetDistance);
                 CalculateRay(inputVector.normalized);
             }
             else
             {
-                throwTarget.position = rb.position + inputVector.normalized * 2.3f;
+                throwTarget.position = rb.position + inputVector.normalized * throwTargetDistance;
                 CalculateRay(inputVector.normalized);
             }
         }
@@ -230,7 +248,7 @@ public class GirlController : MonoBehaviour
         float a = ((throwTarget.position.x - transform.position.x) * (throwTarget.position.x - transform.position.x));
         float b = ((throwTarget.position.y - transform.position.y) * (throwTarget.position.y - transform.position.y));
         float distance = Mathf.Sqrt(a + b);
-        Debug.Log(distance);
+        //Debug.Log(distance);
         if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1; }         
         RaycastHit2D hit = Physics2D.Raycast(transform.position, castDirection, distance, layerMask);
         //if (hit) { Debug.Log(hit.collider.name); }
@@ -245,6 +263,23 @@ public class GirlController : MonoBehaviour
                 isThrowable = false;
             }
         }
+    }
+
+    private void MoveTarget()
+    {
+        Debug.Log("Successfully Called");
+
+        Vector2 targetMovementInput = girlActions.GirlAppleseedGadget.ChangeThrowRange.ReadValue<Vector2>();
+
+        Vector2 movement = new Vector2(targetMovementInput.x, targetMovementInput.y);
+        
+        movement.Normalize();
+        Debug.Log(movement.y);
+        if (movement.y < -0.1) { throwTargetDistance = throwTargetDistance - 0.04f; }
+        if (movement.y > 0.1) { throwTargetDistance = throwTargetDistance + 0.04f; }
+
+        if (throwTargetDistance > throwTargetMax) { throwTargetDistance = throwTargetMax; }
+        else if (throwTargetDistance < throwTargetMin) { throwTargetDistance = throwTargetMin; }
     }
 
     public void SetThrowable(bool b)
