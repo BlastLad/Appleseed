@@ -11,6 +11,10 @@ TagManager:
   - ThrownObject
   - Walls
   - ThrowMarker
+  - WorldObject
+  - AppleseedAttack
+  - SmallWalls
+  - MountingBounds
   layers:
   - Default
   - TransparentFX
@@ -27,8 +31,8 @@ TagManager:
   - ThrowMarker
   - ThrowBounds
   - ThrownObject
-  - 
-  - 
+  - Objects
+  - SmallWalls
   - 
   - 
   - 
@@ -45,6 +49,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: SmallWalls
+    uniqueID: 2830528541
+    locked: 0
   - name: ThrowBounds
     uniqueID: 4177046051
     locked: 0

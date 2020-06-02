@@ -308,6 +308,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HitArea
       objectReference: {fileID: 0}
+    - target: {fileID: 4603060716132799563, guid: 1132b5e681905d347a56c2a0d9d91ec0,
+        type: 3}
+      propertyPath: m_TagString
+      value: AppleseedAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603060716132799563, guid: 1132b5e681905d347a56c2a0d9d91ec0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1132b5e681905d347a56c2a0d9d91ec0, type: 3}
 --- !u!4 &8541296332956067508 stripped

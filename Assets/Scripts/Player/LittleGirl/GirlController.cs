@@ -244,7 +244,7 @@ public class GirlController : MonoBehaviour
 
     public void CalculateRay(Vector2 castDirection)
     {
-        int layerMask = LayerMask.GetMask("Walls", "ThrowMarker");
+        int layerMask = LayerMask.GetMask("Walls", "ThrowMarker", "Objects");
         float a = ((throwTarget.position.x - transform.position.x) * (throwTarget.position.x - transform.position.x));
         float b = ((throwTarget.position.y - transform.position.y) * (throwTarget.position.y - transform.position.y));
         float distance = Mathf.Sqrt(a + b);

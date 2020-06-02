@@ -47,12 +47,23 @@ public class AppleseedController : MonoBehaviour
         //Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
         if (inputVector == new Vector2(0, 0))
         {
+            hitArea.position = rb.position;
+            hitArea.gameObject.SetActive(true);
             hitArea.position = rb.position + new Vector2(0, -1);
+            StartCoroutine(DeactivateHitArea(0.4f));
         }
         else
         {
+            hitArea.gameObject.SetActive(true);
             hitArea.position = rb.position + inputVector.normalized;
+            StartCoroutine(DeactivateHitArea(0.4f));
         }
+    }
+
+    private IEnumerator DeactivateHitArea(float timeToWait)
+    {
+        yield return new WaitForSeconds(timeToWait);
+        hitArea.gameObject.SetActive(false);
     }
 
     private void EnterPlayDead()
@@ -70,7 +81,7 @@ public class AppleseedController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Girl")
+        if (other.gameObject.tag == "MountingBounds")
         {
             appleseedActions.AppleseedMain.Mount.Enable();
             appleseedActions.AppleseedMain.Mount.started += EnterMount;
@@ -79,7 +90,7 @@ public class AppleseedController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Girl")
+        if (other.gameObject.tag == "MountingBounds")
         {
             appleseedActions.AppleseedMain.Mount.started -= EnterMount;
             appleseedActions.AppleseedMain.Mount.Disable();

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThornController : MonoBehaviour
+public class StarTest : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,10 +16,11 @@ public class ThornController : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Walls" || other.gameObject.tag == "SmallWalls") {
-            Destroy(gameObject);        
+        if (other.gameObject.tag == "Girl" || other.gameObject.tag == "Appleseed")
+        {
+            Destroy(gameObject);
         }
     }
 }
