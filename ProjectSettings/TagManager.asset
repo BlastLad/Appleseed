@@ -29,11 +29,11 @@ TagManager:
   - Thorn
   - Walls
   - ThrowMarker
-  - ThrowBounds
+  - MountingBounds
   - ThrownObject
   - Objects
   - SmallWalls
-  - 
+  - Pitfalls
   - 
   - 
   - 

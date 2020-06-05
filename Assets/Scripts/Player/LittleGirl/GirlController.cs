@@ -32,6 +32,8 @@ public class GirlController : MonoBehaviour
     public bool isMounted = false;
     public bool isThrowing = false;
     public bool isThrowable = true;
+    private bool isPaused = false;//Once again should put in GameManager
+
 
     // Start is called before the first frame update
     void Start()
@@ -52,8 +54,10 @@ public class GirlController : MonoBehaviour
         girlActions.GirlAppleseedGadget.EnterMain.started += ctx => EnterMain();
         girlActions.GirlAppleseedGadget.Throw.started += ctx => ThrowAppleseed(inputVector);
         girlActions.GirlAppleseedGadget.ChangeThrowRange.started += ctx => MoveTarget();
-
-        
+        girlActions.GirlMain.Pause.started += ctx => PauseGame();//Temp Pause game should be in a GameManager Script
+        girlActions.GirlAppleseedGadget.Pause.started += ctx => PauseGame();
+        girlActions.GirlCaptured.Pause.started += ctx => PauseGame();
+        girlActions.GirlRose.Pause.started += ctx => PauseGame();
 
     }
 
@@ -280,6 +284,22 @@ public class GirlController : MonoBehaviour
 
         if (throwTargetDistance > throwTargetMax) { throwTargetDistance = throwTargetMax; }
         else if (throwTargetDistance < throwTargetMin) { throwTargetDistance = throwTargetMin; }
+    }
+
+    private void PauseGame()
+    {
+        if (isPaused == false)
+        {
+            Debug.Log("Game Paused");
+            isPaused = true;
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            Debug.Log("Game Resumed");
+            isPaused = false;
+            Time.timeScale = 1.0f;
+        }
     }
 
     public void SetThrowable(bool b)
