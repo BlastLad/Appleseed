@@ -96,6 +96,7 @@ public class AppleseedController : MonoBehaviour
             appleseedActions.AppleseedMain.Mount.Disable();
         }
     }
+
     private void OnEnable()
     {
         appleseedActions.AppleseedMain.Enable();

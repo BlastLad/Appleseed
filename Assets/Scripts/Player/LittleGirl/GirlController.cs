@@ -10,6 +10,7 @@ public class GirlController : MonoBehaviour
     public GameObject thornPrefab;
     public GameObject appleseedPrefab;
     public GameObject landingZonePrefab;
+    public GameObject mountingBounds;
     public GameObject appleseedThrownSprite;
     public Transform roseTarget;
     public Transform throwTarget;
@@ -25,13 +26,14 @@ public class GirlController : MonoBehaviour
     public float cooldownTimer;
 
     private GirlInputActions girlActions;
-    public bool isMain = true;
-    public bool isRoseMode = false;
-    public bool isCaptured = false;
-    public bool isUsingGadget = false;
-    public bool isMounted = false;
-    public bool isThrowing = false;
-    public bool isThrowable = true;
+    private int currentState = 0; 
+    private bool isMain = true;
+    private bool isRoseMode = false;
+    private bool isCaptured = false;
+    private bool isUsingGadget = false;
+    private bool isMounted = false;
+    private bool isThrowing = false;
+    private bool isThrowable = true;
     private bool isPaused = false;//Once again should put in GameManager
 
 
@@ -58,6 +60,7 @@ public class GirlController : MonoBehaviour
         girlActions.GirlAppleseedGadget.Pause.started += ctx => PauseGame();
         girlActions.GirlCaptured.Pause.started += ctx => PauseGame();
         girlActions.GirlRose.Pause.started += ctx => PauseGame();
+        girlActions.GirlPaused.ResumeGame.started += ctx => PauseGame();
 
     }
 
@@ -121,6 +124,7 @@ public class GirlController : MonoBehaviour
         isRoseMode = false;
         isCaptured = false;
         isMain = true;
+        currentState = 0;
         roseTarget.gameObject.SetActive(false);
         throwTarget.gameObject.SetActive(false);
         if (girlActions.GirlRose.enabled == true) { girlActions.GirlRose.Disable(); }
@@ -144,6 +148,7 @@ public class GirlController : MonoBehaviour
         inputVector = new Vector2(0f, 0f);//Resets input vector
         isMain = false;
         isRoseMode = true;
+        currentState = 1;
         thornCooldown = true;//Ensures that no thorn is fired upon entry
         roseTarget.gameObject.SetActive(true);
         roseTarget.position = rb.position + new Vector2(0, 1);
@@ -182,6 +187,7 @@ public class GirlController : MonoBehaviour
             Debug.Log("Gadget Activated");
             inputVector = new Vector2(0f, 0f);
             isUsingGadget = true;
+            currentState = 2;
             isMain = false;
             throwTarget.gameObject.SetActive(true);
             throwTargetDistance = 2.3f;
@@ -288,17 +294,58 @@ public class GirlController : MonoBehaviour
 
     private void PauseGame()
     {
+        int pauseState = GetState();
         if (isPaused == false)
         {
+            
             Debug.Log("Game Paused");
             isPaused = true;
-            Time.timeScale = 0.0f;
+            Time.timeScale = 0.0f;         
+            if(pauseState == 0)//0 is main
+            {
+                girlActions.GirlMain.Disable();
+                girlActions.GirlMounted.Disable();
+                mountingBounds.gameObject.SetActive(false);
+                
+            }
+            else if(pauseState == 1)//is Rose
+            {
+                girlActions.GirlRose.Disable();
+                girlActions.GirlMounted.Disable();
+                roseTarget.gameObject.SetActive(false);
+                mountingBounds.gameObject.SetActive(false);
+            }
+            else if (pauseState == 2)//0 is AppleseedGadget
+            {
+                girlActions.GirlAppleseedGadget.Disable();
+                throwTarget.gameObject.SetActive(false);
+            }
+            girlActions.GirlPaused.Enable();
         }
         else
         {
             Debug.Log("Game Resumed");
-            isPaused = false;
+            isPaused = false;       
             Time.timeScale = 1.0f;
+            if (pauseState == 0)//0 is main
+            {
+                girlActions.GirlMain.Enable();
+                girlActions.GirlMounted.Enable();
+                mountingBounds.gameObject.SetActive(true);
+            }
+            else if (pauseState == 1)//0 is Rose
+            {
+                girlActions.GirlRose.Enable();
+                girlActions.GirlMounted.Enable();
+                roseTarget.gameObject.SetActive(true);
+                mountingBounds.gameObject.SetActive(true);
+            }
+            else if (pauseState == 2)//0 is AppleseedGadget
+            {
+                girlActions.GirlAppleseedGadget.Enable();
+                throwTarget.gameObject.SetActive(true);
+            }
+            girlActions.GirlPaused.Disable();
         }
     }
 
@@ -306,4 +353,9 @@ public class GirlController : MonoBehaviour
     {
         isThrowable = b;
     } 
+
+    public int GetState()
+    {
+        return currentState;
+    }
 }

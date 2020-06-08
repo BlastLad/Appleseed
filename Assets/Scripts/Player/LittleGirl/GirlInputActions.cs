@@ -797,7 +797,7 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""up"",
                     ""id"": ""52b9c98b-e2c4-4463-b7b6-abe3199cc8ba"",
-                    ""path"": ""<XInputController>/dpad/up"",
+                    ""path"": ""<XInputController>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -808,7 +808,7 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""32e25dd8-98fa-4083-8880-1d0f68a4f27d"",
-                    ""path"": ""<XInputController>/dpad/down"",
+                    ""path"": ""<XInputController>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -915,6 +915,44 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""GirlPaused"",
+            ""id"": ""ff3bdcdb-8d28-4186-b376-cc4a4ec5120d"",
+            ""actions"": [
+                {
+                    ""name"": ""ResumeGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c989e28-2c56-48f7-9cec-513ddac01f85"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""95ebbb19-abc5-4ccc-8f9d-d3fadb16de2e"",
+                    ""path"": ""<XInputController>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResumeGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c01b14f-3d23-468e-a033-77d067876407"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ResumeGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -946,6 +984,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         // GirlMounted
         m_GirlMounted = asset.FindActionMap("GirlMounted", throwIfNotFound: true);
         m_GirlMounted_Demount = m_GirlMounted.FindAction("Demount", throwIfNotFound: true);
+        // GirlPaused
+        m_GirlPaused = asset.FindActionMap("GirlPaused", throwIfNotFound: true);
+        m_GirlPaused_ResumeGame = m_GirlPaused.FindAction("ResumeGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1252,6 +1293,39 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
         }
     }
     public GirlMountedActions @GirlMounted => new GirlMountedActions(this);
+
+    // GirlPaused
+    private readonly InputActionMap m_GirlPaused;
+    private IGirlPausedActions m_GirlPausedActionsCallbackInterface;
+    private readonly InputAction m_GirlPaused_ResumeGame;
+    public struct GirlPausedActions
+    {
+        private @GirlInputActions m_Wrapper;
+        public GirlPausedActions(@GirlInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ResumeGame => m_Wrapper.m_GirlPaused_ResumeGame;
+        public InputActionMap Get() { return m_Wrapper.m_GirlPaused; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GirlPausedActions set) { return set.Get(); }
+        public void SetCallbacks(IGirlPausedActions instance)
+        {
+            if (m_Wrapper.m_GirlPausedActionsCallbackInterface != null)
+            {
+                @ResumeGame.started -= m_Wrapper.m_GirlPausedActionsCallbackInterface.OnResumeGame;
+                @ResumeGame.performed -= m_Wrapper.m_GirlPausedActionsCallbackInterface.OnResumeGame;
+                @ResumeGame.canceled -= m_Wrapper.m_GirlPausedActionsCallbackInterface.OnResumeGame;
+            }
+            m_Wrapper.m_GirlPausedActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @ResumeGame.started += instance.OnResumeGame;
+                @ResumeGame.performed += instance.OnResumeGame;
+                @ResumeGame.canceled += instance.OnResumeGame;
+            }
+        }
+    }
+    public GirlPausedActions @GirlPaused => new GirlPausedActions(this);
     public interface IGirlMainActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -1283,5 +1357,9 @@ public class @GirlInputActions : IInputActionCollection, IDisposable
     public interface IGirlMountedActions
     {
         void OnDemount(InputAction.CallbackContext context);
+    }
+    public interface IGirlPausedActions
+    {
+        void OnResumeGame(InputAction.CallbackContext context);
     }
 }

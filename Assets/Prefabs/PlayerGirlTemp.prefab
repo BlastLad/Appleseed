@@ -353,6 +353,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 33f56e77-002d-4591-bfe4-dcf406a0b69a
     m_ActionName: GirlAppleseedGadget/ChangeThrowRange[/XInputControllerWindows/dpad/up,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c989e28-2c56-48f7-9cec-513ddac01f85
+    m_ActionName: GirlPaused/ResumeGame
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GirlMain
@@ -376,6 +380,7 @@ MonoBehaviour:
     type: 3}
   landingZonePrefab: {fileID: 7207983503901335756, guid: 860b5db55bfa1374aa5e4c1d7507119c,
     type: 3}
+  mountingBounds: {fileID: 1621315557}
   appleseedThrownSprite: {fileID: 8514176942539155591, guid: 98c4a3c2e3f3b7c4da27a490adc98c84,
     type: 3}
   roseTarget: {fileID: 366586635}
@@ -384,13 +389,6 @@ MonoBehaviour:
   thornSpeed: 5.75
   cooldownTime: 0.5
   cooldownTimer: 0
-  isMain: 1
-  isRoseMode: 0
-  isCaptured: 0
-  isUsingGadget: 0
-  isMounted: 0
-  isThrowing: 0
-  isThrowable: 1
 --- !u!70 &580024985
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

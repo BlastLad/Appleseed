@@ -784,7 +784,7 @@
                 {
                     "name": "up",
                     "id": "52b9c98b-e2c4-4463-b7b6-abe3199cc8ba",
-                    "path": "<XInputController>/dpad/up",
+                    "path": "<XInputController>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -795,7 +795,7 @@
                 {
                     "name": "down",
                     "id": "32e25dd8-98fa-4083-8880-1d0f68a4f27d",
-                    "path": "<XInputController>/dpad/down",
+                    "path": "<XInputController>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -898,6 +898,44 @@
                     "processors": "",
                     "groups": "",
                     "action": "Demount",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "GirlPaused",
+            "id": "ff3bdcdb-8d28-4186-b376-cc4a4ec5120d",
+            "actions": [
+                {
+                    "name": "ResumeGame",
+                    "type": "Button",
+                    "id": "0c989e28-2c56-48f7-9cec-513ddac01f85",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "95ebbb19-abc5-4ccc-8f9d-d3fadb16de2e",
+                    "path": "<XInputController>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ResumeGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2c01b14f-3d23-468e-a033-77d067876407",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ResumeGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
