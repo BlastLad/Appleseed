@@ -21,7 +21,7 @@ public class SwitchOrbController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Thorn")
+        if (other.gameObject.tag == "Thorn" || other.gameObject.tag == "WorldObject")
         {
             systemManager.SetOrbState();
             //isRed = !isRed;

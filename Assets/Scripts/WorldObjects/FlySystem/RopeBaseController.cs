@@ -18,13 +18,22 @@ public class RopeBaseController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (counterWeight == null)
+        {
+            isFalling = false;
+            Destroy(dropShadow.gameObject);
+        }
+        
+        
         if (isFalling == true)
         {
             counterWeight.transform.position = Vector2.MoveTowards(counterWeight.transform.position, dropShadow.transform.position, (speed * Time.deltaTime));
+            speed += 0.13f;
             if (counterWeight.transform.position == dropShadow.transform.position)
             {
                 Debug.Log("Position Reached");
                 isFalling = false;
+                Destroy(dropShadow.gameObject);
             }
         }
     }
