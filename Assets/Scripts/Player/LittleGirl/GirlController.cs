@@ -5,6 +5,9 @@ using UnityEngine.InputSystem;
 
 public class GirlController : MonoBehaviour
 {
+
+
+    public static GirlController Instance { get; private set; }
     private Vector2 inputVector = new Vector2(0, 0); // Start is called before the first frame update
     private Rigidbody2D rb;
     public GameObject thornPrefab;
@@ -179,6 +182,14 @@ public class GirlController : MonoBehaviour
         girlActions.GirlMounted.Demount.Disable();
         Instantiate(appleseedPrefab, transform.position, Quaternion.identity);
     }
+    private void Demount()
+    {
+        if (isMounted == false || isUsingGadget == true) { return; }
+        isMounted = false;
+        girlActions.GirlMounted.Demount.performed -= Demount;
+        girlActions.GirlMounted.Demount.Disable();
+        Instantiate(appleseedPrefab, transform.position, Quaternion.identity);
+    }
 
     public void UseGadget()
     {
@@ -291,7 +302,16 @@ public class GirlController : MonoBehaviour
         if (throwTargetDistance > throwTargetMax) { throwTargetDistance = throwTargetMax; }
         else if (throwTargetDistance < throwTargetMin) { throwTargetDistance = throwTargetMin; }
     }
-
+    public void EnterCaptured()
+    {
+        Debug.Log("Entered Capture Mode");
+        isCaptured = true;
+        EnterMain();
+        isMain = false;
+        if (isMounted == true) { Demount(); }
+        girlActions.GirlMain.Disable();
+        girlActions.GirlMain.Pause.Enable();
+    }
     private void PauseGame()
     {
         int pauseState = GetState();
@@ -357,5 +377,10 @@ public class GirlController : MonoBehaviour
     public int GetState()
     {
         return currentState;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return transform.position;
     }
 }

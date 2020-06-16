@@ -7978,7 +7978,7 @@ PrefabInstance:
     - target: {fileID: 2720147998072092349, guid: da88483030736494bbe0268cc2839463,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.45328116
+      value: -0.4532812
       objectReference: {fileID: 0}
     - target: {fileID: 2720147998072092349, guid: da88483030736494bbe0268cc2839463,
         type: 3}
@@ -8034,6 +8034,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2969405028688826484, guid: db20b173e0b9bbc4692fe9cf3a31cfe1,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2969405028688826489, guid: db20b173e0b9bbc4692fe9cf3a31cfe1,
         type: 3}
       propertyPath: m_Name
@@ -8108,6 +8113,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerAppleseedTemp
       objectReference: {fileID: 0}
+    - target: {fileID: 3656825432348818332, guid: 13fb968d65d6053409a9a347deaebac2,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3656825432348818335, guid: 13fb968d65d6053409a9a347deaebac2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8161,6 +8171,16 @@ PrefabInstance:
     - target: {fileID: 3656825432348818335, guid: 13fb968d65d6053409a9a347deaebac2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541296332956067510, guid: 13fb968d65d6053409a9a347deaebac2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8541296332956067511, guid: 13fb968d65d6053409a9a347deaebac2,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8257,10 +8277,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwitchDoorManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8168419830642974532, guid: e7493b18c7a8ed9489d32d9a0b5fbddc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8168419831049009355, guid: e7493b18c7a8ed9489d32d9a0b5fbddc,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8168419831295861003, guid: e7493b18c7a8ed9489d32d9a0b5fbddc,
         type: 3}

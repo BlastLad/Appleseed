@@ -21,5 +21,14 @@ public class ThornController : MonoBehaviour
         if (other.gameObject.tag == "Walls" || other.gameObject.tag == "SmallWalls") {
             Destroy(gameObject);        
         }
+        else if (other.gameObject.tag == "Soul-dier")
+        {
+            bool isArresting = other.gameObject.GetComponent<EnemyController>().GetArrestState();//GetCaptureState
+            if (isArresting == false)
+            {
+                Destroy(gameObject);
+            }
+            
+        }
     }
 }
