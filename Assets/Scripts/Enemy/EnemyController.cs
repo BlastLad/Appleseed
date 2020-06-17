@@ -94,8 +94,25 @@ public class EnemyController : MonoBehaviour
                 Debug.Log("Hello");
             }
         }//can also be called with a longer time for appleseed in play dead
+    }
 
-        
+    public void FindtargetFromCircle(GameObject target)
+    {
+        Vector3 targetPosition = target.transform.position;
+        targetPlayer = target.gameObject;
+        if (isHunting == false) { targetRange = 2f; }
+
+
+        if (isArresting == false)
+        {
+            StartCoroutine(FuzzyDetection(0.75f, targetPosition));//Next goal is to not have this detect player but have the enenmy spin to the direction of player
+            if (Vector3.Distance(transform.position, targetPosition) < targetRange)
+            {
+                GetComponent<TempEnemySpinner>().enabled = false;
+                StartCoroutine(EnemyMoveDelay(1.5f));
+                Debug.Log("Hello");
+            }
+        }
     }
 
     public void SetHunt(bool setter)
@@ -109,7 +126,7 @@ public class EnemyController : MonoBehaviour
          
         yield return new WaitForSeconds(timeToWait);
         
-            targetRange = 6.35f;
+            targetRange = 6.55f;
             suspicious = true;
             if (Vector3.Distance(transform.position, targetPosition) < targetRange)
             {

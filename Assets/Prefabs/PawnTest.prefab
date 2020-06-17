@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 1391607589}
   - component: {fileID: 1391607590}
   - component: {fileID: 2035079590}
+  - component: {fileID: 174697601}
   m_Layer: 0
   m_Name: PawnTest
   m_TagString: Soul-dier
@@ -275,7 +276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 6.35
-  viewAngle: 54
+  viewAngle: 60
   wallMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -375,3 +376,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BarTime: 6
   BarTimer: 0
+--- !u!114 &174697601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2720147998072092344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d086ca9dc644a254ca8e306027e1e18d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 2
+  viewAngle: 360
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  AppleseedMask:
+    serializedVersion: 2
+    m_Bits: 512
+  edgeResolveIterations: 4
+  edgeDistanceMin: 0.5
+  visibleTargets: []
+  meshResolution: 0
