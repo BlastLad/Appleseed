@@ -49,6 +49,7 @@ public class GirlController : MonoBehaviour
     //Awake occurs before start
     private void Awake()
     {
+        Instance = this;
         girlActions = new GirlInputActions();
         rb = GetComponent<Rigidbody2D>();
         girlActions.GirlMain.Enable();
@@ -114,7 +115,9 @@ public class GirlController : MonoBehaviour
         if (thornCooldown == true) { return; }      
             if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1.0f; }
             GameObject thorn = Instantiate(thornPrefab, transform.position, Quaternion.identity);
-            thorn.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
+        
+        //thorn.transform.position = thorn.transform.position + Vector3.zero;
+        thorn.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
             Destroy(thorn, 5f);
             thornCooldown = true;
             cooldownTimer = cooldownTime;
@@ -311,6 +314,15 @@ public class GirlController : MonoBehaviour
         if (isMounted == true) { Demount(); }
         girlActions.GirlMain.Disable();
         girlActions.GirlMain.Pause.Enable();
+    }
+
+    public void EnterCutScene()
+    {
+        isCaptured = true;
+        EnterMain();
+        isMain = false;
+        if (isMounted == true) { Demount(); }
+        girlActions.GirlMain.Disable();
     }
     private void PauseGame()
     {

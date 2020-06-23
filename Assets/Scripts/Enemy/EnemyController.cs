@@ -5,42 +5,39 @@ using Pathfinding;
 
 public class EnemyController : MonoBehaviour
 {
-    public float speed;
+    
     GameObject targetPlayer;
+    private GameObject arrestedPlayer;
+    Vector3 startingPosition;
+    Rigidbody2D rb;
+
     public bool isHunting;
     public bool isArresting;
-    public float targetRange = 6.35f;
-    Vector3 startingPosition;
     private bool found = false;
     bool suspicious = false;
-    Rigidbody2D rb;
-    [SerializeField]
-    private GameObject arrestedPlayer;
+    public float targetRange = 6.35f;
+    public float rangeSetter;
+    public float speed;
+    public float moveDelay;
 
-
-    public Transform targetDestination;
-    public float nextWaypointDistance = 3f;
-
+    Seeker seeker;
     Path path;
     int currentWaypoint = 0;
+    public Transform targetDestination;
+    public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
-
-    Seeker seeker;  
+ 
     // Start is called before the first frame update
     void Start()
     {
         startingPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
-        seeker = GetComponent<Seeker>();//new
+        seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, .5f);
       
     }
 
-    // Update is called once per frame
-    /*private void Update()
-    {
-        
-    }*/
+    // FixedUpdate is called at a fixed rate
     void FixedUpdate()
     {
         if (suspicious == true) { StartCoroutine(ResetSuspicion(3.0f)); }
@@ -66,8 +63,7 @@ public class EnemyController : MonoBehaviour
                 {
                     SetHunt(false);
                     StartCoroutine(ReturnToStart(2.0f));
-                    Debug.Log("false");
-                    
+                    Debug.Log("false");                    
                 }
                 return;
             }
@@ -76,7 +72,7 @@ public class EnemyController : MonoBehaviour
                 CalculateRay();
                 targetDestination = targetPlayer.transform;
                 Vector2 moveDirection = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-                Vector2 force = moveDirection * speed * Time.deltaTime;//NEW
+                Vector2 force = moveDirection * speed * Time.deltaTime;
                 float pathFindDistance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
                 if (path.GetTotalLength() < 2f)
                 {
@@ -86,20 +82,17 @@ public class EnemyController : MonoBehaviour
                     CalculateRay();
                 }
                 else
-                {                //else { speed = 2000; }
-                    //AIDestinationSetter destination = GetComponent<AIDestinationSetter>();
-                    //destination.GetComponent<AIDestinationSetter>().target = targetPlayer.transform;   
-                    CalculateRay();
+                {
+                    CalculateRay();//Maybe remove the doubel calculate
                     rb.drag = 2f;
-                    rb.AddForce(force);///NEW
+                    rb.AddForce(force);
                     CalculateRay();
                 }
                 if (pathFindDistance < nextWaypointDistance)
                 {
                     currentWaypoint++;
                 }
-
-            }//speed += 0.13f;
+            }
         }
     }
 
@@ -113,12 +106,9 @@ public class EnemyController : MonoBehaviour
 
     public void FindTarget(GameObject target)
     {
-
         Vector3 targetPosition = target.transform.position;
         targetPlayer = target.gameObject;
-        if (isHunting == false) { targetRange = 6.35f; }
-
-
+        if (isHunting == false) { targetRange = rangeSetter; }//wahiwcfiboydv hahvbcdsabovcaevbd clavb
 
         if (targetPlayer.tag == "Appleseed" && isArresting == false)
         {
@@ -127,34 +117,19 @@ public class EnemyController : MonoBehaviour
             {
                 StartCoroutine(FuzzyDetection(2.0f, targetPosition));
                 if (suspicious == false) { targetRange = 0.1f; }                
-                if (Vector3.Distance(transform.position, targetPosition) < targetRange)
-                {
-                    GetComponent<TempEnemySpinner>().enabled = false;
-                    StartCoroutine(EnemyMoveDelay(1.5f));
-                    Debug.Log("Enemy About to Move");
-                }
+                if (Vector3.Distance(transform.position, targetPosition) < targetRange) { BeginHuntMode(); }
                 Debug.Log("AppleseedFound");
             }
             else
             {
                 StartCoroutine(FuzzyDetection(0.5f, targetPosition));
-                if (Vector3.Distance(transform.position, targetPosition) < targetRange)
-                {
-                    GetComponent<TempEnemySpinner>().enabled = false;
-                    StartCoroutine(EnemyMoveDelay(1.5f));
-                    Debug.Log("Hello");
-                }
+                if (Vector3.Distance(transform.position, targetPosition) < targetRange) { BeginHuntMode(); }
             }
         }
         else if (isArresting == false)
         {
             StartCoroutine(FuzzyDetection(0.5f, targetPosition));
-            if (Vector3.Distance(transform.position, targetPosition) < targetRange)
-            {
-                GetComponent<TempEnemySpinner>().enabled = false;
-                StartCoroutine(EnemyMoveDelay(1.5f));
-                Debug.Log("Hello");
-            }
+            if (Vector3.Distance(transform.position, targetPosition) < targetRange) { BeginHuntMode(); }
         }//can also be called with a longer time for appleseed in play dead
     }
 
@@ -168,12 +143,7 @@ public class EnemyController : MonoBehaviour
         if (isArresting == false)
         {
             StartCoroutine(FuzzyDetection(0.75f, targetPosition));//Next goal is to not have this detect player but have the enenmy spin to the direction of player
-            if (Vector3.Distance(transform.position, targetPosition) < targetRange)
-            {
-                GetComponent<TempEnemySpinner>().enabled = false;
-                StartCoroutine(EnemyMoveDelay(1.5f));
-                Debug.Log("Hello");
-            }
+            if (Vector3.Distance(transform.position, targetPosition) < targetRange) { BeginHuntMode(); }
         }
     }
 
@@ -185,25 +155,16 @@ public class EnemyController : MonoBehaviour
             currentWaypoint = 0;
         }
     }
-
-    public void SetHunt(bool setter)
-    {
-        isHunting = setter;
-    }
-
-
     private IEnumerator FuzzyDetection(float timeToWait, Vector3 targetPosition)
-    {
-         
+    {       
         yield return new WaitForSeconds(timeToWait);
-        
-            targetRange = 6.55f;
+
+            targetRange = rangeSetter + 0.65f ;
             suspicious = true;
             if (Vector3.Distance(transform.position, targetPosition) < targetRange)
             {
                 targetRange = 10.0f;
             }
-        //}
     }
 
     private IEnumerator EnemyMoveDelay(float timeToWait)
@@ -216,15 +177,20 @@ public class EnemyController : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-        //isWaitingToMove = false;
     }
 
+    private void BeginHuntMode()
+    {
+        GetComponent<PawnMovementController>().enabled = false;
+        StartCoroutine(EnemyMoveDelay(moveDelay));
+        Debug.Log("Enemy About to Move");
+    }
     private IEnumerator ReturnToStart(float waitForSeconds)
     {
         GetComponentInChildren<SightConeMaterialController>().SetYellow();
         yield return new WaitForSeconds(waitForSeconds);
         transform.position = startingPosition;
-        GetComponent<TempEnemySpinner>().enabled = true;
+        GetComponent<PawnMovementController>().enabled = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         suspicious = false;
         Debug.Log("ReturnToStart Called");
@@ -240,7 +206,7 @@ public class EnemyController : MonoBehaviour
         GetComponentInChildren<SightConeMaterialController>().SetYellow();
         transform.position = startingPosition;
         isArresting = false;
-        GetComponent<TempEnemySpinner>().enabled = true;
+        GetComponent<PawnMovementController>().enabled = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         suspicious = false;
         Debug.Log("ReturnToStart Called");
@@ -257,8 +223,6 @@ public class EnemyController : MonoBehaviour
             if (hit.collider.gameObject.tag == "Appleseed" || hit.collider.gameObject.tag == "Girl")
             {
                 //transform.position = Vector2.MoveTowards(transform.position, targetPlayer.transform.position, (speed * Time.deltaTime));
-                //AIDestinationSetter destination = GetComponent<AIDestinationSetter>();
-                //destination.GetComponent<AIDestinationSetter>().target = targetPlayer.transform;
                 targetDestination = targetPlayer.transform;
                 found = true;
             }
@@ -273,8 +237,7 @@ public class EnemyController : MonoBehaviour
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
         rb.rotation = angle;
-
-           
+          
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Vector3.Distance(transform.position, targetPlayer.transform.position), layerMask);
         if (hit)
         {
@@ -317,7 +280,38 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    private void OnCollisionStay2D(Collision2D other)//This May cause problems will have to see...
+    {
+        if (isHunting && !isArresting)
+        {
+            if (other.gameObject.tag == "Appleseed")
+            {
+                ArrestPlayer(other.gameObject);
+                other.gameObject.GetComponent<AppleseedController>().EnterCaptured();
+                Debug.Log("PlayerCaptured");
+                Debug.Log("+1 Strike");
+            }
+            else if (other.gameObject.tag == "Girl")
+            {
+                ArrestPlayer(other.gameObject);
+                other.gameObject.GetComponent<GirlController>().EnterCaptured();
+                Debug.Log("PlayerCaptured");
+                Debug.Log("+1 Strike");
+            }
+        }
 
+        if (isArresting)
+        {
+            if (other.gameObject.tag == "Thorn")
+            {
+                ArrestFailed();
+                GetComponent<ArrestController>().DeacivateGameOverTimer();
+                StartCoroutine(ReturnToStartFromArrest(2.0f));
+                Debug.Log("Knocked Out");
+                Destroy(other.gameObject);
+            }
+        }
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (isArresting)
@@ -334,13 +328,10 @@ public class EnemyController : MonoBehaviour
 
     private void ArrestPlayer(GameObject playerUnderArrest)//Maybe pass in object
     {
-        Debug.Log("Arrest Called");
-        
-        
+        Debug.Log("Arrest Called");          
         GetComponent<FieldOfView>().enabled = false;
         GetComponentInChildren<SightConeMaterialController>().SetYellow();
         GetComponentInChildren<MeshRenderer>().enabled = false;
-        //speed = 0;
         arrestedPlayer = playerUnderArrest;
         isHunting = false;
         isArresting = true;
@@ -368,15 +359,9 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(timeToWait);
         suspicious = false;
     }
-    public bool GetHuntState()
-    {
-        return isHunting;
-    }
-
-    public bool GetArrestState()
-    {
-        return isArresting;
-    }
+    public bool GetHuntState() { return isHunting; }
+    public void SetHunt(bool setter) { isHunting = setter; }
+    public bool GetArrestState() { return isArresting; }
 }
 
 /*Origional Script For Enemy Controller

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class AppleseedController : MonoBehaviour
 {
+    public static AppleseedController instance { get; private set; }
     private Vector2 inputVector = new Vector2(0, 0); // Start is called before the first frame update
     private Rigidbody2D rb;
     public float walkSpeed;
@@ -19,6 +20,15 @@ public class AppleseedController : MonoBehaviour
     public GirlController girlController;
     void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogWarning("Fix the dact that there is an instcane" + gameObject.name);
+        }
+        else
+        {
+            instance = this;
+        }
+
         appleseedActions = new AppleseedInputActions();
         rb = GetComponent<Rigidbody2D>();
         girl = GameObject.Find("PlayerGirlTemp");

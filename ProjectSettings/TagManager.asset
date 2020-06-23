@@ -17,6 +17,7 @@ TagManager:
   - MountingBounds
   - Soul-dier
   - BlindSpot
+  - SecondFloorBlockers
   layers:
   - Default
   - TransparentFX
@@ -36,8 +37,8 @@ TagManager:
   - Objects
   - SmallWalls
   - Pitfalls
-  - 
-  - 
+  - CanonBall
+  - Enemy
   - 
   - 
   - 
@@ -51,6 +52,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Floor
+    uniqueID: 3806424505
+    locked: 0
   - name: SmallWalls
     uniqueID: 2830528541
     locked: 0
@@ -65,4 +69,7 @@ TagManager:
     locked: 0
   - name: AboveGround
     uniqueID: 1243529929
+    locked: 0
+  - name: UI
+    uniqueID: 1083762619
     locked: 0

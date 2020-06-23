@@ -1,0 +1,55 @@
+{
+    "name": "DialogueControls",
+    "maps": [
+        {
+            "name": "Dialogue",
+            "id": "8d4ee3a4-9c5f-4e44-89c9-7eb6f28da09f",
+            "actions": [
+                {
+                    "name": "Next",
+                    "type": "Button",
+                    "id": "d9dee382-b8df-4340-970a-19ff7c258647",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "385e63db-184c-44a5-b9ea-d7870c38f25d",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9f20d444-1dd9-4007-97c7-189b6f74a92e",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b42f542-618e-4784-bc96-c12c161008c0",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

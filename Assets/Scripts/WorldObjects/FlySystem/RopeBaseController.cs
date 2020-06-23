@@ -8,6 +8,7 @@ public class RopeBaseController : MonoBehaviour
     [SerializeField] GameObject counterWeight;
     [SerializeField] GameObject dropShadow;
     private bool isFalling = false;
+    public bool isCut = false;
     public float speed = 4.0f;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,7 @@ public class RopeBaseController : MonoBehaviour
             }
 
             isFalling = true;
-
+            isCut = true;
 
             Destroy(other.gameObject);
         }

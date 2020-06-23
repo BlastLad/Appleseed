@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Piper
+    characterPortrait: {fileID: 5816477108443209080, guid: b9f42aa775fb5fd4b9e74b65644d1dd8,
+      type: 3}
+    frameText: Hey hows it going out there?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: Good if only we have our real sprites!
+    isLeft: 0
+  - characterName: Piper
+    characterPortrait: {fileID: 5816477108443209080, guid: b9f42aa775fb5fd4b9e74b65644d1dd8,
+      type: 3}
+    frameText: Hey that does not matter right now have fun and I can't wait until
+      you guys take the stage!
+    isLeft: 1

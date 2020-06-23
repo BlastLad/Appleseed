@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 31709951142446580}
   - component: {fileID: 2724466914479373952}
   - component: {fileID: 2724466914479373953}
-  - component: {fileID: 2724466914193656938}
   - component: {fileID: 2724466914193656937}
+  - component: {fileID: 954303617922722446}
   - component: {fileID: 2724466913499392745}
   - component: {fileID: 2724466914855935950}
   - component: {fileID: 2724466914440804738}
@@ -153,26 +153,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0.01933366, y: 0.12030482}
   m_Size: {x: 0.9392911, y: 1.1221404}
   m_Direction: 0
---- !u!114 &2724466914193656938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 31709951142446583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb550b2efa0a044488e947513d899560, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyTransform: {fileID: 0}
-  speed: 80
-  pointA: 180
-  pointB: 0
-  isCalled: 0
-  callCount: 0
-  callCountMax: 112
-  isPatrol: 1
 --- !u!114 &2724466914193656937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,13 +165,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce4a817837ab4fa4a96095f82246d708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2750
   isHunting: 0
   isArresting: 0
   targetRange: 6.35
-  arrestedPlayer: {fileID: 0}
+  speed: 2750
   targetDestination: {fileID: 0}
   nextWaypointDistance: 1.2
+--- !u!114 &954303617922722446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31709951142446583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62622cd171d34014b83f40a05f06937b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyTransform: {fileID: 0}
+  speed: 80
+  pointA: 180
+  pointB: 0
+  startingZPos: 0
+  isCalled: 0
+  callCount: 0
+  callCountMax: 112
+  isPatrol: 1
+  rotateType: 1
+  staticType: 0
+  movementType: 0
+  enemyType: 0
 --- !u!114 &2724466913499392745
 MonoBehaviour:
   m_ObjectHideFlags: 0
