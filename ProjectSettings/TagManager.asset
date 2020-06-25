@@ -18,6 +18,7 @@ TagManager:
   - Soul-dier
   - BlindSpot
   - SecondFloorBlockers
+  - SandBag
   layers:
   - Default
   - TransparentFX

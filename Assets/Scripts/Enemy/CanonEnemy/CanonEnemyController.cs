@@ -40,12 +40,27 @@ public class CanonEnemyController : MonoBehaviour
     {
         int layerMask = LayerMask.GetMask("Walls", "Objects", "Appleseed", "Girl");
         //float distanceToTarget = Vector3.Distance(transform.position, target.position);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, fireDirection, range, layerMask);
+  
+        RaycastHit2D topHit = Physics2D.Raycast(new Vector2(transform.position.x, (transform.position.y + 0.215f)), fireDirection, range, layerMask);
+        RaycastHit2D midHit = Physics2D.Raycast(transform.position, fireDirection, range, layerMask);//Not great numbers
+        RaycastHit2D botHit = Physics2D.Raycast(new Vector2(transform.position.x, (transform.position.y - 0.315f)), fireDirection, range, layerMask);
         Debug.DrawRay(transform.position, fireDirection, Color.green);
-        if (hit)
+        if (midHit || topHit || botHit)
         {
             //Debug.Log("Object hit");
-            if(hit.collider.gameObject.tag == "Girl" || hit.collider.gameObject.tag == "Appleseed")
+            if(topHit.collider.gameObject.tag == "Girl" || topHit.collider.gameObject.tag == "Appleseed")
+            {
+                StartCoroutine(fireCanon(0.5f));
+                cooldown = true;
+                cooldownTimer = cooldownTime;
+            }
+            else if (midHit.collider.gameObject.tag == "Girl" || midHit.collider.gameObject.tag == "Appleseed")
+            {
+                StartCoroutine(fireCanon(0.5f));
+                cooldown = true;
+                cooldownTimer = cooldownTime;
+            }
+            else if(botHit.collider.gameObject.tag == "Girl" || botHit.collider.gameObject.tag == "Appleseed")
             {
                 StartCoroutine(fireCanon(0.5f));
                 cooldown = true;

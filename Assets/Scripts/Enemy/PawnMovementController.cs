@@ -10,6 +10,7 @@ public class PawnMovementController : MonoBehaviour
     public float pointB;
     public float startingZPos;
     private bool isCalled = false;
+    private bool heardSound= false;
     private int callCount = 0;
     private int waypointIndex = 0;
     public int callCountMax;//112 is 180
@@ -22,6 +23,9 @@ public class PawnMovementController : MonoBehaviour
     public bool rotateType = false;
     public bool staticType = false;
     public bool movementType = false;
+
+
+    private GameObject soundSource;
     //[Header("insert movement type below; 1 Rotate, 2 static, 3 moving")]
     //public int enemyType = 0;
 
@@ -42,16 +46,29 @@ public class PawnMovementController : MonoBehaviour
 
     private void Update()
     {
+        if (transform.position == soundSource.transform.position && soundSource != null)
+        {
+            if (soundSource.gameObject.tag == "SandBag")
+            {
+                heardSound = false;
+                enemyTransform.rotation = Quaternion.Euler(0, 0, startingZPos);
+                Destroy(soundSource.gameObject);
+                soundSource = null;
+            }
+        }
         if (movementType == true)
         {
-            direction = targetPath.position - transform.position;
-            //transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
-            
+            direction = targetPath.position - transform.position;           //transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);           
         }
     }
         // Update is called once per frame
         void FixedUpdate()
     {
+        if (heardSound == true)
+        {
+            MoveToSound();
+
+        }
         if (rotateType == true)
         {
             if (callCount > callCountMax)
@@ -138,8 +155,32 @@ public class PawnMovementController : MonoBehaviour
         targetPath = WayPointPathGet.points[waypointIndex];
     }
 
+    public void MoveToSound()
+    {
+        Debug.Log("Ismoving");
+        Vector2 directionToTarget = (soundSource.transform.position - transform.position).normalized;
+
+        float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg + 90f;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.rotation = angle;
+
+        //enemyTransform.rotation = Quaternion.Euler(directionToTarget);
+        transform.position = Vector2.MoveTowards(transform.position, soundSource.transform.position, (speed / 35 * Time.deltaTime));
+     
+    }
+
+
+    public void SetSoundSource(GameObject soundSourceOrigin)
+    {
+        heardSound = true;
+        soundSource = soundSourceOrigin;
+        Debug.Log(soundSource.transform.position + " " + heardSound);
+    }
+
     private void OnEnable()
     {
+        heardSound = false;
+        soundSource = null;
         if (rotateType == true)
         {
             Debug.Log("This shit was called");

@@ -168,7 +168,9 @@ MonoBehaviour:
   isHunting: 0
   isArresting: 0
   targetRange: 6.35
+  rangeSetter: 0
   speed: 2750
+  moveDelay: 0
   targetDestination: {fileID: 0}
   nextWaypointDistance: 1.2
 --- !u!114 &954303617922722446
@@ -188,14 +190,11 @@ MonoBehaviour:
   pointA: 180
   pointB: 0
   startingZPos: 0
-  isCalled: 0
-  callCount: 0
   callCountMax: 112
   isPatrol: 1
   rotateType: 1
   staticType: 0
   movementType: 0
-  enemyType: 0
 --- !u!114 &2724466913499392745
 MonoBehaviour:
   m_ObjectHideFlags: 0

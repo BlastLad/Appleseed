@@ -46,9 +46,9 @@ public class ThornController : MonoBehaviour
         if (other.gameObject.tag == "Walls" || other.gameObject.tag == "SmallWalls") {
             if (currentFloor == 2)
             {
-                Physics2D.IgnoreLayerCollision(10, 16, true);
-                Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), other.otherCollider);
-                return;
+                //Physics2D.IgnoreLayerCollision(10, 16, true);
+                //Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), other.otherCollider);
+
             }
             Destroy(gameObject);        
         }
