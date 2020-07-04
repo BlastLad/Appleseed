@@ -27,5 +27,9 @@ public class CanonBallController : MonoBehaviour
             other.rigidbody.AddForce(new Vector2(-1f * 2050, 0f), ForceMode2D.Force);
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

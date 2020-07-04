@@ -23,10 +23,12 @@ public class SwitchOrbController : MonoBehaviour
     {
         if (other.gameObject.tag == "Thorn" || other.gameObject.tag == "WorldObject")
         {
-            systemManager.SetOrbState();
-            //isRed = !isRed;
-            //anim.SetBool("isRed", isRed);
-            Destroy(other.gameObject);
+           
+                systemManager.SetOrbState();
+                //isRed = !isRed;
+                //anim.SetBool("isRed", isRed);
+                Destroy(other.gameObject);
+            
         }
     }
 

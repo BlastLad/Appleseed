@@ -25,7 +25,7 @@ public class PawnMovementController : MonoBehaviour
     public bool movementType = false;
 
 
-    private GameObject soundSource;
+    private GameObject soundSource = null;
     //[Header("insert movement type below; 1 Rotate, 2 static, 3 moving")]
     //public int enemyType = 0;
 
@@ -46,14 +46,17 @@ public class PawnMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position == soundSource.transform.position && soundSource != null)
+        if (soundSource != null)
         {
-            if (soundSource.gameObject.tag == "SandBag")
+            if (transform.position == soundSource.transform.position)
             {
-                heardSound = false;
-                enemyTransform.rotation = Quaternion.Euler(0, 0, startingZPos);
-                Destroy(soundSource.gameObject);
-                soundSource = null;
+                if (soundSource.gameObject.tag == "SandBag")
+                {
+                    heardSound = false;
+                    enemyTransform.rotation = Quaternion.Euler(0, 0, startingZPos);
+                    Destroy(soundSource.gameObject);
+                    soundSource = null;
+                }
             }
         }
         if (movementType == true)

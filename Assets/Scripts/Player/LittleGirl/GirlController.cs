@@ -15,6 +15,7 @@ public class GirlController : MonoBehaviour
     public GameObject landingZonePrefab;
     public GameObject mountingBounds;
     public GameObject appleseedThrownSprite;
+    private Animator eliseAnim;
     public Transform roseTarget;
     public Transform throwTarget;
     private float throwTargetDistance = 2.3f;
@@ -52,6 +53,7 @@ public class GirlController : MonoBehaviour
         Instance = this;
         girlActions = new GirlInputActions();
         rb = GetComponent<Rigidbody2D>();
+        eliseAnim = GetComponent<Animator>();
         girlActions.GirlMain.Enable();
         girlActions.GirlMain.EnterRose.started += ctx => EnterRose();      
         girlActions.GirlMain.UseGadget.started += ctx => UseGadget();
@@ -77,6 +79,19 @@ public class GirlController : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
             if (cooldownTimer < 0)
                 thornCooldown = false;
+        }
+
+        eliseAnim.SetFloat("Horizontal", inputVector.x);
+        eliseAnim.SetFloat("Vertical", inputVector.y);
+
+        if (inputVector != new Vector2(0, 0) && isMain == true)
+        {
+            eliseAnim.SetBool("IsMoving", true);
+            
+        }
+        else
+        {
+            eliseAnim.SetBool("IsMoving", false);
         }
 
         
@@ -115,7 +130,10 @@ public class GirlController : MonoBehaviour
         if (thornCooldown == true) { return; }      
             if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1.0f; }
             GameObject thorn = Instantiate(thornPrefab, transform.position, Quaternion.identity);
-        
+        Vector3 direction = (roseTarget.transform.position - transform.position).normalized;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        thorn.GetComponent<Rigidbody2D>().rotation = angle;
         //thorn.transform.position = thorn.transform.position + Vector3.zero;
         thorn.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
             Destroy(thorn, 5f);
@@ -389,6 +407,11 @@ public class GirlController : MonoBehaviour
     public int GetState()
     {
         return currentState;
+    }
+
+    public bool GetMountState()
+    {
+        return isMounted;
     }
 
     public Vector3 GetPosition()

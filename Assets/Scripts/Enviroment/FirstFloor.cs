@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class FirstFloor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static FirstFloor instance { get; private set; }// Start is called before the first frame update
+
+    public GameObject[] SwitchOrbs;
+    void Awake()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -23,14 +25,33 @@ public class FirstFloor : MonoBehaviour
         {
             Debug.Log("Collision" + other.name);
             ThornController thornController = other.gameObject.GetComponent<ThornController>();
-            
+            /*if (SwitchOrbs != null)
+            {
+                if (SwitchOrbs[0].layer != LayerMask.NameToLayer("BossWalls"))
+                {
+                    foreach (GameObject orb in SwitchOrbs)
+                    {
+                        orb.layer = LayerMask.NameToLayer("Objects");
+                    }
+                }
+               
+            }*/
+
             if (thornController.GetFloor() == 0) { thornController.SetFloor(1);
+                if (SwitchOrbs != null)
+                {
+                    foreach (GameObject orb in SwitchOrbs)
+                    {
+                        orb.layer = LayerMask.NameToLayer("Objects");
+                    }
+                }
+
                 Debug.Log(thornController.GetFloor()); }
      
         }
     }
 
-  
+    
 
 
 }

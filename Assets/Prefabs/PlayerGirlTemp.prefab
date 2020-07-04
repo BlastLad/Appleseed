@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: 426138647
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0015b1520d93f04783d1fb2d76cd790, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bf13c9a4e0e696c41a91fbc53ccdefc9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 2969405028688826486}
   - component: {fileID: 2969405028688826487}
   - component: {fileID: 580024985}
+  - component: {fileID: 448530800}
   m_Layer: 8
   m_Name: PlayerGirlTemp
   m_TagString: Girl
@@ -212,11 +213,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1243529929
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2834362912856129037, guid: fa28d1adefce76841b7f11e37fbc81f7,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -239,7 +239,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -402,9 +402,28 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03, y: -0.060188413}
-  m_Size: {x: 0.64, y: 0.8796232}
+  m_Offset: {x: 0.030000001, y: -0.045090556}
+  m_Size: {x: 0.64, y: 0.84942746}
   m_Direction: 0
+--- !u!95 &448530800
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2969405028688826489}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cde0a2987a70ed84791d160f41c027a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5193729071467173959
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ TagManager:
   - Pitfalls
   - CanonBall
   - Enemy
-  - 
+  - BossWalls
   - 
   - 
   - 
@@ -64,6 +64,9 @@ TagManager:
     locked: 0
   - name: Targeting
     uniqueID: 426138647
+    locked: 0
+  - name: Projectile
+    uniqueID: 1775557029
     locked: 0
   - name: Default
     uniqueID: 0
