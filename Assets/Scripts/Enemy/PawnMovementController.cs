@@ -23,6 +23,8 @@ public class PawnMovementController : MonoBehaviour
     public bool rotateType = false;
     public bool staticType = false;
     public bool movementType = false;
+    public bool rotateCounterClockWise = true;
+    public bool shouldSwitchSpin = false;
 
 
     private GameObject soundSource = null;
@@ -81,12 +83,22 @@ public class PawnMovementController : MonoBehaviour
                 {
                     isCalled = true;
                     StartCoroutine(WaitForSpin(5.0f));
+                    if (shouldSwitchSpin == true)
+                    {
+                        rotateCounterClockWise = !rotateCounterClockWise;
+                    }
                 }
 
             }
             else
-            {
-                RotateCounterClockWise();
+            { if (rotateCounterClockWise == true)
+                {
+                    RotateCounterClockWise();
+                }
+            else
+                {
+                    RotateClockWise();
+                }
             }
         }
         else if (movementType == true)
@@ -140,7 +152,14 @@ public class PawnMovementController : MonoBehaviour
         enemyTransform.rotation = Quaternion.Euler(0, 0, currentPoint);
         yield return new WaitForSeconds(timeToWait);
         callCount = 0;
-        RotateCounterClockWise();
+        if (rotateCounterClockWise == true)
+        {
+            RotateCounterClockWise();
+        }
+        else
+        {
+            RotateClockWise();
+        }
         isCalled = false;
 
     }
@@ -190,6 +209,7 @@ public class PawnMovementController : MonoBehaviour
             callCount = 0;
             isCalled = false;
             currentPoint = pointB;
+            rotateCounterClockWise = true;
             transform.rotation = new Quaternion(0, 0, 0, 0);
         }
         else if(movementType == true)

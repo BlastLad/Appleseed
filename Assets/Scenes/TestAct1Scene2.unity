@@ -4274,6 +4274,7 @@ MonoBehaviour:
   - {fileID: 195080644}
   - {fileID: 54473333}
   - {fileID: 1971274227}
+  SwitchOrbs: []
 --- !u!4 &1755489902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7649138893015556795, guid: 786fec064b736f04e91b9243483185cf,
@@ -4458,6 +4459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593c54e373826834eaa038dac00f573b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SwitchOrbs: []
 --- !u!66 &1871392050
 CompositeCollider2D:
   m_ObjectHideFlags: 0
