@@ -9,8 +9,13 @@ public class StageManagerMarionetteController : MonoBehaviour
     
     [SerializeField]
     private GameObject weakPointOrb;
+    [SerializeField]
+    private GameObject BossFieldOfViewObject;
     private int hitNumber;// Start is called before the first frame update
-
+    private bool isSearching = false;
+    private float spinSpeed = 45;
+    private int callCount = 0;
+    private GameObject[] players = new GameObject[2];
     private void Awake()
     {
         if (instance != null)
@@ -21,18 +26,30 @@ public class StageManagerMarionetteController : MonoBehaviour
         {
             instance = this;
         }
+
+
     }
 
     void Start()
     {
         StartCoroutine(fire());
+        StartRollCall();
         //StartCoroutine(StartCurtainCallRight());
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        if (isSearching == true)
+        {
+            BossFieldOfViewObject.transform.Rotate(-Vector3.forward * spinSpeed * Time.deltaTime);
+            callCount++;
+            if (callCount > 150)
+            {
+                isSearching = false;
+                RollCallCheck();
+            }          
+        }
     }
 
 
@@ -127,4 +144,76 @@ public class StageManagerMarionetteController : MonoBehaviour
         yield return new WaitForSeconds(3);
         RightHandController.instance.FullFrontalBarrage();
     }
+
+
+    public void StartRollCall()
+    {
+        isSearching = true;
+        BossFieldOfViewObject.SetActive(true);
+        BossFieldOfViewObject.transform.rotation = Quaternion.Euler(0, 0, 70);
+    }
+
+    public void RollCallCheck()
+    {
+        callCount = 0;
+        BossFieldOfViewObject.transform.rotation = Quaternion.Euler(0, 0, 70);
+        BossFieldOfViewObject.SetActive(false);
+        SonicShuffle();
+    }
+
+
+    public void AddTarget(GameObject target)
+    {
+        Vector3 targetPosition = target.transform.position;
+        GameObject targetPlayer = target.gameObject;
+      
+
+        if (targetPlayer.tag == "Appleseed")
+        {
+            bool isTargetPlayingDead = targetPlayer.GetComponent<AppleseedController>().GetPlayDeadState();
+            if (isTargetPlayingDead == true)
+            {             
+                Debug.Log("AppleseedNotFound");
+                
+            }
+            else
+            {
+                Debug.Log("AppleseedFound");
+                players.SetValue(targetPlayer, 0);
+            }
+        }
+        else if (targetPlayer.tag == "Girl")
+            {
+            Debug.Log("EliseFound");
+            players.SetValue(targetPlayer, 1);
+        }//can also be called with
+    }
+
+    public void SonicShuffle()
+    {
+        foreach(GameObject player in players)
+        {
+            if (player != null)
+            {
+                if (player.transform.position.x < 0)
+                {
+                    player.transform.position = new Vector3(4.4f, -3.3f);
+                }
+                else
+                {
+                    player.transform.position = new Vector3(-4.4f, -3.3f);
+                }
+            }
+        }
+
+        EndRollCall();
+    }
+
+    public void EndRollCall()
+    {
+        players.SetValue(null, 0);
+        players.SetValue(null, 1);
+        StartRollCall();
+    }
+
 }

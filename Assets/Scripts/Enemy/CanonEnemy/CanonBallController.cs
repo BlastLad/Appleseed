@@ -24,7 +24,7 @@ public class CanonBallController : MonoBehaviour
         else if (other.gameObject.tag == "Girl" || other.gameObject.tag == "Appleseed")
         {
             Debug.Log("+ 1 Strike");
-            other.rigidbody.AddForce(new Vector2(-1f * 2050, 0f), ForceMode2D.Force);
+            //other.rigidbody.AddForce(new Vector2(-1f * 2050, 0f), ForceMode2D.Force);
             Destroy(gameObject);
         }
         else

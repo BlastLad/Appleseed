@@ -31,7 +31,7 @@ public class GirlController : MonoBehaviour
 
     private GirlInputActions girlActions;
     private int currentState = 0; 
-    private bool isMain = true;
+    public bool isMain = true;
     private bool isRoseMode = false;
     private bool isCaptured = false;
     private bool isUsingGadget = false;
