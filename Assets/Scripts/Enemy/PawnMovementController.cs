@@ -9,6 +9,7 @@ public class PawnMovementController : MonoBehaviour
     public float pointA;
     public float pointB;
     public float startingZPos;
+    public float spinWaitModNum = 0f;
     private bool isCalled = false;
     private bool heardSound= false;
     private int callCount = 0;
@@ -82,7 +83,7 @@ public class PawnMovementController : MonoBehaviour
                 else
                 {
                     isCalled = true;
-                    StartCoroutine(WaitForSpin(5.0f));
+                    StartCoroutine(WaitForSpin(5.0f - spinWaitModNum));
                     if (shouldSwitchSpin == true)
                     {
                         rotateCounterClockWise = !rotateCounterClockWise;

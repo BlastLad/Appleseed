@@ -81,9 +81,9 @@ public class GirlController : MonoBehaviour
                 thornCooldown = false;
         }
 
-        eliseAnim.SetFloat("Horizontal", inputVector.x);
-        eliseAnim.SetFloat("Vertical", inputVector.y);
-
+            eliseAnim.SetFloat("Horizontal", inputVector.x);
+            eliseAnim.SetFloat("Vertical", inputVector.y);
+        
         if (inputVector != new Vector2(0, 0) && isMain == true)
         {
             eliseAnim.SetBool("IsMoving", true);
@@ -149,6 +149,7 @@ public class GirlController : MonoBehaviour
         isCaptured = false;
         isMain = true;
         currentState = 0;
+        eliseAnim.SetBool("IsCaptured", false);
         roseTarget.gameObject.SetActive(false);
         throwTarget.gameObject.SetActive(false);
         if (girlActions.GirlRose.enabled == true) { girlActions.GirlRose.Disable(); }
@@ -328,10 +329,12 @@ public class GirlController : MonoBehaviour
         Debug.Log("Entered Capture Mode");
         isCaptured = true;
         EnterMain();
-        isMain = false;
+        isMain = false;     
         if (isMounted == true) { Demount(); }
         girlActions.GirlMain.Disable();
         girlActions.GirlMain.Pause.Enable();
+        eliseAnim.SetBool("IsCaptured", true);
+        eliseAnim.SetTrigger("Capture");
     }
 
     public void EnterCutScene()

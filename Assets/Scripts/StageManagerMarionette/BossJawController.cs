@@ -12,7 +12,7 @@ public class BossJawController : MonoBehaviour
     public Vector3 targetPosition;
     private bool isJawCut = false;
     public float speed;
-
+    public bool isBossActive = false;
 
     private bool movingToStart = true;
     private bool movingToClosedPos = false;
@@ -27,6 +27,8 @@ public class BossJawController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isBossActive == false) { return; }
+
         if (isJawCut == false && movingToClosedPos == true)
         {
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, (speed * Time.deltaTime));

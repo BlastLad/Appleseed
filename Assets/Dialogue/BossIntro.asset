@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: BossIntro
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: It's Dark in Here...
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: True I can barely see in front of my paws. Hmmm...
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: Stay right there Elise, I'm gonna scout out ahead!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: Don't die
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: '*Thonk* What!? Who makes a Catwalk that leads to a wall!'
+    isLeft: 0
+  - characterName: ???
+    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: '*Egh* I told you worthless puppet strings I need an hours rest before
+      each show to perform properly'
+    isLeft: 1
+  - characterName: Stage Manager
+    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: So why for all that is unholy.. Are you KNOCKING ON MY TEETH, Wait
+      a minute.... Your Human
+    isLeft: 1
+  - characterName: Elise
+    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: Yeah and you're a giant talking head
+    isLeft: 0
+  - characterName: Stage Manager
+    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: Wha, How dare you! This talking head is responsible for bringing the
+      theater's shows to life! The lights, fly-ins, sparklers, all a product of my
+      endless toil and trouble!
+    isLeft: 1
+  - characterName: Stage Manager
+    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+      type: 3}
+    frameText: But that means nothing to you. I'm sure the King had big plans for
+      you, but Last time I checked there were no humans on the cast list! So I will
+      personally remove you from the stage
+    isLeft: 1

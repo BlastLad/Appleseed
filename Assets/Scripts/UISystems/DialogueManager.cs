@@ -32,6 +32,10 @@ public class DialogueManager : MonoBehaviour
 
     private bool isCurrentlyTyping;
     private string completeText;
+
+    public delegate void OnDialogueLineCallBack(int dialogueLine);
+    public OnDialogueLineCallBack onDialogueLineCall;
+    private int totalLineCount;
     private void Start()
     {
        dialogueInfo = new Queue<DialogueBase.Info>(); //A FIFO collection first in first out
@@ -47,6 +51,8 @@ public class DialogueManager : MonoBehaviour
         {
             dialogueInfo.Enqueue(info);
         }
+
+        totalLineCount = dialogueInfo.Count;
 
         EndDeQueueDialogue();
     }
@@ -70,6 +76,13 @@ public class DialogueManager : MonoBehaviour
      
 
         DialogueBase.Info info = dialogueInfo.Dequeue();
+
+
+        if (onDialogueLineCall != null)
+        {
+            onDialogueLineCall.Invoke(totalLineCount - dialogueInfo.Count);
+        }
+
         completeText = info.frameText;
         //Sets out stuff equal to whats needed
         dialogueName.text = info.characterName;

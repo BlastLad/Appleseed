@@ -11,6 +11,7 @@ public class StageManagerMarionetteController : MonoBehaviour
     private GameObject weakPointOrb;
     [SerializeField]
     private GameObject BossFieldOfViewObject;
+    public GameObject bossHead;
     private int hitNumber;// Start is called before the first frame update
     private bool isSearching = false;
     private float spinSpeed = 45;
@@ -31,9 +32,7 @@ public class StageManagerMarionetteController : MonoBehaviour
     }
 
     void Start()
-    {
-        StartCoroutine(fire());
-        StartRollCall();
+    {       
         //StartCoroutine(StartCurtainCallRight());
     }
 
@@ -68,7 +67,7 @@ public class StageManagerMarionetteController : MonoBehaviour
     }
 
 
-    private void DetermineCanonsToFireLeft(int totalToFire)
+    public void DetermineCanonsToFireLeft(int totalToFire)
     {
         Debug.Log("DCTF Called");
         int occupiedSentNum = -1;
@@ -95,7 +94,7 @@ public class StageManagerMarionetteController : MonoBehaviour
         }
     }
 
-    private void DetermineCanonsToFireRight(int totalToFire)
+    public void DetermineCanonsToFireRight(int totalToFire)
     {
         Debug.Log("DCTF Called");
         int occupiedSentNum = -1;
@@ -131,10 +130,9 @@ public class StageManagerMarionetteController : MonoBehaviour
         DetermineCanonsToFireRight(2);
     }
 
-    public IEnumerator StartCurtainCallLeft()
+    public void StartCurtainCallLeft()
     {
-        Debug.Log("Curtain Call called left");
-        yield return new WaitForSeconds(3);
+        Debug.Log("Curtain Call called left");       
         LeftHandCanonController.instance.FullFrontalBarrage();
     }
 
@@ -158,6 +156,7 @@ public class StageManagerMarionetteController : MonoBehaviour
         callCount = 0;
         BossFieldOfViewObject.transform.rotation = Quaternion.Euler(0, 0, 70);
         BossFieldOfViewObject.SetActive(false);
+        bossHead.GetComponent<StageManagerHead>().lightsOut();
         SonicShuffle();
     }
 
@@ -213,7 +212,7 @@ public class StageManagerMarionetteController : MonoBehaviour
     {
         players.SetValue(null, 0);
         players.SetValue(null, 1);
-        StartRollCall();
+        
     }
 
 }
