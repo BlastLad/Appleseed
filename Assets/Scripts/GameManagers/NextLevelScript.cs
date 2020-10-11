@@ -6,17 +6,12 @@ public class NextLevelScript : MonoBehaviour
 {
     private bool eliseIn = false;
     private bool appleseedIn = false;
-    public int currentScene = 1;
+    public int currentBuildIndex = 1;
+    [SerializeField]
+    PlayerDataGameObject player;
         
         
         
-        
-        
-        // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -65,6 +60,22 @@ public class NextLevelScript : MonoBehaviour
 
     private void LoadNextScene()
     {
+        player.SavePlayer(true);
+        SceneManager.LoadScene(currentBuildIndex + 1);
+    }
+
+    public void StartGame()
+    {
+        player.OnGameStart();
+        player.SavePlayer(false);
+        
+
         SceneManager.LoadScene(1);
+    }
+
+    public void LoadFinale()
+    {
+        SceneManager.LoadScene("Finale");
+        
     }
 }

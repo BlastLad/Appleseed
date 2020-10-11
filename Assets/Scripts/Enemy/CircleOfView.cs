@@ -16,8 +16,6 @@ public class CircleOfView : MonoBehaviour
     public int edgeResolveIterations;
     public float edgeDistanceMin;
 
-    //public MeshFilter viewMeshFilter;
-    //Mesh viewMesh;
 
 
 
@@ -28,9 +26,7 @@ public class CircleOfView : MonoBehaviour
 
     void Start()
     {
-        //viewMesh = new Mesh();
-        //viewMesh.name = "View Mesh";
-        //viewMeshFilter.mesh = viewMesh;
+      
         StartCoroutine("FindTargetsDelayed", .2f);
     }
 
@@ -64,13 +60,10 @@ public class CircleOfView : MonoBehaviour
                 if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, blockMask) && souldierEnemy.GetHuntState() == false && souldierEnemy.GetArrestState() == false)
                 {
                     visibleTargets.Add(target);
-                    Debug.Log("player found what");//Not possible
-                    //GetComponent<EnemyController>().FindTarget(target.gameObject);
+                  
+                    
                     souldierEnemy.FindtargetFromCircle(target.gameObject);
-                    /*if (target.gameObject.tag == "Appleseed")
-                    {
-                        target.GetComponent<AppleseedController>().SetBehindState(false);
-                    }No Need for this in the Circle*/
+              
                 }
             }
         }
@@ -126,10 +119,7 @@ public class CircleOfView : MonoBehaviour
             }
         }
 
-        //viewMesh.Clear();
-        //viewMesh.vertices = verticies;
-        //viewMesh.triangles = triangles;
-        //viewMesh.RecalculateNormals();
+  
     }
 
     EdgeInfo FindEdge(ViewCastInfo min, ViewCastInfo max)//new

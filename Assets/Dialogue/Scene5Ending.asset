@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Scene5Ending
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Recardo, The Radio Head
+    characterPortrait: {fileID: 21300000, guid: fe0e417b7fc7b9f4ba3db54dc0cda758,
+      type: 3}
+    frameText: '*BZZT* HOW DARE YOU *BZZT* I-I AM RECARDO, THE GR-GREAT STAGE MANAGER
+      OF WONDE-DER LAND *BZZT* I-I-I CAN NO-NOT BE *BZZT* POWERING DOWN'
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Woo... Well that was a work out! Looks like we beat him!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: What work out? You are a stuffed bear...you can't even sweat. All
+      you did is distact the oaf, I did all the real work.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Aw... it stings because I know you're right... Either way you have
+      to admit we make a pretty good team.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: ...I agree, thank you for escorting me. Now if we are all done here,
+      can we leave? The inside of his mouth smells like oil.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Heh, looks like there's a door in the back of his head. Sorry Elise
+      just hold your breath while we walk through.
+    isLeft: 0

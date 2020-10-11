@@ -10,22 +10,36 @@ public class ThornController : MonoBehaviour
 
 
     private GameObject[] blockers;
+    private GameObject[] thirdBlockers;
 
     private int currentFloor = 0;
-    // Start is called before the first frame update
 
     private void Awake()
     {
         if (currentFloor == 2)
         {
             DisableSecondFloorBlockers();
+            GetComponent<SpriteRenderer>().sortingLayerName = "AboveGround";
+        }
+        else if (currentFloor == 3)
+        {
+            DisableThirdFloorBlockers();
+            DisableThirdFloorBlockers();
+            GetComponent<SpriteRenderer>().sortingLayerName = "AboveGround";
         }
     }
 
 
     void Start()
     {
-        blockers = SecondFloor.Instance.secondFloorBlockers;
+        if (SecondFloor.Instance)
+        {
+            blockers = SecondFloor.Instance.secondFloorBlockers;
+        }
+        if (ThirdFloor.instance)
+        {
+            thirdBlockers = ThirdFloor.instance.thirdFloorBlockers;
+        }
     }
 
     // Update is called once per frame
@@ -34,10 +48,20 @@ public class ThornController : MonoBehaviour
         if (currentFloor == 1)
         {
             EnableSecondFloorBlockers();
+            EnableThirdFloorBlockers();
+            
         }
         else if (currentFloor == 2)
         {
+            
             DisableSecondFloorBlockers();
+            EnableThirdFloorBlockers();
+        }
+        else if (currentFloor == 3)
+        {
+            
+            DisableSecondFloorBlockers();
+            DisableThirdFloorBlockers();
         }
     }
 
@@ -73,9 +97,36 @@ public class ThornController : MonoBehaviour
 
     public void DisableSecondFloorBlockers()
     {
+        
         foreach (GameObject blocker in blockers)
         {
             blocker.SetActive(false);
+        }
+    }
+
+    public void DisableThirdFloorBlockers()
+    {
+
+        GetComponent<SpriteRenderer>().sortingLayerName = "AboveGround";
+        if (thirdBlockers != null)
+        {
+            foreach (GameObject blocker in thirdBlockers)
+            {
+                blocker.SetActive(false);
+            }
+        }
+    }
+
+    public void EnableThirdFloorBlockers()
+    {
+        
+      
+        if (thirdBlockers != null)
+        {
+            foreach (GameObject blocker in thirdBlockers)
+            {
+                blocker.SetActive(true);
+            }
         }
     }
 
@@ -86,14 +137,6 @@ public class ThornController : MonoBehaviour
             blocker.SetActive(true);
         }
     }
-
-    /*public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag != "Girl" && collision.gameObject.tag != "MountingBounds") 
-        {
-            Debug.Log("on tigger reconozed");
-        }
-    }*/
 
     public void SetFloor(int floorNum)
     {

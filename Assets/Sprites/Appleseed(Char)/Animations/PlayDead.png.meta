@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: 573de00673943ca41ba3b9924d7b98e5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1042077790458202529
+    second: PlayDead_0
+  - first:
+      213: 2477982764307154258
+    second: PlayDead_1
+  - first:
+      213: -5351870104362535190
+    second: PlayDead_2
+  - first:
+      213: 8392784749559545118
+    second: PlayDead_3
+  - first:
+      213: -8814534638590435547
+    second: PlayDead_4
+  - first:
+      213: -6971915452149065128
+    second: PlayDead_5
+  - first:
+      213: 1402812952569166898
+    second: PlayDead_6
+  - first:
+      213: 3895015929246715954
+    second: PlayDead_7
+  - first:
+      213: 5474475527196413531
+    second: PlayDead_8
+  - first:
+      213: 7317622500469173358
+    second: PlayDead_9
+  - first:
+      213: -8035619975946174908
+    second: PlayDead_10
+  - first:
+      213: 7230948527893512679
+    second: PlayDead_11
+  - first:
+      213: -242301980850678454
+    second: PlayDead_12
+  - first:
+      213: -8496512020079509310
+    second: PlayDead_13
+  - first:
+      213: 2134558607350417067
+    second: PlayDead_14
+  - first:
+      213: -5563214401428749688
+    second: PlayDead_15
+  - first:
+      213: -3049454639825055304
+    second: PlayDead_16
+  - first:
+      213: -2833629354734891839
+    second: PlayDead_17
+  - first:
+      213: -7358053172113658772
+    second: PlayDead_18
+  - first:
+      213: -7902597547170857070
+    second: PlayDead_19
+  - first:
+      213: 5598251820918993214
+    second: PlayDead_20
+  - first:
+      213: 977122906156281270
+    second: PlayDead_21
+  - first:
+      213: 1919976030991239747
+    second: PlayDead_22
+  - first:
+      213: 5882891866537503586
+    second: PlayDead_23
+  - first:
+      213: 180607251444005508
+    second: PlayDead_24
+  - first:
+      213: 7625550075036212848
+    second: PlayDead_25
+  - first:
+      213: -8155781971128182471
+    second: PlayDead_26
+  - first:
+      213: -2824070409846170688
+    second: PlayDead_27
+  - first:
+      213: -6603457071413802570
+    second: PlayDead_28
+  - first:
+      213: -9021554711391742247
+    second: PlayDead_29
+  - first:
+      213: 6048694725570760264
+    second: PlayDead_30
+  - first:
+      213: -4465929571896072928
+    second: PlayDead_31
+  - first:
+      213: 3023946388720277737
+    second: PlayDead_32
+  - first:
+      213: 3684009548451461411
+    second: PlayDead_33
+  - first:
+      213: 5402599898666979898
+    second: PlayDead_34
+  - first:
+      213: -6656827059913835557
+    second: PlayDead_35
+  - first:
+      213: 3510262705962509267
+    second: PlayDead_36
+  - first:
+      213: 5071195147143213112
+    second: PlayDead_37
+  - first:
+      213: 798473743454671389
+    second: PlayDead_38
+  - first:
+      213: -3108023368246330284
+    second: PlayDead_39
+  - first:
+      213: -5331686917823618344
+    second: PlayDead_40
+  - first:
+      213: -1738530892071689387
+    second: PlayDead_41
+  - first:
+      213: 7189784910667563679
+    second: PlayDead_42
+  - first:
+      213: -4370489986453295316
+    second: PlayDead_43
+  - first:
+      213: -5800243823475391606
+    second: PlayDead_44
+  - first:
+      213: -3364461815254223676
+    second: PlayDead_45
+  - first:
+      213: -7375952371101700907
+    second: PlayDead_46
+  - first:
+      213: 8258282558948788250
+    second: PlayDead_47
+  - first:
+      213: -820158454233565892
+    second: PlayDead_48
+  - first:
+      213: 7891660373701707376
+    second: PlayDead_49
+  - first:
+      213: -2154677466135215788
+    second: PlayDead_50
+  - first:
+      213: -7497816922158180856
+    second: PlayDead_51
+  - first:
+      213: -1468826260270986854
+    second: PlayDead_52
+  - first:
+      213: 7408219902974362481
+    second: PlayDead_53
+  - first:
+      213: 2763640012303903064
+    second: PlayDead_54
+  - first:
+      213: -8080329083167283594
+    second: PlayDead_55
+  - first:
+      213: 4723237715568030038
+    second: PlayDead_56
+  - first:
+      213: -9125811003890309966
+    second: PlayDead_57
+  - first:
+      213: -7593195269827215929
+    second: PlayDead_58
+  - first:
+      213: 3857810435019842902
+    second: PlayDead_59
+  - first:
+      213: 6069100441654484405
+    second: PlayDead_60
+  - first:
+      213: -4145317930343596325
+    second: PlayDead_61
+  - first:
+      213: -8739745032226212176
+    second: PlayDead_62
+  - first:
+      213: 1443941138882415901
+    second: PlayDead_63
+  - first:
+      213: -7475008610081237142
+    second: PlayDead_64
+  - first:
+      213: -2411361007992149801
+    second: PlayDead_65
+  - first:
+      213: -3739152147535282853
+    second: PlayDead_66
+  - first:
+      213: 2275021762435665465
+    second: PlayDead_67
+  - first:
+      213: -3425181438136075295
+    second: PlayDead_68
+  - first:
+      213: 4871262933902918590
+    second: PlayDead_69
+  - first:
+      213: 3427536159928845434
+    second: PlayDead_70
+  - first:
+      213: -4227971646117736922
+    second: PlayDead_71
+  - first:
+      213: -3750421718629133567
+    second: PlayDead_72
+  - first:
+      213: 8907212812258488132
+    second: PlayDead_73
+  - first:
+      213: 8283472136414712427
+    second: PlayDead_74
+  - first:
+      213: 9006909878537906897
+    second: PlayDead_75
+  - first:
+      213: -5239342760753076100
+    second: PlayDead_76
+  - first:
+      213: 2971811492498387369
+    second: PlayDead_77
+  - first:
+      213: 7147578384295407702
+    second: PlayDead_78
+  - first:
+      213: -7716373212901744206
+    second: PlayDead_79
+  - first:
+      213: -8982107384489610908
+    second: PlayDead_80
+  - first:
+      213: -8588950890659345625
+    second: PlayDead_81
+  - first:
+      213: -4834546145687965107
+    second: PlayDead_82
+  - first:
+      213: 3489112186168816160
+    second: PlayDead_83
+  - first:
+      213: -2903006403763049973
+    second: PlayDead_84
+  - first:
+      213: 8968676585356522176
+    second: PlayDead_85
+  - first:
+      213: 6834352852161192934
+    second: PlayDead_86
+  - first:
+      213: -6107164712230737554
+    second: PlayDead_87
+  - first:
+      213: 3942290124877566901
+    second: PlayDead_88
+  - first:
+      213: 466647855356072035
+    second: PlayDead_89
+  - first:
+      213: -4447756875358726265
+    second: PlayDead_90
+  - first:
+      213: -7104421375153824076
+    second: PlayDead_91
+  - first:
+      213: -3781562013666709914
+    second: PlayDead_92
+  - first:
+      213: 3668611071052330764
+    second: PlayDead_93
+  - first:
+      213: 7384184041204120920
+    second: PlayDead_94
+  - first:
+      213: -4935256216705259282
+    second: PlayDead_95
+  - first:
+      213: -801827747069308871
+    second: PlayDead_96
+  - first:
+      213: 3072837464421963886
+    second: PlayDead_97
+  - first:
+      213: -5307833450840916888
+    second: PlayDead_98
+  - first:
+      213: 3339113051391718004
+    second: PlayDead_99
+  - first:
+      213: 1252647223390943919
+    second: PlayDead_100
+  - first:
+      213: -5443991171118061352
+    second: PlayDead_101
+  - first:
+      213: 9115282941564779233
+    second: PlayDead_102
+  - first:
+      213: -5156900502689226236
+    second: PlayDead_103
+  - first:
+      213: -7965249295899922583
+    second: PlayDead_104
+  - first:
+      213: 4356945972566271237
+    second: PlayDead_105
+  - first:
+      213: -2290208441033250514
+    second: PlayDead_106
+  - first:
+      213: 2703885160304874910
+    second: PlayDead_107
+  - first:
+      213: -2883642057473784642
+    second: PlayDead_108
+  - first:
+      213: 6311866260742939089
+    second: PlayDead_109
+  - first:
+      213: -1954033048978459158
+    second: PlayDead_110
+  - first:
+      213: -5779932067178197012
+    second: PlayDead_111
+  - first:
+      213: 7514027538595342252
+    second: PlayDead_112
+  - first:
+      213: 6230485679929066095
+    second: PlayDead_113
+  - first:
+      213: -2684138429451780286
+    second: PlayDead_114
+  - first:
+      213: -6214635345530833943
+    second: PlayDead_115
+  - first:
+      213: 8135210277063794045
+    second: PlayDead_116
+  - first:
+      213: -7796639439910602072
+    second: PlayDead_117
+  - first:
+      213: 4206550404928307417
+    second: PlayDead_118
+  - first:
+      213: 8735486690423456429
+    second: PlayDead_119
+  - first:
+      213: -1151156731481665664
+    second: PlayDead_120
+  - first:
+      213: -5915650154933896338
+    second: PlayDead_121
+  - first:
+      213: 5379132474454927014
+    second: PlayDead_122
+  - first:
+      213: -5883588719807501622
+    second: PlayDead_123
+  - first:
+      213: -1611603037382570110
+    second: PlayDead_124
+  - first:
+      213: -3059566218731483179
+    second: PlayDead_125
+  - first:
+      213: 15750317617737118
+    second: PlayDead_126
+  - first:
+      213: 7784208634929396882
+    second: PlayDead_127
+  - first:
+      213: -6044896159560984701
+    second: PlayDead_128
+  - first:
+      213: -7817773199185359501
+    second: PlayDead_129
+  - first:
+      213: -4729591494576298405
+    second: PlayDead_130
+  - first:
+      213: -819830787650362625
+    second: PlayDead_131
+  - first:
+      213: -1891255218408518243
+    second: PlayDead_132
+  - first:
+      213: 8370836384024106324
+    second: PlayDead_133
+  - first:
+      213: -2218142184406302599
+    second: PlayDead_134
+  - first:
+      213: -2544177662823647233
+    second: PlayDead_135
+  - first:
+      213: -556715710296481293
+    second: PlayDead_136
+  - first:
+      213: 3453473159887868845
+    second: PlayDead_137
+  - first:
+      213: 7406799727022665542
+    second: PlayDead_138
+  - first:
+      213: -6749159904545065620
+    second: PlayDead_139
+  - first:
+      213: 5724715571366160912
+    second: PlayDead_140
+  - first:
+      213: -587101111248438957
+    second: PlayDead_141
+  - first:
+      213: -8082187250234935603
+    second: PlayDead_142
+  - first:
+      213: 1128977171297742199
+    second: PlayDead_143
+  - first:
+      213: 6900164521297776398
+    second: PlayDead_144
+  - first:
+      213: -2635167631499111749
+    second: PlayDead_145
+  - first:
+      213: -6995535771236974628
+    second: PlayDead_146
+  - first:
+      213: -1187743915659259218
+    second: PlayDead_147
+  - first:
+      213: 1339541843108996452
+    second: PlayDead_148
+  - first:
+      213: -6605955144081369130
+    second: PlayDead_149
+  - first:
+      213: -7686855780199604560
+    second: PlayDead_150
+  - first:
+      213: -6019571982839638299
+    second: PlayDead_151
+  - first:
+      213: -2402121583492519976
+    second: PlayDead_152
+  - first:
+      213: 3046759992532629333
+    second: PlayDead_153
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayDead_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f563a6f45cbc981f0800000000000000
+      internalID: -1042077790458202529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 255811af130936220800000000000000
+      internalID: 2477982764307154258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae63079de765ab5b0800000000000000
+      internalID: -5351870104362535190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1dffc94349297470800000000000000
+      internalID: 8392784749559545118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fd076927b7ca580800000000000000
+      internalID: -8814534638590435547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a1996c5d7ce3f90800000000000000
+      internalID: -6971915452149065128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cb33ca2fac77310800000000000000
+      internalID: 1402812952569166898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_7
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2301d39d950ed0630800000000000000
+      internalID: 3895015929246715954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e8c1aac7e39fb40800000000000000
+      internalID: 5474475527196413531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ceedcc4ea6d8560800000000000000
+      internalID: 7317622500469173358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ef1b7d43ebb7090800000000000000
+      internalID: -8035619975946174908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e10a3aff5d795460800000000000000
+      internalID: 7230948527893512679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a459507d1ab23acf0800000000000000
+      internalID: -242301980850678454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayDead_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c0035d8553561a80800000000000000
+      internalID: -8496512020079509310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

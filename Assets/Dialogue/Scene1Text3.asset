@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Scene1Text3
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: ....what a lame gift, if all this rose does is launch thorns, that
+      cat could have just told me...I was expecting a real surprise.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: '*Bzzt* ELISE!! Can you hear me!? *Bzzt* '
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: AHH! Appleseed? Where are you?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: 'Not Important! I''m using the magic in that rose to communicate with
+      you. Pretty cool right? '
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Great job opening the curtain, now all we have to do is take down
+      that stuffing-less Soul-dier! Easy, right? Lets go!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: Well how do you plan on doing that?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: O..oh...right... Well there is no easy way to say this. Elise I need
+      you to act as bait!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: ...Ok I am going back to my cell. Come get me when you have a real
+      plan.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Hey wait! let me explain.
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: All Soul-diers have their life force hiding inside (BLUE SOUL-CORES).
+      Our lovely Pawn here has one too, see it's right between his horns. Destroy
+      that core and the Soul-dier (DISSAPEARS) to who knows where!
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: 'Sounds simple but all Soul-diers know of this weakness, so they protect
+      that core at all costs. '
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Now I can destroy those cores with a well placed, good ol' Plush Punch!...
+      but only when those cores are glowing (RED). If a (CORE IS RED), that's how
+      you'll know their guard is down.
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: All Soul-diers have different things that make them tick. For this
+      Pawn, when he's chasing someone he gets so caught up in the excitement that
+      he forgets to protect himself!
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: So we get him to chase you, and his (SOUL-CORE) will turn (RED) I'm
+      sure of it! Once that happens (ONE PUNCH) from behind will do him in, just
+      trust me!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: '*sigh* Ok fine I trust you. just try to get him before his creepy
+      hands touch my dress.'
+    isLeft: 1

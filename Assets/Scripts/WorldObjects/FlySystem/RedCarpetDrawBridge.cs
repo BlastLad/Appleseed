@@ -6,6 +6,8 @@ public class RedCarpetDrawBridge : MonoBehaviour
 {
     [SerializeField]
     GameObject[] flySystems;
+    [SerializeField]
+    GameObject floor;
     private int sentValue = 0;
 
     public void Update()
@@ -25,6 +27,8 @@ public class RedCarpetDrawBridge : MonoBehaviour
     }
     public void DropCarpet()
     {
+        floor.SetActive(true);
         gameObject.SetActive(false);
+      
     }
 }

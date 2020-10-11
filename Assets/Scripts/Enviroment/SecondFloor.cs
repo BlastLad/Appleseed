@@ -9,25 +9,21 @@ public class SecondFloor : MonoBehaviour
     [SerializeField]
     public GameObject[] secondFloorBlockers;
     public GameObject[] SwitchOrbs;
+    public GameObject[] firstFloorEnemies;
 
-    private int floor = 2;// Start is called before the first frame update
+    private int floor = 2;
     void Awake()
     {
         Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.gameObject.tag == "Thorn")
         {
-            Debug.Log("Collision" + other.name + "Floor2)");
+            
             ThornController thornController = other.gameObject.GetComponent<ThornController>();
             if (SwitchOrbs != null)
             {
@@ -37,10 +33,18 @@ public class SecondFloor : MonoBehaviour
                 }
             }
 
+            if (firstFloorEnemies != null)
+            {
+                foreach (GameObject enemy in firstFloorEnemies)
+                {
+                    enemy.layer = LayerMask.NameToLayer("BossWalls");
+                }
+            }
+
             if (thornController.GetFloor() == 0)
             {
                 thornController.SetFloor(2);
-                Debug.Log(thornController.GetFloor());
+                
             }
         }
     }

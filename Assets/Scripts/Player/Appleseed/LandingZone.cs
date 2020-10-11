@@ -4,17 +4,10 @@ using UnityEngine;
 
 public class LandingZone : MonoBehaviour
 {
-    public GameObject appleseedPrefab;// Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject appleseedPrefab;
+   
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     public void OnTriggerEnter2D(Collider2D other)
     {

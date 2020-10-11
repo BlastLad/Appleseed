@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Scene3Text2
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Elise, I just have to say we are making great time! You will be home
+      and in bed in no time!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: Um, Appleseed. Look up.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Look u-AHH! Ugh, Another Soul-dier type, this level of security is
+      un-bear-able.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: Types?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Yup! Like I said before, there are loads of Soul-diers in Wonderland,
+      and each one of the buggers has a different weakness. Our usual tricks are
+      not going to work on this guy.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: Well if being bait won't work, then it looks like we can not move
+      forward.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Why don't you throw me down there and I'll do a little recon.
+    isLeft: 0

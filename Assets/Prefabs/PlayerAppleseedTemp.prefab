@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3656825432348818323}
   - component: {fileID: 3656825432348818322}
   - component: {fileID: 1211996100}
+  - component: {fileID: 1124931289}
   m_Layer: 9
   m_Name: PlayerAppleseedTemp
   m_TagString: Appleseed
@@ -73,11 +74,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 4
-  m_Sprite: {fileID: -626140877796867588, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
-    type: 3}
+  m_SortingLayerID: 1243529929
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -122,18 +122,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03337291, y: -0.100616336}
+  m_Offset: {x: 0.03337291, y: -0.15001631}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8888889, y: 0.8888889}
+    oldSize: {x: 1.0666667, y: 1.0666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.684701, y: 0.69384265}
+  m_Size: {x: 0.684701, y: 0.6814923}
   m_EdgeRadius: 0
 --- !u!114 &3656825432348818323
 MonoBehaviour:
@@ -223,9 +223,28 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.029000014, y: -0.06570923}
-  m_Size: {x: 0.58, y: 0.7574704}
+  m_Offset: {x: 0.018404484, y: -0.124372005}
+  m_Size: {x: 0.53197384, y: 0.83774614}
   m_Direction: 0
+--- !u!95 &1124931289
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3656825432348818329}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fa2f2ca18f7f9c4db648993ecc705d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &5289931411952235261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -296,7 +315,7 @@ PrefabInstance:
     - target: {fileID: 4603060716132799562, guid: 1132b5e681905d347a56c2a0d9d91ec0,
         type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4603060716132799562, guid: 1132b5e681905d347a56c2a0d9d91ec0,
         type: 3}

@@ -5,8 +5,8 @@ using UnityEngine;
 public class StageManagerMarionetteController : MonoBehaviour
 {
     public static StageManagerMarionetteController instance { get; private set; }
-    
-    
+
+    private AudioSource coreAudio;
     [SerializeField]
     private GameObject weakPointOrb;
     [SerializeField]
@@ -17,6 +17,19 @@ public class StageManagerMarionetteController : MonoBehaviour
     private float spinSpeed = 45;
     private int callCount = 0;
     private GameObject[] players = new GameObject[2];
+    [SerializeField]
+    private GameObject dialogueTrigger;
+    [SerializeField]
+    GameObject teleportPrefab;
+    [SerializeField]
+    PlayerDataGameObject player;
+    [SerializeField]
+    GameObject topJaw;
+    [SerializeField]
+    AudioSource mainCamera;
+    public Animator bossCenterPiece;
+
+    public GameObject[] orbDamaged;
     private void Awake()
     {
         if (instance != null)
@@ -26,8 +39,9 @@ public class StageManagerMarionetteController : MonoBehaviour
         else
         {
             instance = this;
-        }
 
+        }
+        coreAudio = GetComponent<AudioSource>();
 
     }
 
@@ -56,12 +70,31 @@ public class StageManagerMarionetteController : MonoBehaviour
     {
         if (other.gameObject.tag == "AppleseedAttack")
         {
-            
+            coreAudio.Play();
             hitNumber++;
+
             Debug.Log("BossHit" + hitNumber);
             if (hitNumber >= 3)
             {
+                player.BossDefeated(true);
+                player.SavePlayer(true);
+                bossHead.GetComponent<StageManagerHead>().SetDefeated();
+                topJaw.GetComponent<SpriteRenderer>().sortingLayerName = "AboveGround";
+                topJaw.GetComponent<SpriteRenderer>().sortingOrder = 6;
+                dialogueTrigger.GetComponent<TestDialogue>().DifferentActivation();
+                mainCamera.Stop();
+                bossCenterPiece.SetBool("IsActive", false);
                 Destroy(weakPointOrb);
+            }
+            else if (hitNumber == 2)
+            {
+                orbDamaged[1].SetActive(true);
+                orbDamaged[0].SetActive(false);
+            }
+            else if (hitNumber == 1)
+            {
+                orbDamaged[0].SetActive(true);
+
             }
         }
     }
@@ -136,10 +169,9 @@ public class StageManagerMarionetteController : MonoBehaviour
         LeftHandCanonController.instance.FullFrontalBarrage();
     }
 
-    public IEnumerator StartCurtainCallRight()
+    public void StartCurtainCallRight()
     {
         Debug.Log("Curtain Call called right");
-        yield return new WaitForSeconds(3);
         RightHandController.instance.FullFrontalBarrage();
     }
 
@@ -196,10 +228,14 @@ public class StageManagerMarionetteController : MonoBehaviour
             {
                 if (player.transform.position.x < 0)
                 {
+                    Instantiate(teleportPrefab, player.transform.position, Quaternion.identity);
+                    Instantiate(teleportPrefab, new Vector3(4.4f, -3.3f), Quaternion.identity);
                     player.transform.position = new Vector3(4.4f, -3.3f);
                 }
                 else
                 {
+                    Instantiate(teleportPrefab, player.transform.position, Quaternion.identity);
+                    Instantiate(teleportPrefab, new Vector3(-4.4f, -3.3f), Quaternion.identity);
                     player.transform.position = new Vector3(-4.4f, -3.3f);
                 }
             }

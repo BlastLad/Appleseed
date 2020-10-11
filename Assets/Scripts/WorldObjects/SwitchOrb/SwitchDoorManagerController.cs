@@ -7,17 +7,7 @@ public class SwitchDoorManagerController : MonoBehaviour
     [SerializeField] GameObject[] switchOrbs;
     [SerializeField] GameObject[] redDoors;
     [SerializeField] GameObject[] whiteDoors;
-    private bool isRed = true;// Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool isRed = true;
 
     public void SetOrbState()
     {
@@ -35,5 +25,10 @@ public class SwitchDoorManagerController : MonoBehaviour
                 }
            }
         
+    }
+
+    public bool GetIsRed()
+    {
+        return isRed;
     }
 }

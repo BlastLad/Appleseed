@@ -9,34 +9,46 @@ public class ThirdFloor : MonoBehaviour
 
     [SerializeField]
     public GameObject[] secondFloorBlockers;
+    public GameObject[] thirdFloorBlockers;
+    public GameObject[] SwitchOrbs;
+    public GameObject[] firstFloorEnemies;
 
     private int floor = 3;
 
-    // Start is called before the first frame update
     void Awake()
     {
         instance = this;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
         if (other.gameObject.tag == "Thorn")
         {
-            Debug.Log("Collision" + other.name + "Floor3)");
+            
             ThornController thornController = other.gameObject.GetComponent<ThornController>();
+
+            if (SwitchOrbs != null)
+            {
+                foreach (GameObject orb in SwitchOrbs)
+                {
+                    orb.layer = LayerMask.NameToLayer("BossWalls");
+                }
+            }
+
+            if (firstFloorEnemies != null)
+            {
+                foreach (GameObject enemy in firstFloorEnemies)
+                {
+                    enemy.layer = LayerMask.NameToLayer("BossWalls");
+                    //Made weakpoint orb on bosswalls
+                }
+            }
 
             if (thornController.GetFloor() == 0)
             {
-                thornController.SetFloor(2);
-                Debug.Log(thornController.GetFloor());
+                thornController.SetFloor(3);
+               
             }
         }
     }

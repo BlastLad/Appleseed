@@ -26,7 +26,7 @@ public class BlackPitController : MonoBehaviour
         {
             if (other.gameObject.tag == "Appleseed" || other.gameObject.tag == "Girl")
             {
-                Debug.Log("Life Lost");
+               
             }
         }
     }

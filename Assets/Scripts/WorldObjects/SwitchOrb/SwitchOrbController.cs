@@ -5,19 +5,19 @@ using UnityEngine;
 public class SwitchOrbController : MonoBehaviour
 {
     Animator anim;
-    bool isRed = true;// Start is called before the first frame update
+    AudioSource orbAudio;
+    public AudioClip soundSFX;
+    bool isRed = true;
     SwitchDoorManagerController systemManager;
+    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        orbAudio = GetComponent<AudioSource>();
         systemManager = GetComponentInParent<SwitchDoorManagerController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -25,8 +25,7 @@ public class SwitchOrbController : MonoBehaviour
         {
            
                 systemManager.SetOrbState();
-                //isRed = !isRed;
-                //anim.SetBool("isRed", isRed);
+          
                 Destroy(other.gameObject);
             
         }
@@ -37,8 +36,7 @@ public class SwitchOrbController : MonoBehaviour
         if (other.gameObject.tag == "AppleseedAttack")
         {
             systemManager.SetOrbState();
-            //isRed = !isRed;
-            //anim.SetBool("isRed", isRed);
+            
   
         }
     }
@@ -46,6 +44,7 @@ public class SwitchOrbController : MonoBehaviour
     public void ChangeOrbState()
     {
         isRed = !isRed;
+        orbAudio.PlayOneShot(soundSFX, .3f);
         anim.SetBool("isRed", isRed);
     }
 }

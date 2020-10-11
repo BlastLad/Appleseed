@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Scene2Entrance
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Woo... Great work back there, you're a natural at this!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: That is not a compliment. I do not enjoy being bait.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Hey don't be like that! Here's a little secret about the Soul-diers.
+      If one catchs us it will take a few seconds before they can wisk us away to
+      another dungeon cell. Before that happens we can free each other if we (ATTACK)
+      them!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: Well that should not be an issue. After all, you're going to ensure
+      they never lay one grubby finger on me...right?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Eh-o-of course Elise, but you know accidents happ-
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: ...
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: '*Ahem* oh... what is that over there?? Oh would you look at that
+      it''s a rope!'
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: A rope. Yes how interesting.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Right you are Elise. That rope there gives me an idea. I bet your
+      rose's thorns are sharp enough to cleanly (CUT) through them. Go ahead give
+      it a try!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: 'Fine if I must, but please forgive me if I graze your fur with it.
+      After all accidents happen, right?  '
+    isLeft: 1

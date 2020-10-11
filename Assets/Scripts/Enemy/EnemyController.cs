@@ -8,8 +8,9 @@ public class EnemyController : MonoBehaviour
     
     GameObject targetPlayer;
     private GameObject arrestedPlayer;
-    Vector3 startingPosition;
+    public Vector3 startingPosition;
     Rigidbody2D rb;
+    AudioSource enemyAudio;
 
     public bool isHunting;
     public bool isArresting;
@@ -26,20 +27,26 @@ public class EnemyController : MonoBehaviour
     public Transform targetDestination;
     public float nextWaypointDistance = 3f;
     bool reachedEndOfPath = false;
+    public Transform parentSprite;
+    [SerializeField]
+    GameObject teleportPrefab;
+
  
     // Start is called before the first frame update
     void Start()
     {
         startingPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
+        enemyAudio = GetComponent<AudioSource>();
         seeker = GetComponent<Seeker>();
         InvokeRepeating("UpdatePath", 0f, .5f);
-      
+        seeker.StartPath(rb.position, targetDestination.position, OnPathComplete);
     }
-
+  
     // FixedUpdate is called at a fixed rate
     void FixedUpdate()
     {
+      
         if (suspicious == true) { StartCoroutine(ResetSuspicion(3.0f)); }
         if (path != null)
         {
@@ -55,7 +62,7 @@ public class EnemyController : MonoBehaviour
         }
 
         if (isHunting)
-        {
+        {           
             if (Vector3.Distance(transform.position, targetPlayer.transform.position) > targetRange)
             {
                 FindPlayerWithRay();
@@ -63,7 +70,7 @@ public class EnemyController : MonoBehaviour
                 {
                     SetHunt(false);
                     StartCoroutine(ReturnToStart(2.0f));
-                    Debug.Log("false");                    
+                                       
                 }
                 return;
             }
@@ -77,7 +84,7 @@ public class EnemyController : MonoBehaviour
                 if (path.GetTotalLength() < 2f)
                 {
                     CalculateRay();
-                    //transform.position = Vector2.MoveTowards(transform.position, targetPlayer.transform.position, (4 * Time.deltaTime));
+                    
                     rb.AddForce(force / 2.2f, ForceMode2D.Impulse);
                     CalculateRay();
                 }
@@ -108,7 +115,7 @@ public class EnemyController : MonoBehaviour
     {
         Vector3 targetPosition = target.transform.position;
         targetPlayer = target.gameObject;
-        if (isHunting == false) { targetRange = rangeSetter; }//wahiwcfiboydv hahvbcdsabovcaevbd clavb
+        if (isHunting == false) { targetRange = rangeSetter; }
 
         if (targetPlayer.tag == "Appleseed" && isArresting == false)
         {
@@ -142,7 +149,7 @@ public class EnemyController : MonoBehaviour
 
         if (isArresting == false)
         {
-            StartCoroutine(FuzzyDetection(0.75f, targetPosition));//Next goal is to not have this detect player but have the enenmy spin to the direction of player
+            StartCoroutine(FuzzyDetection(0.75f, targetPosition));
             if (Vector3.Distance(transform.position, targetPosition) < targetRange) { BeginHuntMode(); }
         }
     }
@@ -183,7 +190,7 @@ public class EnemyController : MonoBehaviour
     {
         GetComponent<PawnMovementController>().enabled = false;
         StartCoroutine(EnemyMoveDelay(moveDelay));
-        Debug.Log("Enemy About to Move");
+        
     }
     private IEnumerator ReturnToStart(float waitForSeconds)
     {
@@ -193,14 +200,16 @@ public class EnemyController : MonoBehaviour
         GetComponent<PawnMovementController>().enabled = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         suspicious = false;
-        Debug.Log("ReturnToStart Called");
+        
     }
 
     private IEnumerator ReturnToStartFromArrest(float waitForSeconds)
     {
         GetComponent<FieldOfView>().enabled = true;
         
-        arrestedPlayer = null;       
+        arrestedPlayer = null;
+        Instantiate(teleportPrefab, new Vector3(transform.position.x, transform.position.y + 0.05f, 0), Quaternion.identity);
+        Instantiate(teleportPrefab, startingPosition, Quaternion.identity);
         yield return new WaitForSeconds(waitForSeconds);
         GetComponentInChildren<MeshRenderer>().enabled = true;
         GetComponentInChildren<SightConeMaterialController>().SetYellow();
@@ -209,7 +218,7 @@ public class EnemyController : MonoBehaviour
         GetComponent<PawnMovementController>().enabled = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         suspicious = false;
-        Debug.Log("ReturnToStart Called");
+        
     }
 
     public void FindPlayerWithRay()
@@ -217,12 +226,12 @@ public class EnemyController : MonoBehaviour
         int layerMask = LayerMask.GetMask("Girl", "Appleseed", "Objects", "Walls");
         Vector3 direction = (targetPlayer.transform.position - transform.position).normalized;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Vector3.Distance(transform.position, targetPlayer.transform.position), layerMask);
-        //isWaitingToMove = true;//new
+        
         if (hit)
         {
             if (hit.collider.gameObject.tag == "Appleseed" || hit.collider.gameObject.tag == "Girl")
             {
-                //transform.position = Vector2.MoveTowards(transform.position, targetPlayer.transform.position, (speed * Time.deltaTime));
+                
                 targetDestination = targetPlayer.transform;
                 found = true;
             }
@@ -256,15 +265,15 @@ public class EnemyController : MonoBehaviour
             {
                 ArrestPlayer(other.gameObject);
                 other.gameObject.GetComponent<AppleseedController>().EnterCaptured();
-                Debug.Log("PlayerCaptured");
-                Debug.Log("+1 Strike");                
+                GetComponentInChildren<PawnAnimationController>().ArrestTrigger();
+                               
             }
             else if (other.gameObject.tag == "Girl")
             {
                 ArrestPlayer(other.gameObject);
                 other.gameObject.GetComponent<GirlController>().EnterCaptured();
-                Debug.Log("PlayerCaptured");
-                Debug.Log("+1 Strike");
+                GetComponentInChildren<PawnAnimationController>().ArrestTrigger();
+                
             }
         }
         
@@ -274,8 +283,8 @@ public class EnemyController : MonoBehaviour
             {
                 ArrestFailed();
                 GetComponent<ArrestController>().DeacivateGameOverTimer();
-                StartCoroutine(ReturnToStartFromArrest(2.0f));
-                Debug.Log("Knocked Out");
+                StartCoroutine(ReturnToStartFromArrest(1.9f));
+               
                 Destroy(other.gameObject);
             }
         }
@@ -288,15 +297,15 @@ public class EnemyController : MonoBehaviour
             {
                 ArrestPlayer(other.gameObject);
                 other.gameObject.GetComponent<AppleseedController>().EnterCaptured();
-                Debug.Log("PlayerCaptured");
-                Debug.Log("+1 Strike");
+                GetComponentInChildren<PawnAnimationController>().ArrestTrigger();
+               
             }
             else if (other.gameObject.tag == "Girl")
             {
                 ArrestPlayer(other.gameObject);
                 other.gameObject.GetComponent<GirlController>().EnterCaptured();
-                Debug.Log("PlayerCaptured");
-                Debug.Log("+1 Strike");
+                GetComponentInChildren<PawnAnimationController>().ArrestTrigger();
+             
             }
         }
 
@@ -306,8 +315,8 @@ public class EnemyController : MonoBehaviour
             {
                 ArrestFailed();
                 GetComponent<ArrestController>().DeacivateGameOverTimer();
-                StartCoroutine(ReturnToStartFromArrest(2.0f));
-                Debug.Log("Knocked Out");
+                StartCoroutine(ReturnToStartFromArrest(1.9f));
+                
                 Destroy(other.gameObject);
             }
         }
@@ -320,15 +329,15 @@ public class EnemyController : MonoBehaviour
             {
                 ArrestFailed();
                 GetComponent<ArrestController>().DeacivateGameOverTimer();
-                StartCoroutine(ReturnToStartFromArrest(2.0f));
-                Debug.Log("Knocked Out");
+                StartCoroutine(ReturnToStartFromArrest(1.9f));
+              
             }
         }
     }
 
     private void ArrestPlayer(GameObject playerUnderArrest)//Maybe pass in object
     {
-        Debug.Log("Arrest Called");          
+                
         GetComponent<FieldOfView>().enabled = false;
         GetComponentInChildren<SightConeMaterialController>().SetYellow();
         GetComponentInChildren<MeshRenderer>().enabled = false;
@@ -336,8 +345,9 @@ public class EnemyController : MonoBehaviour
         isHunting = false;
         isArresting = true;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        HealthSystem.instance.TakeDamage(1);
         GetComponent<ArrestController>().ActivateGameOverTimer();
-        //need the timer for the shows over game over
+      
 
     }
 
@@ -352,6 +362,8 @@ public class EnemyController : MonoBehaviour
         {
             arrestedPlayer.GetComponent<AppleseedController>().EnterCaptured();
         }
+        GetComponentInChildren<PawnAnimationController>().SetArrest(false);
+
     }
 
     private IEnumerator ResetSuspicion(float timeToWait)

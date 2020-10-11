@@ -17,6 +17,11 @@ public class BossJawController : MonoBehaviour
     private bool movingToStart = true;
     private bool movingToClosedPos = false;
     private bool isBossUsingMove = false;
+
+    [SerializeField]
+    GameObject weakOrb;
+    [SerializeField]
+    GameObject protectedOrb;
     // Start is called before the first frame update
     void Awake()
     {
@@ -70,6 +75,8 @@ public class BossJawController : MonoBehaviour
                 isBossUsingMove = false;
                 movingToStart = true;
                 speed = 2;
+                //weakOrb.SetActive(true);               
+                //protectedOrb.SetActive(false);
 
             }
             //This method should be called when a jaw string is cut

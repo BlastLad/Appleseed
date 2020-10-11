@@ -20,11 +20,7 @@ public class DialogueEvent : MonoBehaviour
         testDialogue = GetComponent<TestDialogue>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 
 
     public void GenericEvent(int line)
@@ -33,7 +29,7 @@ public class DialogueEvent : MonoBehaviour
         {
             unityEvent.Invoke();
             DialogueManager.instance.onDialogueLineCall -= GenericEvent;
-            Debug.Log("Success Generic Event Called");
+           
         }
     }
 

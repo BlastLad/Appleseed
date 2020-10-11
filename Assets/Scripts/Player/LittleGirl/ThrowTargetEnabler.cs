@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class ThrowTargetEnabler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool isThrowable = true;
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Walls")
+        if (other.gameObject.tag == "Walls" || other.gameObject.tag == "PitFalls")
         {
-            Debug.Log("Can Not Throw");
-            gameObject.GetComponentInParent<GirlController>().SetThrowable(false);
+           
+            isThrowable = false;
+        }
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Walls" || other.gameObject.tag == "PitFalls")
+        {
+            
+            isThrowable = false;
         }
     }
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Walls")
+        if (other.gameObject.tag == "Walls" || other.gameObject.tag == "PitFalls")
         {
-            Debug.Log("Can Throw");
-            gameObject.GetComponentInParent<GirlController>().SetThrowable(true);
+         
+            isThrowable = true;
         }
+    }
+
+
+    public bool GetIsThrowable()
+    {
+        return isThrowable;
     }
 }
 

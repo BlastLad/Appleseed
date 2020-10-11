@@ -228,6 +228,17 @@
                 },
                 {
                     "name": "",
+                    "id": "aff9bdf0-92e4-42c4-b739-cabe460a6bbb",
+                    "path": "<Keyboard>/v",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e1f6baa6-1b46-4876-877b-18c151a6aa85",
                     "path": "<XInputController>/buttonSouth",
                     "interactions": "",
@@ -250,6 +261,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bb9fde80-4bc7-4a96-ba83-372264dd9cb7",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Mount",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6d05b146-dac6-43d3-b4fc-0538140082a1",
                     "path": "<XInputController>/rightShoulder",
                     "interactions": "",
@@ -263,6 +285,17 @@
                     "name": "",
                     "id": "bb41136d-0944-421e-9f65-268c633a150f",
                     "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayDead",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f7a2062a-0241-4daf-a59d-6faa7449cfe8",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

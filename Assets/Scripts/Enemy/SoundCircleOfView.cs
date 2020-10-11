@@ -6,7 +6,7 @@ public class SoundCircleOfView : MonoBehaviour
 {
     public float viewRadius;
     [Range(0, 360)]
-    public float viewAngle;// Start is called before the first frame update
+    public float viewAngle;
 
     private float hitDistance;
 
@@ -16,8 +16,7 @@ public class SoundCircleOfView : MonoBehaviour
     public int edgeResolveIterations;
     public float edgeDistanceMin;
 
-    //public MeshFilter viewMeshFilter;
-    //Mesh viewMesh;
+ 
 
 
 
@@ -28,9 +27,7 @@ public class SoundCircleOfView : MonoBehaviour
 
     void Start()
     {
-        //viewMesh = new Mesh();
-        //viewMesh.name = "View Mesh";
-        //viewMeshFilter.mesh = viewMesh;
+       
         StartCoroutine("FindTargetsDelayed", .2f);
     }
 
@@ -51,7 +48,7 @@ public class SoundCircleOfView : MonoBehaviour
         visibleTargets.Clear();
         int layerMask = LayerMask.GetMask("Objects");
         int blockMask = LayerMask.GetMask("SmallWalls", "Pitfalls"); //Maybe Pitfalls, and SmallWalls or delete them...
-        Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), viewRadius, layerMask);//ytransform.position, viewRadius, AppleseedMask); ;
+        Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), viewRadius, layerMask);
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -123,10 +120,7 @@ public class SoundCircleOfView : MonoBehaviour
             }
         }
 
-        //viewMesh.Clear();
-        //viewMesh.vertices = verticies;
-        //viewMesh.triangles = triangles;
-        //viewMesh.RecalculateNormals();
+   
     }
 
     EdgeInfo FindEdge(ViewCastInfo min, ViewCastInfo max)//new

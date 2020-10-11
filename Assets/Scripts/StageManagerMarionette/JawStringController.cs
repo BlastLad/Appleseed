@@ -6,6 +6,7 @@ public class JawStringController : MonoBehaviour
 {
     public GameObject ropeSprite;// Start is called before the first frame update
     private bool isCut = false;
+    public AudioSource audioJaw;
     void Start()
     {
         
@@ -24,6 +25,7 @@ public class JawStringController : MonoBehaviour
     {
         if (other.gameObject.tag == "Thorn" && isCut == false)
         {
+            audioJaw.Play();
             Destroy(ropeSprite);
             isCut = true;
             BossJawController.instance.CheckJaw();

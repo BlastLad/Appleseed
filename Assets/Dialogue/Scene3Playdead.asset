@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Scene3Playdead
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Stop right there! Hold on a second Elise.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: I'm not even moving...
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: That Soul-diers's position has no openings for us to slip by. Hmm..If
+      only there was a way for one of us to (AVOID DETECTION)...
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: ...I feel like you already have an answer.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Hehehe...Right as always Elise. Now answer this, what do I look like?
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: A teddy bear...
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: 'Exactly! So why would armed guards chase down a cuddly teddy bear? '
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Beacuse that beautiful bear is walking around on two legs. It's unatural,
+      that's what it is!
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: 'I can (PRETNED TO BE A NORMAL TEDDY BEAR) by pressing (RB). While
+      pretending the Soul-diers will (LOOK RIGHT PAST ME) without a second glance! '
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: But I can't hide my (SOUL ENERGY) from them. So if I stay in a Soul-dier's
+      (SIGHT) for too long, the thugs will figure out my little ruse and (CHASE)
+      me.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
+      type: 3}
+    frameText: Okay. If you are all done talking can we move on now?
+    isLeft: 1

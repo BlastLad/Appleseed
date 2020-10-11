@@ -5,14 +5,19 @@ using UnityEngine;
 public class SightConeMaterialController : MonoBehaviour
 {
     public Material yellowCone;
-    public Material redCone;// Start is called before the first frame update
-    private bool isRed = false;
+    public Material redCone;
+    public bool isRed = false;
+    AudioSource enemyAudio;
+
+    [SerializeField]
+    AudioClip sightSFX;
     void Start()
     {
         GetComponent<MeshRenderer>().material = yellowCone;
+        enemyAudio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+
     public void SetYellow()
     {
         GetComponent<MeshRenderer>().material = yellowCone;
@@ -22,6 +27,7 @@ public class SightConeMaterialController : MonoBehaviour
     public void SetRed()
     {
         GetComponent<MeshRenderer>().material = redCone;
+        if (isRed == false) { enemyAudio.PlayOneShot(sightSFX); }     
         isRed = true;
     }
 

@@ -21,6 +21,17 @@ public class LeftArmScreenController : MonoBehaviour
 
     public Vector2 rightPlatformLanding;
 
+    public GameObject switchOrb;
+    public GameObject ArrowSet;
+    [SerializeField]
+    GameObject appleseedThrowPrefab;
+    GameObject throwSprite;
+    [SerializeField]
+    BoxCollider2D[] ropes;
+
+    private bool throwCalled = false;
+
+
     private Vector3 startPosition;
     void Awake()
     {
@@ -46,7 +57,14 @@ public class LeftArmScreenController : MonoBehaviour
             if (transform.position == startPosition)
             {
                 isMovingToStart = false;
+                MoveTimerMarionette.instance.BeginMoveSet();
             }
+        }
+
+        if (throwCalled == true && Vector2.Distance(throwSprite.transform.position, rightPlatformLanding) < 1.0f)
+        {
+            AppleseedController.instance.gameObject.SetActive(true);
+            throwSprite.SetActive(false);
         }
     }
 
@@ -56,6 +74,7 @@ public class LeftArmScreenController : MonoBehaviour
         {
             Debug.Log("Appleseed landed");
             isMovingToFloor3 = true;
+            MoveTimerMarionette.instance.StopAllCoroutines();
             FirstFloor.instance.GetComponent<Collider2D>().enabled = false;
             thornBlocker.SetActive(false);
             wallBlocker.SetActive(true);
@@ -71,21 +90,90 @@ public class LeftArmScreenController : MonoBehaviour
         thornBlocker.SetActive(true);
         wallBlocker.SetActive(false);
         FirstFloor.instance.GetComponent<Collider2D>().enabled = true;
-        AppleseedController.instance.transform.position = rightPlatformLanding;
+        AppleseedThrow();
+        StartCoroutine(ReSpawnAppleseed(2.2f, throwSprite));
     }
 
 
     public void TheWallsFall()
     {
-        AppleseedController.instance.transform.position = rightPlatformLanding;
+        if (RightArmScreenController.instance.GetFallState() == false)
+        {
+            AppleseedThrow();
+            if (switchOrb.GetComponentInParent<SwitchDoorManagerController>().GetIsRed() == true)
+            {
+                switchOrb.GetComponentInParent<SwitchDoorManagerController>().SetOrbState();
+            }
+            switchOrb.GetComponent<BossOrb>().OrbOff();
+            switchOrb.SetActive(false);
+            
+            
+        }
+        else { MoveTimerMarionette.instance.StopAllMoves(); }
         StopAllCoroutines();
+        StartCoroutine(ReSpawnAppleseed(2.2f, throwSprite));
         speed = 4;
         isMovingToStart = true;
         FirstFloor.instance.GetComponent<Collider2D>().enabled = true;
         thornBlocker.SetActive(false);
         wallBlocker.SetActive(false);
+        ArrowSet.SetActive(true);
+        foreach (BoxCollider2D rope in ropes)
+        {
+            if (rope != null)
+            {
+                rope.enabled = true;
+            }
+        }
+        StartCoroutine(TurnOffArrows(6f));
         isFallen = true;
         
         //You Can change layer with gameObject.layer = int
+    }
+
+    private IEnumerator TurnOffArrows(float time)
+    {
+        yield return new WaitForSeconds(time);
+        ArrowSet.SetActive(false);
+    }
+
+    public bool GetFallState()
+    {
+        return isFallen;
+    }
+
+    private IEnumerator ReSpawnAppleseed(float time, GameObject appleseedThrown)
+    {
+        yield return new WaitForSeconds(time);
+        AppleseedController.instance.gameObject.SetActive(true);
+        if (throwSprite != null)
+        {
+            throwSprite.SetActive(false);
+            Destroy(throwSprite);
+        }
+        throwCalled = false;
+    }
+
+    private void AppleseedThrow()
+    {
+        Debug.Log("This Was Called Hellp");
+        if (throwCalled == true) { return; }
+        else
+        {
+            throwCalled = true;
+            Vector3 landingArea = new Vector3(rightPlatformLanding.x, rightPlatformLanding.y, 0);
+            Vector3 direction = (landingArea - AppleseedController.instance.transform.position).normalized;
+            throwSprite = Instantiate(appleseedThrowPrefab, AppleseedController.instance.gameObject.transform.position, Quaternion.identity);
+
+            throwSprite.GetComponent<Rigidbody2D>().velocity = direction * 5.75f;
+
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+            throwSprite.GetComponent<Rigidbody2D>().rotation = angle;
+
+            AppleseedController.instance.gameObject.SetActive(false);
+            AppleseedController.instance.transform.position = rightPlatformLanding;
+
+
+        }
     }
 }

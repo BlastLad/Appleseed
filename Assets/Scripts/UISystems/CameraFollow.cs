@@ -7,11 +7,7 @@ public class CameraFollow : MonoBehaviour
     public Transform target;
     public Vector2 minPosition;
     public Vector2 maxPosition;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void LateUpdate()

@@ -12,13 +12,12 @@ public class VerticalCanonEnemyController : MonoBehaviour
     public float range;
     public float cooldownTime;
     public float cooldownTimer;
+    public AudioSource cameraAudio;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
+        cameraAudio = GetComponent<AudioSource>();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -38,14 +37,14 @@ public class VerticalCanonEnemyController : MonoBehaviour
 
     private void CalculateRay()
     {
-        int layerMask = LayerMask.GetMask("Appleseed", "Girl");
+        int layerMask = LayerMask.GetMask("Appleseed", "Girl", "Objects");
         int BlockMask = LayerMask.GetMask("Walls", "Objects");
-        //float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        
 
         RaycastHit2D midHit = Physics2D.Raycast(transform.position, fireDirection, range, layerMask);//Not great numbers
         Debug.DrawRay(transform.position, fireDirection, Color.green);
         if (midHit)
-        {        //Debug.Log("Object hit");  
+        {        
             if (midHit.collider.gameObject.tag == "Girl" || midHit.collider.gameObject.tag == "Appleseed")
             {
                 StartCoroutine(fireCanon(0.5f));
@@ -59,6 +58,7 @@ public class VerticalCanonEnemyController : MonoBehaviour
     private IEnumerator fireCanon(float time)
     {
         yield return new WaitForSeconds(time);
+        cameraAudio.Play();
         GameObject canonBall = Instantiate(canonBallPreFab, transform.position, Quaternion.identity);
         canonBall.GetComponent<Rigidbody2D>().velocity = fireDirection * canonBallSpeed;
     }

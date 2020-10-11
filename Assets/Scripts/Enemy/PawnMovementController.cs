@@ -19,7 +19,9 @@ public class PawnMovementController : MonoBehaviour
     public bool isPatrol = true;
     bool isAbletoTurn = false;
     Transform targetPath;
+    public Transform basePath;
     Vector2 direction;
+    public float pointAStart;
 
     public bool rotateType = false;
     public bool staticType = false;
@@ -42,8 +44,8 @@ public class PawnMovementController : MonoBehaviour
     {
         if (movementType == true)
         {
-            targetPath = WayPointPathGet.points[0];
-            //StartCoroutine(holdSpin(2.5f));
+            targetPath = basePath.GetComponent<WayPointPathGet>().points[0];
+            
         }
     }
 
@@ -57,6 +59,7 @@ public class PawnMovementController : MonoBehaviour
                 {
                     heardSound = false;
                     enemyTransform.rotation = Quaternion.Euler(0, 0, startingZPos);
+                    GetComponent<EnemyController>().startingPosition = soundSource.transform.position;
                     Destroy(soundSource.gameObject);
                     soundSource = null;
                 }
@@ -64,7 +67,7 @@ public class PawnMovementController : MonoBehaviour
         }
         if (movementType == true)
         {
-            direction = targetPath.position - transform.position;           //transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);           
+            direction = targetPath.position - transform.position;            
         }
     }
         // Update is called once per frame
@@ -73,7 +76,6 @@ public class PawnMovementController : MonoBehaviour
         if (heardSound == true)
         {
             MoveToSound();
-
         }
         if (rotateType == true)
         {
@@ -108,7 +110,14 @@ public class PawnMovementController : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, targetPath.position, (speed/35 * Time.deltaTime));
             if (callCount < callCountMax && isAbletoTurn == true)
             {
-                RotateCounterClockWise();
+                if (rotateCounterClockWise == true)
+                {
+                    RotateCounterClockWise();
+                }
+                else
+                {
+                    RotateClockWise();
+                }
             }
             else if (callCount == callCountMax)
             {
@@ -119,15 +128,15 @@ public class PawnMovementController : MonoBehaviour
             {
                 isAbletoTurn = true;
                 GetNextWaypoint();
-            }//enemyType = 1;
+            }
 
             }
-        // = new Quaternion(0, 0, (enemyTransform.rotation.z + 0.01f), 0);
+       
     }
 
     void RotateCounterClockWise()
     {
-        Debug.Log("Called");
+        
         enemyTransform.Rotate(Vector3.forward * speed * Time.deltaTime);
         callCount++;
     }
@@ -166,28 +175,35 @@ public class PawnMovementController : MonoBehaviour
     }
     void GetNextWaypoint()
     {
-        if (waypointIndex >= WayPointPathGet.points.Length - 1)
+        if (waypointIndex >= basePath.GetComponent<WayPointPathGet>().points.Length - 1)
         {
             waypointIndex = 0;
             return;
         }
         waypointIndex++;
         callCount = 0;
-        //enemyTransform.rotation = Quaternion.Euler(0, 0, pointA);
-        pointA += 90;
-        targetPath = WayPointPathGet.points[waypointIndex];
+        
+        if (rotateCounterClockWise == true)
+        {
+            pointA += 90;
+        }
+        else
+        {
+            pointA -= 90;
+        }
+        targetPath = basePath.GetComponent<WayPointPathGet>().points[waypointIndex];
     }
 
     public void MoveToSound()
     {
-        Debug.Log("Ismoving");
+       
         Vector2 directionToTarget = (soundSource.transform.position - transform.position).normalized;
 
         float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg + 90f;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.rotation = angle;
 
-        //enemyTransform.rotation = Quaternion.Euler(directionToTarget);
+      
         transform.position = Vector2.MoveTowards(transform.position, soundSource.transform.position, (speed / 35 * Time.deltaTime));
      
     }
@@ -197,7 +213,7 @@ public class PawnMovementController : MonoBehaviour
     {
         heardSound = true;
         soundSource = soundSourceOrigin;
-        Debug.Log(soundSource.transform.position + " " + heardSound);
+       
     }
 
     private void OnEnable()
@@ -206,18 +222,18 @@ public class PawnMovementController : MonoBehaviour
         soundSource = null;
         if (rotateType == true)
         {
-            Debug.Log("This shit was called");
+          
             callCount = 0;
             isCalled = false;
             currentPoint = pointB;
             rotateCounterClockWise = true;
-            transform.rotation = new Quaternion(0, 0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, startingZPos);
         }
         else if(movementType == true)
         {
             waypointIndex = 0;
-            targetPath = WayPointPathGet.points[0];
-            pointA = 0;
+            targetPath = basePath.GetComponent<WayPointPathGet>().points[0];
+            pointA = pointAStart;
         }
         else
         {

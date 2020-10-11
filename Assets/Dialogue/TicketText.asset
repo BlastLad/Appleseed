@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: TicketText
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Appleseed
+    characterPortrait: {fileID: 0}
+    frameText: Hey, Elise look at this!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 0}
+    frameText: What is that?... A ticket?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 0}
+    frameText: I don't know, but look it has my face on it!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 0}
+    frameText: 'Yes your face is adorable, but is this poor artist''s '
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 0}
+    frameText: We should keep an eye out for any more of these things. Who knows
+      maybe they will help us at some point!
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: 0}
+    frameText: (I doubt it...)
+    isLeft: 1

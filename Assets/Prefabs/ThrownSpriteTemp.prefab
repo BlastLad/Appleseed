@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8622298309554670275}
   - component: {fileID: -3042588214506705216}
   - component: {fileID: -3840658131552477519}
+  - component: {fileID: 4606964029971711182}
   m_Layer: 14
   m_Name: ThrownSpriteTemp
   m_TagString: ThrownObject
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3476130977536529104, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+  m_Sprite: {fileID: 8795609047644063397, guid: 1d46a9cc19f12634b977a517699c1e5b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,3 +122,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.014851451, y: -0.013204217}
   m_Size: {x: 0.5357559, y: 0.86248046}
   m_Direction: 0
+--- !u!95 &4606964029971711182
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8514176942539155591}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ae93329f4b79f464f9b8b237caaa81f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

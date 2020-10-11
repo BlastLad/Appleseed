@@ -12,11 +12,12 @@ public class CanonEnemyController : MonoBehaviour
     public float range;
     public float cooldownTime;
     public float cooldownTimer;
+    AudioSource phantoGraphAudio;
         
         // Start is called before the first frame update
     void Start()
     {
-        
+        phantoGraphAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -39,15 +40,15 @@ public class CanonEnemyController : MonoBehaviour
     private void CalculateRay()
     {
         int layerMask = LayerMask.GetMask("Walls", "Objects", "Appleseed", "Girl");
-        //float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        
   
         RaycastHit2D topHit = Physics2D.Raycast(new Vector2(transform.position.x, (transform.position.y + 0.215f)), fireDirection, range, layerMask);
-        RaycastHit2D midHit = Physics2D.Raycast(transform.position, fireDirection, range, layerMask);//Not great numbers
+        RaycastHit2D midHit = Physics2D.Raycast(transform.position, fireDirection, range, layerMask);
         RaycastHit2D botHit = Physics2D.Raycast(new Vector2(transform.position.x, (transform.position.y - 0.315f)), fireDirection, range, layerMask);
         Debug.DrawRay(transform.position, fireDirection, Color.green);
         if (midHit || topHit || botHit)
         {
-            //Debug.Log("Object hit");
+            
             if(topHit.collider.gameObject.tag == "Girl" || topHit.collider.gameObject.tag == "Appleseed")
             {
                 StartCoroutine(fireCanon(0.5f));
@@ -72,6 +73,7 @@ public class CanonEnemyController : MonoBehaviour
     private IEnumerator fireCanon(float time)
     {
         yield return new WaitForSeconds(time);
+        phantoGraphAudio.Play();
         GameObject canonBall = Instantiate(canonBallPreFab, transform.position, Quaternion.identity);
         canonBall.GetComponent<Rigidbody2D>().velocity = fireDirection * canonBallSpeed;
     }

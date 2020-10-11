@@ -16,56 +16,57 @@ MonoBehaviour:
   - characterName: Elise
     characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
       type: 3}
-    frameText: It's Dark in Here...
+    frameText: It's dark in here...
     isLeft: 1
   - characterName: Appleseed
-    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
       type: 3}
     frameText: True I can barely see in front of my paws. Hmmm...
     isLeft: 0
   - characterName: Appleseed
-    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
       type: 3}
     frameText: Stay right there Elise, I'm gonna scout out ahead!
     isLeft: 0
   - characterName: Elise
     characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
       type: 3}
-    frameText: Don't die
+    frameText: Don't die.
     isLeft: 1
   - characterName: Appleseed
-    characterPortrait: {fileID: -2914500919241999546, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
       type: 3}
-    frameText: '*Thonk* What!? Who makes a Catwalk that leads to a wall!'
+    frameText: '*Thonk* What!? Who makes a catwalk that leads to a wall!?'
     isLeft: 0
   - characterName: ???
-    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+    characterPortrait: {fileID: 21300000, guid: fe0e417b7fc7b9f4ba3db54dc0cda758,
       type: 3}
-    frameText: '*Egh* I told you worthless puppet strings I need an hours rest before
-      each show to perform properly'
+    frameText: '*Egh* I told you worthless puppet strings, I need at least two hours
+      of rest before each show, or I won''t be at peak performance.'
     isLeft: 1
-  - characterName: Stage Manager
-    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+  - characterName: ???
+    characterPortrait: {fileID: 21300000, guid: fe0e417b7fc7b9f4ba3db54dc0cda758,
       type: 3}
-    frameText: So why for all that is unholy.. Are you KNOCKING ON MY TEETH, Wait
-      a minute.... Your Human
+    frameText: So unless the King Of All Things himself has decided to finally thank
+      me for all my hard work... I have to ask, "Who is the fool KNOCKING ON MY TEETH?"!...
+      Wait a minute.... You're Human.
     isLeft: 1
   - characterName: Elise
-    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+    characterPortrait: {fileID: 21300000, guid: 0ecca251034489946a265dffe331c548,
       type: 3}
-    frameText: Yeah and you're a giant talking head
+    frameText: Yeah? So what if I am human? After all you are a giant talking head.
     isLeft: 0
-  - characterName: Stage Manager
-    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+  - characterName: Recardo, The Radio Head
+    characterPortrait: {fileID: 21300000, guid: fe0e417b7fc7b9f4ba3db54dc0cda758,
       type: 3}
-    frameText: Wha, How dare you! This talking head is responsible for bringing the
-      theater's shows to life! The lights, fly-ins, sparklers, all a product of my
-      endless toil and trouble!
+    frameText: Wha-, How dare you! My name is Recardo, and I am responsible for bringing
+      the theatre's shows to life! The lights, fly-ins, sparklers, all a product
+      of my endless toil and trouble!
     isLeft: 1
-  - characterName: Stage Manager
-    characterPortrait: {fileID: -6888012339299914099, guid: 4e666f7c76bf4cf4bafa20771ea6bcf9,
+  - characterName: Recardo, The Radio Head
+    characterPortrait: {fileID: 21300000, guid: fe0e417b7fc7b9f4ba3db54dc0cda758,
       type: 3}
-    frameText: But that means nothing to you. I'm sure the King had big plans for
-      you, but Last time I checked there were no humans on the cast list! So I will
-      personally remove you from the stage
+    frameText: But that means nothing to you I'm sure. The Grand Festival begins
+      in less than an hour, and the last time I checked there were no humans on the
+      cast list! So I Recardo, will personally remove you from the stage!
     isLeft: 1

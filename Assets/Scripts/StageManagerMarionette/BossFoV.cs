@@ -50,7 +50,7 @@ public class BossFoV : MonoBehaviour
     {
         visibleTargets.Clear();       
         int layerMask = LayerMask.GetMask("Appleseed", "Girl");
-        int blockMask = LayerMask.GetMask("SmallWalls", "Pitfalls"); //Maybe Pitfalls, and SmallWalls or delete them...
+        int blockMask = LayerMask.GetMask("Enemy"); //Maybe Pitfalls, and SmallWalls or delete them...
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), viewRadius, layerMask);//ytransform.position, viewRadius, AppleseedMask); ;
 
         for (int i = 0; i < targetsInViewRadius.Length; i++)
@@ -158,7 +158,7 @@ public class BossFoV : MonoBehaviour
     ViewCastInfo ViewCast(float globalAngle)
     {
         Vector3 direction = DirectionFromAngle(globalAngle, true);
-        int blockMask = LayerMask.GetMask("Walls", "SmallWalls");
+        int blockMask = LayerMask.GetMask("Enemy");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(direction.x, direction.y), viewRadius, blockMask);
 
         if (hit && hit.collider != null)

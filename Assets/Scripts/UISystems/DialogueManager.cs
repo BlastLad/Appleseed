@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
     {
 
         isCurrentlyTyping = true;
-        ///dialogueText.text = "";
+       
         foreach(char c in info.frameText.ToCharArray())
         {
             yield return new WaitForSeconds(delay);
@@ -129,10 +129,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         DialogueButtonController.instance.gameObject.SetActive(false);
-        AppleseedController.instance.EnterCaptured();
+        AppleseedController.instance.EnterCutScene();
         GirlController.Instance.EnterMain();
         
-        //Also turn back on player movement during this
+        
     }
 
 

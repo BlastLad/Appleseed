@@ -10,12 +10,13 @@ public class BossCanonController : MonoBehaviour
     float canonBallSpeed;
     public Vector2 fireDirection;
     public float range;
+    AudioSource source;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -37,6 +38,7 @@ public class BossCanonController : MonoBehaviour
     private IEnumerator fireCanonCoroutine(float time)
     {
         yield return new WaitForSeconds(time);
+        source.Play();
         finger.GetComponent<Animator>().SetTrigger("OpenFinger");
         GameObject canonBall = Instantiate(canonBallPreFab, transform.position, Quaternion.identity);
         canonBall.GetComponent<Rigidbody2D>().velocity = fireDirection * canonBallSpeed;

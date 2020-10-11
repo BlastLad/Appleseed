@@ -17,11 +17,18 @@ public class MoveToBossEvent : MonoBehaviour
     {
         if (isMoving == true)
         {
-            if (appleseed.transform.position == targetPos)
+            appleseed.GetComponent<AppleseedController>().SetAnimation();
+            if (Vector2.Distance(appleseed.transform.position, targetPos) < .84f)
             {
-                isMoving = false;               
+                isMoving = false;
+                appleseed.GetComponent<Animator>().SetFloat("Vertical", 0f);
+                appleseed.GetComponent<Animator>().SetBool("IsMoving", false);
+                appleseed.GetComponent<AppleseedController>().SetCutScene(false);
             }
-            appleseed.transform.position = Vector2.MoveTowards(appleseed.transform.position, targetPos, AppleseedController.instance.walkSpeed * Time.deltaTime);
+            else
+            {
+                appleseed.transform.position = Vector2.MoveTowards(appleseed.transform.position, targetPos, AppleseedController.instance.walkSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -29,6 +36,7 @@ public class MoveToBossEvent : MonoBehaviour
     public void BeginEvent()
     {
         appleseed = AppleseedController.instance.gameObject;
+        appleseed.GetComponent<AppleseedController>().SetAnimation();
         isMoving = true;
     }
 }

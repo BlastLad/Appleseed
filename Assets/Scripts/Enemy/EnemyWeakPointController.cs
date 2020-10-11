@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyWeakPointController : MonoBehaviour
 {
-    public GameObject parentEnemy;// Start is called before the first frame update
+    public GameObject parentEnemy;
+    public GameObject destructionPrefab;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +15,7 @@ public class EnemyWeakPointController : MonoBehaviour
             bool isBehind = other.GetComponentInParent<AppleseedController>().GetBehindState();
             if (isBehind == true)
             {
+                Instantiate(destructionPrefab, parentEnemy.transform.position, Quaternion.identity);
                 Destroy(parentEnemy);
             }
         }

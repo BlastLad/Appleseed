@@ -8,7 +8,7 @@ public class GirlController : MonoBehaviour
 
 
     public static GirlController Instance { get; private set; }
-    private Vector2 inputVector = new Vector2(0, 0); // Start is called before the first frame update
+    private Vector2 inputVector = new Vector2(0, 0);
     private Rigidbody2D rb;
     public GameObject thornPrefab;
     public GameObject appleseedPrefab;
@@ -39,13 +39,6 @@ public class GirlController : MonoBehaviour
     private bool isThrowing = false;
     private bool isThrowable = true;
     private bool isPaused = false;//Once again should put in GameManager
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     //Awake occurs before start
     private void Awake()
@@ -99,21 +92,22 @@ public class GirlController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //rb.velocity = transform.forward * inputVector * walkSpeed;
+       
         if (isUsingGadget == true)//Needs to be improved
         {
             if (inputVector == new Vector2(0, 0))
             {
                 MoveTarget();
-                throwTarget.position = rb.position + (new Vector2(0, 1) * throwTargetDistance);
-                CalculateRay(inputVector.normalized);
+                Vector2 direction = (throwTarget.transform.position - transform.position).normalized;
+                throwTarget.position = rb.position + (direction * throwTargetDistance);
+                CalculateRay(direction);
             }
             else
             {
                 MoveTarget();
                 throwTarget.position = rb.position + inputVector.normalized * throwTargetDistance;
                 CalculateRay(inputVector.normalized);
-            }//Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
+            }
         }
         else if (isMain == true) {
             Vector2 position = rb.position;//Current Position of Player
@@ -128,13 +122,13 @@ public class GirlController : MonoBehaviour
         castDirection.Normalize();
 
         if (thornCooldown == true) { return; }      
-            if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1.0f; }
+            
             GameObject thorn = Instantiate(thornPrefab, transform.position, Quaternion.identity);
         Vector3 direction = (roseTarget.transform.position - transform.position).normalized;
-
+        if (castDirection.x == 0 && castDirection.y == 0) { castDirection = direction; }
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         thorn.GetComponent<Rigidbody2D>().rotation = angle;
-        //thorn.transform.position = thorn.transform.position + Vector3.zero;
+        
         thorn.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
             Destroy(thorn, 5f);
             thornCooldown = true;
@@ -144,7 +138,6 @@ public class GirlController : MonoBehaviour
     //A funtion that enables the MainMode Input Action Maps and Disables all others
     public void EnterMain()
     {
-        Debug.Log("Entered Main Mode");
         isRoseMode = false;
         isCaptured = false;
         isMain = true;
@@ -161,7 +154,6 @@ public class GirlController : MonoBehaviour
                 girlActions.GirlMounted.Enable();
             }
             isThrowing = false;
-            //girlActions.GirlMounted.Demount.performed += Demount;
         }
         girlActions.GirlMain.Enable();
         
@@ -169,8 +161,8 @@ public class GirlController : MonoBehaviour
     //A Function that disables Main Mode and enters Rose Mode
     public void EnterRose()
     {
-        Debug.Log("Entered Rose Mode");
         inputVector = new Vector2(0f, 0f);//Resets input vector
+        rb.velocity = Vector3.zero;
         isMain = false;
         isRoseMode = true;
         currentState = 1;
@@ -180,16 +172,11 @@ public class GirlController : MonoBehaviour
         cooldownTimer = cooldownTime - 0.3f;
         girlActions.GirlMain.Disable();
         girlActions.GirlRose.Enable();
-        /*if (isMounted)
-        {
-            girlActions.GirlMain.Demount.Enable();
-        }*/
     }
 
     //A Function called by Appleseed that enables the Demount Function
     public void Mount()
     {
-        Debug.Log("mounted");
         isMounted = true;
         girlActions.GirlMounted.Enable();
         girlActions.GirlMounted.Demount.performed += Demount;
@@ -199,14 +186,16 @@ public class GirlController : MonoBehaviour
     public void Demount(InputAction.CallbackContext context)
     {
         if (isMounted == false || isUsingGadget == true) { return; }
-        isMounted = false;
+   
+            isMounted = false;
+       
         girlActions.GirlMounted.Demount.performed -= Demount;
         girlActions.GirlMounted.Demount.Disable();
         Instantiate(appleseedPrefab, transform.position, Quaternion.identity);
     }
     private void Demount()
     {
-        if (isMounted == false || isUsingGadget == true) { return; }
+        if (isMounted == false || isUsingGadget == true ) { return; }
         isMounted = false;
         girlActions.GirlMounted.Demount.performed -= Demount;
         girlActions.GirlMounted.Demount.Disable();
@@ -217,7 +206,8 @@ public class GirlController : MonoBehaviour
     {
         if (isMounted)//Also that current selected gadget is Appleseed
         {
-            Debug.Log("Gadget Activated");
+            
+            rb.velocity = new Vector2(0, 0);
             inputVector = new Vector2(0f, 0f);
             isUsingGadget = true;
             currentState = 2;
@@ -238,11 +228,17 @@ public class GirlController : MonoBehaviour
         else
         {
             castDirection.Normalize();
-            //GameObject appleseedThrow = Instantiate(appleseedPrefab, throwTarget.position, Quaternion.identity);
-            if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1.0f; }
+            
+            Vector3 direction = (throwTarget.transform.position - transform.position).normalized;
+            if (castDirection.x == 0 && castDirection.y == 0) { castDirection = direction; }
             GameObject throwSprite = Instantiate(appleseedThrownSprite, transform.position, Quaternion.identity);
             Instantiate(landingZonePrefab, throwTarget.position, Quaternion.identity);
             throwSprite.GetComponent<Rigidbody2D>().velocity = castDirection * thornSpeed;
+
+
+            float angle = Mathf.Atan2(castDirection.y, castDirection.x) * Mathf.Rad2Deg - 90f;
+            throwSprite.GetComponent<Rigidbody2D>().rotation = angle;
+
             isThrowing = true;
             isMounted = false;
             EnterMain();
@@ -252,29 +248,28 @@ public class GirlController : MonoBehaviour
     //A function that reads the Left Joy Sticks  current direction
     public void OnMovement(InputAction.CallbackContext context)
     {
-        /*if (isRoseMode == true) {
-            inputVector = new Vector2(0f, 0f);//Resets the Input Vector so Player Object is stationary
-            return; 
-        }*/      
+        
         inputVector = context.ReadValue<Vector2>();
         if (isRoseMode == true)
         {
             if (inputVector == new Vector2(0, 0))
             {
-                roseTarget.position = rb.position + new Vector2(0, 1);
+                //roseTarget.position = rb.position + new Vector2(0, 1);
             }
             else
             {
+                Debug.Log(inputVector);
                 roseTarget.position = rb.position + inputVector.normalized;
+                
             }
         }
         else if (isUsingGadget == true)
         {
             if (inputVector == new Vector2(0,0))
             {
-                
-                throwTarget.position = rb.position + (new Vector2(0, 1) * throwTargetDistance);
-                CalculateRay(inputVector.normalized);
+                Vector2 direction = (throwTarget.transform.position - transform.position).normalized;
+                throwTarget.position = rb.position + (direction * throwTargetDistance);
+                CalculateRay(direction);        
             }
             else
             {
@@ -282,7 +277,7 @@ public class GirlController : MonoBehaviour
                 CalculateRay(inputVector.normalized);
             }
         }
-        //Debug.Log("X: " + inputVector.x.ToString() + " Y: " + inputVector.y.ToString());
+        
     }
 
     public void CalculateRay(Vector2 castDirection)
@@ -291,15 +286,22 @@ public class GirlController : MonoBehaviour
         float a = ((throwTarget.position.x - transform.position.x) * (throwTarget.position.x - transform.position.x));
         float b = ((throwTarget.position.y - transform.position.y) * (throwTarget.position.y - transform.position.y));
         float distance = Mathf.Sqrt(a + b);
-        //Debug.Log(distance);
-        if (castDirection.x == 0 && castDirection.y == 0) { castDirection.y = 1; }         
+        Vector3 direction = (throwTarget.transform.position - transform.position).normalized;
+        if (castDirection.x == 0 && castDirection.y == 0) { castDirection = direction; }         
         RaycastHit2D hit = Physics2D.Raycast(transform.position, castDirection, distance, layerMask);
-        //if (hit) { Debug.Log(hit.collider.name); }
+        
         if (hit)
         {
             if (hit.collider.gameObject.tag == "ThrowMarker")
             {
-                isThrowable = true;
+                if (throwTarget.gameObject.GetComponent<ThrowTargetEnabler>().GetIsThrowable() == true)
+                {
+                    isThrowable = true;
+                }
+                else
+                {
+                    isThrowable = false;
+                }
             }
             else
             {
@@ -310,7 +312,7 @@ public class GirlController : MonoBehaviour
 
     private void MoveTarget()
     {
-        Debug.Log("Successfully Called");
+        
 
         Vector2 targetMovementInput = girlActions.GirlAppleseedGadget.ChangeThrowRange.ReadValue<Vector2>();
 
@@ -326,7 +328,8 @@ public class GirlController : MonoBehaviour
     }
     public void EnterCaptured()
     {
-        Debug.Log("Entered Capture Mode");
+       
+        rb.velocity = Vector3.zero;
         isCaptured = true;
         EnterMain();
         isMain = false;     
@@ -340,33 +343,32 @@ public class GirlController : MonoBehaviour
     public void EnterCutScene()
     {
         isCaptured = true;
+        rb.velocity = Vector3.zero;
         EnterMain();
         isMain = false;
         if (isMounted == true) { Demount(); }
         girlActions.GirlMain.Disable();
     }
-    private void PauseGame()
+    public void PauseGame()
     {
         int pauseState = GetState();
         if (isPaused == false)
         {
+            PauseManager.Instance.PauseGame();
             
-            Debug.Log("Game Paused");
-            isPaused = true;
-            Time.timeScale = 0.0f;         
+            isPaused = true;       
             if(pauseState == 0)//0 is main
             {
                 girlActions.GirlMain.Disable();
-                girlActions.GirlMounted.Disable();
-                mountingBounds.gameObject.SetActive(false);
+                
                 
             }
             else if(pauseState == 1)//is Rose
             {
                 girlActions.GirlRose.Disable();
-                girlActions.GirlMounted.Disable();
+             
                 roseTarget.gameObject.SetActive(false);
-                mountingBounds.gameObject.SetActive(false);
+                
             }
             else if (pauseState == 2)//0 is AppleseedGadget
             {
@@ -377,27 +379,28 @@ public class GirlController : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game Resumed");
-            isPaused = false;       
-            Time.timeScale = 1.0f;
+            
+            isPaused = false;
+            PauseManager.Instance.ResumeGame();
             if (pauseState == 0)//0 is main
             {
                 girlActions.GirlMain.Enable();
-                girlActions.GirlMounted.Enable();
-                mountingBounds.gameObject.SetActive(true);
+                
             }
             else if (pauseState == 1)//0 is Rose
             {
                 girlActions.GirlRose.Enable();
-                girlActions.GirlMounted.Enable();
+               
                 roseTarget.gameObject.SetActive(true);
-                mountingBounds.gameObject.SetActive(true);
+                
             }
             else if (pauseState == 2)//0 is AppleseedGadget
             {
                 girlActions.GirlAppleseedGadget.Enable();
+                girlActions.GirlMounted.Enable();
                 throwTarget.gameObject.SetActive(true);
             }
+         
             girlActions.GirlPaused.Disable();
         }
     }

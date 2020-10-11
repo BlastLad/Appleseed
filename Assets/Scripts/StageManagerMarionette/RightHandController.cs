@@ -11,6 +11,8 @@ public class RightHandController : MonoBehaviour
     private GameObject[] cannons;// Start is called before the first frame update
     [SerializeField]
     public GameObject[] fingers;
+    [SerializeField]
+    private GameObject[] lights;
     void Awake()
     {
         instance = this;
@@ -27,6 +29,8 @@ public class RightHandController : MonoBehaviour
     {
         Debug.Log("Full Frontal Called");
         BossCanonController currentCanon = cannons[numberToFire].GetComponent<BossCanonController>();
+        lights[numberToFire].GetComponent<Animator>().SetBool("IsActive", true);
+        StartCoroutine(TurnOutTheLights(lights[numberToFire]));
         fingers[numberToFire].GetComponent<Animator>().SetTrigger("CloseFinger");
         //simple launch that coresponds to the number passed in
         currentCanon.StopAllCoroutines();
@@ -51,5 +55,16 @@ public class RightHandController : MonoBehaviour
         {
             finger.GetComponent<Animator>().SetTrigger("CloseFinger");
         }
+        foreach (GameObject light in lights)
+        {
+            light.GetComponent<Animator>().SetBool("IsActive", true);
+            StartCoroutine(TurnOutTheLights(light));
+        }
+    }
+
+    private IEnumerator TurnOutTheLights(GameObject light)
+    {
+        yield return new WaitForSeconds(1.55f);
+        light.GetComponent<Animator>().SetBool("IsActive", false);
     }
 }

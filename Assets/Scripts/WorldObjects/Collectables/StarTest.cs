@@ -4,22 +4,13 @@ using UnityEngine;
 
 public class StarTest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    [SerializeField]
+    PlayerDataGameObject player;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Girl" || other.gameObject.tag == "Appleseed")
+        if (other.gameObject.tag == "Girl" || other.gameObject.tag == "Appleseed" || other.gameObject.tag == "ThrownObject")
         {
+            player.ticketCollected();
             Destroy(gameObject);
         }
     }

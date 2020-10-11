@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dcc32b6ebf2554487584c8cb283c4f, type: 3}
+  m_Name: Scene1Text1
+  m_EditorClassIdentifier: 
+  dialogueInfo:
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: Appleseed, where are we going...
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Where are we... I already told you, we're getting you out of Wonderland
+      and back to Human World! Hmm... See that EXIT SIGN, my teddy-senses tell me
+      that if we follow those we'll be out of this dungeon in no time!
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: The security in this place is tighter than my stitching. Looks like
+      the Soul-diers are not making this easy.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: Well, we can't go anywhere with these curtains in the way.
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: I know that!! The control orb has to be near by.... A-ha I've got
+      it! Elise, throw me across this deep, dark, ominous, bottomless pit. I'll scout
+      ahead.
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: Wha..What, how dare you. I am NOT doing that... what if you fall...
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Oh, come on it's easy, just pick me up with the (A BUTTON), plant
+      your feet firm with (LB), aim carefully with (LT) and (RT)...then press (LB)
+      and I'll be feeling the wind on my face before it's time for tea!
+    isLeft: 0
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: Oh, almost forgot. If you need to reposition yourself press the (B
+      BUTTON) or (VIEW).
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: Oh, alright fine. But I'll be expecting a lemon cake from you later.
+      But what happens after I throw you?
+    isLeft: 1
+  - characterName: Appleseed
+    characterPortrait: {fileID: 21300000, guid: 357eaccad28066545bc9c73bdde032be,
+      type: 3}
+    frameText: 'No need to worry about that, just focus on throwing me over the abyss
+      for now. Just be sure to stay out of the SOUL-DIER''S SIGHT. If those thugs
+      see that we''ve escaped they''ll be sure to chase us down. '
+    isLeft: 0
+  - characterName: Elise
+    characterPortrait: {fileID: -5622644239277436267, guid: bc66a4229a272e040ab35980c07155e9,
+      type: 3}
+    frameText: Well ok then...here I go.. (This is proving to be a lot more difficult
+      than I hoped, maybe I should have stayed in that cell...)
+    isLeft: 1
+  - characterName: 
+    characterPortrait: {fileID: 21300000, guid: d85b884f0b9956442a0153aeffb476c1,
+      type: 3}
+    frameText: 'Move Elise with (LEFT CONTROL STICK)
+
+      Move Appleseed with (RIGHT
+      CONTROL STICK)
+
+      To use Appleseed''s Punch press (RT)'
+    isLeft: 1

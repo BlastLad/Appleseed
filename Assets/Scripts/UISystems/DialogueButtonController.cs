@@ -7,7 +7,7 @@ public class DialogueButtonController : MonoBehaviour
 
     public static DialogueButtonController instance;
 
-    public DialogueControls actions; // Start is called before the first frame update
+    public DialogueControls actions; 
    
  
     private void Awake()
@@ -29,7 +29,7 @@ public class DialogueButtonController : MonoBehaviour
 
     public void GetNextLine()
     {
-        Debug.Log("Called");
+       
         DialogueManager.instance.EndDeQueueDialogue();
     }
 

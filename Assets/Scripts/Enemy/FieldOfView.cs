@@ -62,7 +62,7 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics2D.Raycast(transform.position,directionToTarget,distanceToTarget,blockMask))
                 {
                     visibleTargets.Add(target);
-                    Debug.Log("player found what");//Not possible
+                    
                     GetComponent<EnemyController>().FindTarget(target.gameObject);
                     if (target.gameObject.tag == "Appleseed")
                     {
